@@ -18,13 +18,20 @@
 .expandable-title {
   padding: 10px;
   background-color: #f3f3f3;
+  font-size: 30px;
+  font-family: sans-serif;
 }
 
 .expandable-content {
   padding: 10px;
   display: none;
+  font-size: 30px;
+  font-family: sans-serif;
 }
-
+.expandable-content-DS1{
+  padding: 10px;
+  display: none;
+}
 .expandable-item.expanded .expandable-content {
   display: block;
 }
@@ -120,9 +127,81 @@ h1 .A0 {
 .A5{
   margin-right: 1230px;
 }
+.first-line{
+ display: inline;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 25vh; 
+  color:red;
+}
+.arabic-1{
+  text-align: right;
+  color: brown;
+}
+.ex-1{
+  display:flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+.ex-1-1{
+  color: brown;
+}
+.title-2{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 25vh; 
+  color:red;
+}
+.compound-propositions{
+  display: flex;
+  align-items: center; /* Centers items vertically */
+}
+.compound-propositions img {
+  width: 300px; /* Adjust image width as needed */
+  height: 400px; /* Maintain aspect ratio */
+  margin-right: 10px; /* Adjust spacing between image and paragraph */
+}
+.non-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 5px;
+}
+.non-2::before {
+  content: "\25A0"; /* Unicode for square */
+  display: inline-block;
+  width: 1em; /* Adjust size of the square as needed */
+  margin-right: 0.5em; /* Adjust spacing between the square and paragraph text */
+}
+.non-3::before {
+  content: "\25A0"; 
+  display: inline-block;
+  width: 1em; 
+  margin-right: 0.5em; 
+}
+.non-4::before {
+  content: "\25A0"; 
+  display: inline-block;
+  width: 1em; 
+  margin-right: 0.5em; 
+}
+
+.negation-img img{
+  width: 50%;
+  height: auto;
+}
+.negation-img p {
+  flex: 1; /* Expand to fill remaining space */
+  text-align:right;
+  color: brown;
+}
 </style>
 <head>
-    <title>JUSTforHELP</title>
+  <title>JUSTforHELP</title>
 </head>
 <body>
   
@@ -141,130 +220,55 @@ h1 .A0 {
     
     <ul class="expandable-list">
       <li class="expandable-item">
+        <div class="expandable-content"></div>
         <div class="expandable-title">Lect 1</div>
-        <div class="expandable-content">Content for Text 1</div>
+        <div class="expandable-content">
+          <a class="first-line" href="https://highered.mheducation.com/sites/125967651x/student_view0/index.html">Learning Center</a>
+          <p class="first-line" >this link containes Interactive Demonstrations, Self Assessments, etc...</p>
+          <h1 class="title">Propositions</h1>
+          <p>Propositions is a declarative sentence that is either<strong>"TRUE" or "FALSE"</strong>.</p>
+          <p class="arabic-1">ببساطة لازم تكون الاجابة ب صح او غلط مينعش اي اجابة تاني</p>
+          <p class="arabic-1">مشينفعش الاجابة تكون قيمة او رقم او مكان او زمان الخ</p>
+          <h2>Examples of Propositions</h2>
+          <div  class="ex-1"><p ><strong>(A)</strong> Moon is made of green cheese</p><p class="ex-1-1">Answer is FALSE but it still <strong>Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(B)</strong> Cairo is a capital of Egypt</p><p class="ex-1-1">Answer is clearly TRUE it's a <strong>Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(C)</strong> 1 + 1 = 2</p><p class="ex-1-1">TRUE it's a <strong>Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(D)</strong> 0 + 0 = 5</p><p class="ex-1-1">FALSE it's a <strong>Proposition</strong></p></div>
+          <h2>Examples of not Propositions</h2>
+          <div  class="ex-1"><p ><strong>(A)</strong> Sit down!</p><p class="ex-1-1">it's imperative form you gonna refuse or accept. it's<strong> NOT Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(B)</strong> What time is it ?</p><p class="ex-1-1">Answer will be (the time now) not T or F. it's<strong> NOT Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(C)</strong> X + 1 = 2</p><p class="ex-1-1">Answer is clearly "1" but it's not T or F. it's<strong> NOT Proposition</strong></p></div>
+          <div  class="ex-1"><p ><strong>(D)</strong> X + Y = Z</p><p class="ex-1-1">Who knows XD. it's<strong> NOT Proposition</strong></p></div>
+          <h2 class="title-2">Compound Propositions</h2>
+          <p>Compound Propositions are constructed from logical connectives and other propositions.</p>
+          <div class="compound-propositions">
+          <img  src="Compound Propositions.png">
+          <div class="non-1">
+          <P class="non-2">These tools are used for propositions only.</P>
+          <P class="non-3">Negation tool is used for ONE proposition.</P>
+          <P class="non-4">Conjunction (and), disjunction (or), implies (if-then), biconditional (if and only if) are used to connect TWO propositions.All tools are Binary except Negation.</P>
+          </div>
+          </div>
+          <h2 class="title-2">Negation (NOT)</h2>
+          <div class="negation-img">
+          <img src="Negation.png">
+          <img src="NegationEX.png">
+          <p> باختصار انفي الجملة اللي قدامك ايا كان معناها منغير ما تغير قيمة اي حاجة</p>
+          </div>
+          <h2 class="title-2">Conjunction (AND)</h2>
+          <div class="negation-img">
+          <img src="ANDtable.png">
+          <img src="andEX.png">
+          <p>Just add "AND" between P and Q.</p>
+          <h2 class="title-2">Conjunction (AND)</h2>
+
+          </div>
+        </div>
       </li>
       <li class="expandable-item">
-        <div class="expandable-title">sec 1</div>
-        <div class="expandable-content">Content for Text 2</div>
+        <div class="expandable-title">Sec 1</div>
+        <div class="expandable-content">Same Content</div>
       </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 2</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 2</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 3</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 3</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 4</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 4</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 5</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 5</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 6</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 6</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 7</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 7</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 8</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 8</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 9</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 9</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 10</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 10</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 11</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 11</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 12</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 12</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 13</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 13</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 14</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 14</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 15</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">sec 15</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">FINAL</div>
-        <div class="expandable-content">Content for Text 3</div>
-      </li>
-    </ul>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const expandableTitles = document.querySelectorAll('.expandable-title');
@@ -275,6 +279,7 @@ h1 .A0 {
           });
         });
       });
+
     </script>
 </body>
 </Html>
