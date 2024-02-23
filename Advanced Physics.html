@@ -223,6 +223,19 @@
 .Volume-costant-exp{
   color: brown;
 }
+.for-line{
+  display:flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+.for-line-exp{
+  color: brown;
+}
+.proof-alpha{
+  border: solid red;
+  padding-left: 10px;
+}
+
 </style>
 
 <head>
@@ -271,16 +284,16 @@
       <div>Mercury can't get <span class="Ared"> Less </span> than -39&deg;C</div>
       <div>Mercury can't get <span class="Bgreen"> More </span> than 85&deg;C</div>
       <p><strong>(2)- Volume constant thermo </strong></p>
-      <div class="Volume-costant"><p>P = Po + &rho;gh</p> <p class="Volume-costant-exp">( Po = 1.013*10<sup>5</sup>) ( &rho; of water = 1000 ) ( g = 9.8 )</p></div>
+      <div class="Volume-costant"><p>P = P<sub>o</sub> + &rho;gh</p> <p class="Volume-costant-exp">( Po = 1.013*10<sup>5</sup>) ( &rho; of water = 1000 ) ( g = 9.8 )</p></div>
       <p>Before we talk about types of temp we need to notice that <strong class="Ared"> Absolute Value is = 273.15&deg;C </strong> <strong> When P & V = 0</strong></p>
       <div>
       <p><strong class="Temp-title">There is 3 types of TEMP</strong></p>
-      <p><strong class="Ared">Tk or T that stand for Kelvin TEMP</strong></p>
-      <p><strong class="Bgreen">Tc that stand for celsius TEMP</strong></p>
-      <p><strong class="Cblue">Tf that stand for fahrenheit TEMP</strong></p>
-      <p>Tk = T = 273.15&deg; + Tc</p>
-      <p>Tf = 9/5 Tc + 32</p>
-      <p>&Delta;Tc = &Delta;Tk</p>
+      <p><strong class="Ared">T<sub>k</sub> or T that stand for Kelvin TEMP</strong></p>
+      <p><strong class="Bgreen">T<sub>c</sub> that stand for celsius TEMP</strong></p>
+      <p><strong class="Cblue">T<sub>f</sub> that stand for fahrenheit TEMP</strong></p>
+      <p>T<sub>k</sub> = T = 273.15&deg; + T<sub>c</sub></p>
+      <p>T<sub>f</sub> = 9/5 T<sub>c</sub> + 32</p>
+      <p>&Delta;T<sub>c</sub> = &Delta;T<sub>k</sub></p>
       </div>
     </div>
     </li>
@@ -293,10 +306,70 @@
     </li>
     <li class="expandable-item">
       <div class="expandable-title">Lect 2</div>
-      <div class="expandable-content">soon</div>
+      <div class="expandable-content">
+      <h1 class="title">Thermal expansion</h1>
+      <P>first we have to know that (Every material has its own coefficient of expansion <strong class="Ared"> &alpha; </strong>)</P>
+      <P><strong class="Ared"> &alpha; </strong> = &deg;C<sup>-1</sup></P>
+      <P><strong class="Ared"> &alpha; </strong> = &Delta;L / &Delta;T * L<sub>i</sub></P>
+      <div>
+        <details>
+            <summary>Proof</summary>
+            <div class="proof-alpha">
+                <p>&Delta;L / L<sub>i</sub> &alpha; &Delta;T</p>
+                <i class="fa-solid fa-arrow-down"></i>
+                <p>&Delta;L / L<sub>i</sub> = &alpha; &Delta;T</p>
+            </div>
+        </details>
+      </div>
+      <div class="for-line">
+        <p>&Delta;L = &alpha; L<sub>i</sub> &Delta;T</p>
+        <p class="for-line-exp">لما تتعامل مع طول عادي</p>
+      </div>
+      <div class="for-line">
+        <p>&Delta;A = 2*&alpha; A<sub>i</sub> &Delta;T</p>
+        <p class="for-line-exp">لما تتعامل مع مساحات</p>
+      </div>
+      <div class="for-line">
+        <p>&Delta;V = 3*&alpha; V<sub>i</sub> &Delta;T</p>
+        <p class="for-line-exp">لما تتعامل مع حجوم</p>
+      </div>
+      <p>3*<span class ="Ared">&alpha;</span> = <span class = "Cblue">&beta;</span></p>
+      <div class="for-line">
+        <strong>Note :-</strong>
+        <strong class="for-line-exp">خلي بالك كويس ايه المعطيات اللي معاك عشان تحدد هتستخدم قانون ايه</strong>
+      </div>
+      <h1 class="title">Heat energy (Q)</h1>
+      <div class="for-line">
+        <p><strong>Heat capacity : </strong> C = Q/&Delta;T</p>
+        <p class="for-line-exp"> J/&deg;C</p>
+      </div>
+      <div class="for-line">
+        <p><strong>Spacific heat : </strong> c = Q/&Delta;T.M</p>
+        <p class="for-line-exp"> J/Kg.&deg;C</p>
+      </div>
+      <strong>Q = M.c.&Delta;T</strong>
+      <h1 class="title">Calorimetry</h1>
+      <h3 style="text-align: right;">بتخلط جسم بارد مع جسم سخن</h3>
+      <Strong><p><span style="color:rgb(6, 206, 206);">Q<sub>cold</sub></span> = -<span style="color: red;">Q<sub>hot</sub></span></p></Strong>
+      <Strong><p><span style="color:rgb(6, 206, 206);">(M.c.&Delta;T)</span> = - <span style="color: red;">(M.c.&Delta;T)</span></p></Strong>
+      <Strong><p><span style="color:rgb(6, 206, 206);">(M.c.&Delta;T)</span> + <span style="color: red;">(M.c.&Delta;T)</span> = 0</p></Strong>
+      </div>
     </li>
     <li class="expandable-item">
       <div class="expandable-title">LAB 2</div>
+      <div class="expandable-content">
+        <h1 class="title">Some Notes and Ex</h1>
+        <Strong><p><span style="color:rgb(197, 47, 177)">If</span>(<span style="color:rgb(37, 177, 212)">&Delta;T<sub>k</sub></span> == <span style="color:rgb(37, 177, 212)">&Delta;T<sub>c</sub></span> && <span style="color:rgb(37, 177, 212)">&Delta;T<sub>c</sub></span> ==<span style="color:rgb(5, 211, 142)">9/5</span> <span style="color:rgb(37, 177, 212)">&Delta;T<sub>f</sub></span>)</p></Strong>
+        <Strong><p style="margin-left: 40px;"><span style="color:rgb(224, 191, 0)">printf</span><span style="color:#bb3804">(" T<sub>k</sub> = T<sub>c</sub> = 9/5 T<sub>f</sub>")</span></p></Strong>
+        <h3 style="text-align: right;"><i class="fa-regular fa-face-laugh-beam"></i> يا عم بهزر معاك متبقاش قفوش كدا </h3>
+      </div>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">Lect 3</div>
+      <div class="expandable-content">soon</div>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">LAB 3</div>
       <div class="expandable-content">soon</div>
     </li>
     <li class="expandable-item">
