@@ -78,9 +78,9 @@ div .highlite{
   color : #ffcf20
 }
 .A2{
-  width: 50%; 
+  width: 50%; /* Adjust the width as needed */
   float: left; /* Float the paragraph to the left */
-  padding: 20px; 
+  padding: 20px; /* Optional: Add padding for better readability */
   box-sizing: border-box;
  display: block;
  font-size: 90px;
@@ -92,7 +92,7 @@ h1 .A0 {
   display: inline-block;
 }
 .moved-image{
-  width: 50%; 
+  width: 50%; /* Adjust the width of the image column */
 }
 .A2 p {
   margin-bottom: 5px; 
@@ -105,17 +105,17 @@ h1 .A0 {
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
-    /*  CSS rules for small screens */
+    /* Your CSS rules for small screens */
 }
 
 /* Styles for screens between 601px and 900px */
 @media (min-width: 601px) and (max-width: 900px) {
-    /*  CSS rules for medium screens */
+    /* Your CSS rules for medium screens */
 }
 
 /* Styles for screens larger than 901px */
 @media (min-width: 901px) {
-    /*  CSS rules for large screens */
+    /* Your CSS rules for large screens */
 }
 .A4{
  font-size: 30px;
@@ -123,6 +123,30 @@ h1 .A0 {
 }
 .A5{
   margin-right: 1230px;
+}
+.title{
+  text-align: center;
+  color: red;
+}
+.list-1{
+  display:flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+.exp-list-1{
+  color:brown;
+}
+.notes{
+  margin:10px;
+}
+.mal7osa{
+  display:flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+.mal7osa-exp{
+  margin: 0px;
+  color:brown;
 }
 </style>
 <head>
@@ -146,11 +170,32 @@ h1 .A0 {
     <ul class="expandable-list">
       <li class="expandable-item">
         <div class="expandable-title">Lect 1</div>
-        <div class="expandable-content">Soon</div>
+        <div class="expandable-content">
+
+        </div>
       </li>
       <li class="expandable-item">
         <div class="expandable-title">Sec 1</div>
-        <div class="expandable-content">Soon</div>
+        <div class="expandable-content">          <h1 class="title">Writing Process</h1>
+          <h3 style="margin: 5px;"><strong>(1) Title</strong></h3>
+          <ul>
+            <ol>Must be concis <span style="color:brown;">"short and enough"</span></ol>
+            <ol>Reflects the content of topice</ol>
+            <ol>Not too general</ol>
+            <div class="list-1"> <ol>Narrow down your title</ol> <p class="exp-list-1">تحول الفكرة من عامة الى مخصصة</p></div>
+          </ul>
+          <h3 style="margin: 5px;"><strong>(2) Pre-Writing</strong></h3>
+          <ul>
+            <ol><strong>Listing : </strong> list all vocabs idea phrases about topic</ol>
+            <ol>Free writing <span style="color:brown;">"Brain Storming"</span></ol>
+            <ol>Clustring <span style="color:brown;">"Mind Mapping"</span></ol>
+          </ul>
+          <h1 class="title">The paragraph</h1>
+          <p>Group of related sentence about one topic.</p>
+          <strong>Notes :-</strong>
+          <p class="notes"><strong>Unity : </strong>all sentence about one topic</p>
+          <p class="notes"><strong>Coherence : </strong>All sentences lead to next one without <span style="color:red;"> Jumps or Gaps</span> and using <span style="color:rgb(20, 197, 17)">[ Linking Words , Transition Signals ].</span></p>
+          <div class="mal7osa"><p class="notes"> <strong style="color: red;">OFF-TOPIC-SENTENCE : </strong> irreletive sentence</p> <p class="mal7osa-exp">متكتبش هري ملهوش معني في نص الكلام</p></div></div>
       </li>
       <li class="expandable-item">
         <div class="expandable-title">FINAL</div>
