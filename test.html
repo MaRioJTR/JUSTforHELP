@@ -6,19 +6,60 @@
     <title>Code Explanation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet">
 </head>
-<body>
+<style> 
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100px;
+  }
+
+  .input-container, .output-container {
+    flex: 0 0 auto;
+    width: 25%;
+    padding: 10px;
+    border: solid #272822;
+  }
+
+  </style>
+<body sytle="width: 100%; heighy: 100vh;">
     <h1>Code Explanation</h1>
 
     <!-- Code Block -->
     <pre>
         <code class="language-javascript">const greeting = "Hello, world!";
         console.log(greeting);</code>
-</pre>
+    </pre>
 
+
+<div class="container">
+    <div class="input-container">
+      <h2>Input</h2>
     
+    </div>
+    <div class="code-container">
+      <pre>
+      <code class="language-c">
+     #include &lt;stdio.h&gt;
+  
+     int main() {
+          printf("Hello, world!\n");
+          return 0;
+     }
+      </code>
+      </pre>
+    </div>
+    <div class="output-container">
+      <h2>Output</h2>
+        
+    </div>
+</div>
+
+
 
     <!-- Prism.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
 </body>
 </html>

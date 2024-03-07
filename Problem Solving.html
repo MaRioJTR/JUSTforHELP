@@ -2,17 +2,21 @@
 <Html lang="en">
 <meta charset="Utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
   .expandable-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .expandable-item {
   border-bottom: 1px solid #ccc;
   cursor: pointer;
+  
 }
 
 .expandable-title {
@@ -45,6 +49,7 @@ nav {
   background-color: #0d126e;
   border: 15px;
   border-radius: 20px ;
+  
 }
 
 nav ul {
@@ -116,6 +121,22 @@ h1 .A0 {
 @media (min-width: 901px) {
     /* Your CSS rules for large screens */
 }
+@media (max-width: 900px) {
+  /* Adjustments for smaller screens */
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container, .output-container {
+    width: 100%;
+  }
+  
+  .A4 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .A4{
  font-size: 30px;
  margin-left: 700px;
@@ -128,34 +149,217 @@ h1 .A0 {
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
 }
+.second-line{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: darkred;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+}
+.title{
+  text-align: center;
+  color:red;
+}
+.container {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start;
+    height: 50vh;
+    margin-bottom:30px ;
+    position: relative;
+}
+.code-container {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 900px; /* Optional: Set a maximum width for responsiveness */
+    height: auto;
+    border: solid #272822;
+    height: 50vh;
+    overflow: auto;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    position: relative;
+}
+  .input-container, .output-container {
+    width: auto;
+    margin: 0; /* Remove margin */
+    padding: 0px;
+    border: solid #272822;
+    height: 50vh;
+    position: relative;
+  }
+  .code-container code.language-c {
+    font-size: 14px; /* Adjust the font size as needed */
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+.explain-short-if{
+  display:flex;
+}
+details p{
+  margin: 5px;
+}
+.copy-button{
+  width: 100px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50px;
+
+}
 </style>
 <head>
     <title>JUSTforHELP</title>
 </head>
 <body>
   
-    <nav>
-         <ul>
-            <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
-            <li><a href="Calculu I.html">Calculus I</a></li>
-            <li><a href="Academic Writing.html">Academic Writing</a></li>
-            <li><a href="Advanced Physics.html">Advanced Physics</a></li>
-            <li><a href="Problem Solving.html">Problem Solving</a></li>
-            <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
-            <li><a href="Discrete Structures.html">Discrete Structures</a></li>
-            <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
-        </ul>
+<nav>
+    <ul>
+    <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
+      <li><a href="Calculu I.html">Calculus I</a></li>
+      <li><a href="Academic Writing.html">Academic Writing</a></li>
+      <li><a href="Advanced Physics.html">Advanced Physics</a></li>
+      <li><a href="Problem Solving.html">Problem Solving</a></li>
+     <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
+      <li><a href="Discrete Structures.html">Discrete Structures</a></li>
+    <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
+    </ul>
     </nav>  
     <div class="first-line"><p><a class="first-link" href="https://youtube.com/@yrmohamed1?si=-RMHhTbvdcxR7xxL">Dr.Yasser Dahab</a> Channel on youtube <i style="color:red;" class="fa-brands fa-youtube"></i></p></div>
     <div class="first-line"><p><a class="first-link" href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Dr.Yasser Eltaher</a> imprtant resource <i style="color:gold;" class="fa-solid fa-star"></i></p></div>
+    <div class="second-line"><strong>Note that this content isn't in order of problem solving course order</strong></div>
     <ul class="expandable-list">
       <li class="expandable-item">
         <div class="expandable-title">Lect 1</div>
-        <div class="expandable-content">Soon</div>
+        <div class="expandable-content">Pointers</div>
       </li>
       <li class="expandable-item">
-        <div class="expandable-title">Sec 1</div>
-        <div class="expandable-content">Soon</div>
+      <div class="expandable-title">Sec 1</div>
+      <div class="expandable-content">
+      <h1 class="title">Short "IF"</h1>
+      <h2>Short If : is exactly IF condition in <span style="color:green">EXCEL</span></h2>
+    <div class="container">
+    <div class="input-container">
+    <h2>Input</h2>
+    <p style="color:gray;">Default input= 10</p>
+    <button class="copy-button">Copy</button>       
+    </div>
+    <div class="code-container">
+    <pre>
+    <code class="language-c">
+    #include &lt;stdio.h&gt;  
+    int main() {
+      int x = 10;
+      ( x > 0 ) ? printf("positive.\n") : printf("negative.\n");
+    return 0;
+    }
+    </code>
+    </pre>
+    </div>
+    <div class="output-container">
+    <h2>Output</h2>
+    <p>positive.</p>            
+    </div>
+    </div>
+    
+    <h2><strong>Explain >></strong></h2>
+    <div class="explain-short-if"><ruby>( x > 0 )___<rp>(</rp><rt style="color:purple">condition  </rt><rp>)</rp></ruby>
+    <ruby>printf("positive.\n")___<rp>(</rp><rt style="color:rgb(5, 197, 5)">if condition is TRUE  </rt><rp>)</rp></ruby>
+    <ruby>printf("negative.\n")___<rp>(</rp><rt style="color:rgb(173, 4, 4)">if condition is FALSE  </rt><rp>)</rp></ruby>
+    </div> 
+    <h1 class="title">Switch Case</h1>
+    <h3>A switch statement allows programmers to execute different blocks of code based on the value of a single variable or expression.</h3>
+    <details>
+      <summary><strong>How it looks like</strong></summary>
+      <p>switch(expression)</p>
+      <p>{</p>
+      <p>case value1: statement_1;</p>
+      <p>break;</p>
+      <p>case value2: statement_2;</p>
+      <p>break;</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>case value_n: statement_n;</p>
+      <p>break;</p>
+      <p>default: default_statement;</p>
+      <p>}</p>
+    </details>
+    <h3><strong>Example</strong></h3>
+    <div class="container">
+      <div class="input-container">
+      <h2>Input</h2>
+      <p>2</p>   
+      <button class="copy-button">Copy</button>    
+      </div>
+      <div class="code-container">
+      <pre>
+      <code class="language-c">
+      #include &lt;stdio.h&gt;  
+      int main() {
+        int choice;
+        printf("Enter a number between 1 and 3: ");
+        scanf("%d", &choice);
+    
+        switch(choice) {
+            case 1:
+                printf("You entered 1.\n");
+                break;
+            case 2:
+                printf("You entered 2.\n");
+                break;
+            case 3:
+                printf("You entered 3.\n");
+                break;
+            default:
+                printf("Invalid choice.\n");
+        }
+        return 0;
+      }
+      </code>
+      </pre>
+      </div>
+      <div class="output-container">
+      <h2>Output</h2>
+      <p>You entered 2.</p>            
+      </div>
+      </div>
+      <h1 class="title">Listed For</h1>
+      <h3>loop inside loop</h3>
+      <h3><strong>Example</strong></h3>
+      <div class="container">
+        <div class="input-container">
+        <h2>Input</h2>
+        <p style="color:gray;">"loop"</p>   
+        <button class="copy-button">Copy</button>    
+        </div>
+        <div class="code-container">
+        <pre>
+        <code class="language-c">
+        #include &lt;stdio.h&gt;  
+        int main() {
+          int i,j;
+          for( i = 1 ; i <=2 ; ++i) {
+              printf("%d",i);
+            for( j = 1 ; j <=3 ; ++j){
+              printF("%d",j);  
+            }
+          }            
+          return 0;
+        }
+        </code>
+        </pre>
+        </div>
+        <div class="output-container">
+        <h2>Output</h2>
+        <p>11232123</p>            
+        </div>
+        </div>
+        <details>
+          <summary><strong>More Details</strong></summary>
+          the first loop execute for one time and it turn to the another loop to execute it completly then tern back to first one if condition still work it prints the number then turn to internal loop and execute it . until the extrnal-loop condition expires.
+        </details>
+  </div>
       </li>
       <li class="expandable-item">
         <div class="expandable-title">FINAL</div>
@@ -173,6 +377,44 @@ h1 .A0 {
         });
       });
     </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+      const copyButtons = document.querySelectorAll('.copy-button');
+
+      copyButtons.forEach(button => {
+          button.addEventListener('click', () => {
+              // Find the closest container that contains the code block
+              const container = button.closest('.container');
+              const codeBlock = container.querySelector('code');
+              const code = codeBlock.innerText;
+
+              // Create a textarea element to hold the code temporarily
+              const textarea = document.createElement('textarea');
+              textarea.value = code;
+              textarea.setAttribute('readonly', '');
+              textarea.style.position = 'absolute';
+              textarea.style.left = '-9999px'; // Move it off screen
+              document.body.appendChild(textarea);
+
+              // Copy the code from the textarea
+              textarea.select();
+              document.execCommand('copy');
+
+              // Remove the textarea from the DOM
+              document.body.removeChild(textarea);
+
+              // Change the button text briefly to indicate copying
+              button.textContent = 'Copied!';
+              setTimeout(() => {
+                  button.textContent = 'Copy';
+              }, 1500);
+          });
+      });
+  });
+</script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </Html>
 

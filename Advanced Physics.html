@@ -235,7 +235,25 @@
   border: solid red;
   padding-left: 10px;
 }
+.phase-change{
+  display: flex;
+  justify-content: center;
+}
+.phase-change-image{
+  width:500px;
+  height:100vh;
+}
+.arrow {
+  font-size: 16px; /* Adjust size as needed */
+}
 
+.arrow::after {
+  content: " "; /* Add space between arrow and text */
+}
+
+.arrow::before {
+  content: "\00a0"; /* Add space between arrow and text */
+}
 </style>
 
 <head>
@@ -366,7 +384,24 @@
     </li>
     <li class="expandable-item">
       <div class="expandable-title">Lect 3</div>
-      <div class="expandable-content">soon</div>
+      <div class="expandable-content">
+        <h1 class="title">Phase Change</h1>
+        <h4 style="text-align: right;" class="for-line-exp">لما تكتسب طاقة عشان تكسر الروابط عشان تحول من حالة ل حالة</h4>
+        <div class="phase-change"><img class="phase-change-image" src="assets/phase-change.png"></div>
+        <h1 class="title">Latent Heat</h1>
+        <h3>Q = ML<sub>f</sub> , ML<sub>v</sub></h3>
+        <h3>L<sub>f</sub> Latent heat of fusion <span style="color:aqua">Solid</span> &harr; <span style="color:blue">Liquid</span></h3>
+        <h3>L<sub>v</sub> Latent heat of vaporization <span style="color:grey">Gas</span> &harr; <span style="color:blue">Liquid</span></h3>
+        <div style="border:solid gray; padding-left:10px; padding-right: 0px;">
+          <h3><strong>-------Example: -10&deg;C ice &rarr; 110&deg;C steam----------</strong></h3>
+          <h3><strong>1st</strong> -10 ice &rarr 0 ice (Mc&Delta;T)</h3>
+          <h3><strong>2nd</strong> 0 ice &rarr 0 water (ML<sub>f</sub>) <span style="color:red;">"phase chane"</span></h3>
+          <h3><strong>3rd</strong> 0 water &rarr 100 water (Mc&Delta;T)</h3>
+          <h3><strong>4th</strong> 100 water &rarr 100 steam (ML<sub>v</sub>) <span style="color:red;">"phase chane"</span></h3>
+          <h3><strong>5th</strong> 100 steam &rarr 110 steam (Mc&Delta;T)</h3>
+        </div>
+        
+      </div>
     </li>
     <li class="expandable-item">
       <div class="expandable-title">LAB 3</div>
