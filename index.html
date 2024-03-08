@@ -49,56 +49,75 @@ nav ul li a:hover {
 div .highlite{
   color : #ffcf20
 }
+.container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 640px;
+  
+}
 .A2{
-  width: 50%; 
-  float: left; /* Float the paragraph to the left */
+  width: 90%; 
+  height: 80%;
   padding: 20px; 
   box-sizing: border-box;
- display: block;
- font-size: 70px;
- color: #0c116d;
- font-family:fantasy ;
+  font-size: 50px;
+  color: #0c116d;
+  font-family:fantasy ;
+  max-width: 1000px;
 }
+
 h1 .A0 {
   color: rgb(102, 59, 151);
   display: inline-block;
 }
-.moved-image{
-  width: 50%; /* Adjust the width of the image column */
+.container img{
+  width: 50%; 
 }
 .A2 p {
-  margin-bottom: 5px; 
   margin-top: 5px;
+  width: 70%;
 }
-.A3{
-  background-color: blue;
+
   
+
+.A3{
+  border: 3px solid red;
+  border-radius: 40px;
+  color: red;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-weight: bold;
+  margin-top: auto;
 }
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
-    /*  CSS rules for small screens */
+  .A2 p {
+    font-size: 20px; 
+  }
+  .A3{
+    font-size: 10px;
+  }
 }
+
 
 /* Styles for screens between 601px and 900px */
 @media (min-width: 601px) and (max-width: 900px) {
-    /*  CSS rules for medium screens */
+  .A3{
+    margin-top: 125vh;
+    font-size: 10px;
+  }
 }
 
 /* Styles for screens larger than 901px */
-@media (min-width: 901px) {
-    /*  CSS rules for large screens */
+@media (min-width: 901px) and (max-width: 1343px){
+  .A3{
+    margin-top: 50vh;
+  }
 }
-.A4{
- font-size: 30px;
- margin-left: 700px;
-}
-.A5{
-  margin-right: 1230px;
-}
-.NOTE{
-  color: red
-}
+
 </style>
 <head>
     <title>JUSTforHELP</title>
@@ -117,7 +136,7 @@ h1 .A0 {
           <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
         </ul>
     </nav>  
-    
+  <div class="container">
     <div class="A2">
       <p>Whasup ! <span class="highlite"> AAST </span> Mates i hope you all 
       good. So as you can see
@@ -127,12 +146,14 @@ h1 .A0 {
       courses scheduled for the semester 2,
       trying to cover a significant portion
       of the curriculum...</p>
-    </div>    
-    <h1 class="NOTE">Note that .... This site is not affiliated with the academy. It is an individual work by a student in AASTMT. i just wanted to share my experience with you . we here for helping each other it's not a competition </h1>
+      
+    </div> 
+    <img src="assets/aast-logo.png" alt="Logo" class="moved-image">   
+  </div>
     <div class="A3">
-
+      <p>This is an individual's work and has no affiliation with the campus</p>
     </div>
-  <img src="assets/aast-logo.png" alt="Logo" class="moved-image">
+  
 </body>
 
 </Html>
