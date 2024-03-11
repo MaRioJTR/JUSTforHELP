@@ -254,6 +254,26 @@
 .arrow::before {
   content: "\00a0"; /* Add space between arrow and text */
 }
+
+.explanation{
+  font-size: 30px;
+}
+
+.diagram {
+  display: flex;
+  align-items: center; /* Vertically center items */
+}
+
+.diagram-img {
+  flex: 0 0 auto; /* Let the image shrink and grow as necessary */
+  margin-right: 20px; /* Adjust spacing between image and content */
+  
+}
+
+.diagram-exp {
+  flex: 1; /* Allow content to take up remaining space */
+}
+
 </style>
 
 <head>
@@ -408,6 +428,86 @@
       <div class="expandable-content">soon</div>
     </li>
     <li class="expandable-item">
+      <div class="expandable-title">Lect.4</div>
+      <div class="expandable-content">
+        <h1 class="title">Supercooling & Superheating</h1>
+        <h2>Supercooling</h2>
+        <p class="explanation">If liquid water is held perfectly still in a very clean container, it is possible for the
+          temperature to drop below 0 o C without freezing.
+          This phenomena is called
+          <strong>supercooling</strong> .
+          It arises because the water requires a disturbance of some sort for the molecules
+          to move apart and start forming the open ice crystal structures.
+          This structure makes the density of ice less than that of water.
+          If the supercooled water is disturbed, it immediately freezes and the energy
+          released returns the temperature to 0 o C.</p>
+        <h2>Superheating</h2>
+        <p class="explanation">
+          Water can rise to a temperature greater than
+          100 o C without boiling.
+          This phenomena is called
+          <strong>superheating</strong> .
+          The formation of a bubble of steam in the water requires nucleation site.
+          This could be a scratch in the container or an impurity in the water.
+          When disturbed, the superheated water can become explosive.
+          The bubbles will immediately form and hot water is forced upward and out of
+          the container.
+        </p>
+        <h1 class="title">ISOthermal Process (T = constant)</h1>
+        <h2>Relation bet P,V,T</h2>
+        <p class="explanation">ISO -> T<sub>i</sub> = T<sub>f</sub></p>
+        <p class="explanation">P<sub>i</sub>V<sub>i</sub> = nRT<sub>i</sub></p>
+        <p class="explanation">P<sub>f</sub>V<sub>f</sub> = nRT<sub>f</sub></p>
+        <p class="explanation">w = P&Delta;V = P.(V<sub>f</sub> - V<sub>i</sub>)</p>
+        <p class="explanation">Q = w + U &rarr; (M.c.&Delta;T) = P&Delta;V + U</p>
+        <p class="explanation">&Delta;U = Q - w</p>
+        <h2>Isothermal Process, cont</h2>
+        <div class="diagram">
+          <div class="diagram-img"><img  src="assets/iso-thermal-pv.png" alt="image" width="500" height="450"></div>
+          <div class="diagram-exp"><p>At right is a PV diagram of an </p>
+            <p>isothermal expansion. The curve is a hyperbola.</p>
+            <p>The equation of the curve is</p>
+            <p>P V = n R T = constant.</p>
+            <p>The curve is called an isotherm.</p>
+        </div>
+        </div>
+        <h1 class="title">Work Done By Various Paths</h1>
+        <h2>Work From a PV Diagram phase-1</h2>
+        <div class="diagram">
+          <div class="diagram-img"><img  src="assets/pv-1.png" alt="image" width="500" height="450"></div>
+          <div class="diagram-exp"><p>The volume of the gas is first reduced</p>
+            <p>from V<sub>i</sub> to V<sub>f</sub> at constant pressure P<sub>i</sub>.</p>
+            <p>Next, the pressure increases from</p>
+            <p>P<sub>i</sub> to P<sub>f</sub> by heating at constant volume V<sub>f</sub>.</p>
+            <p>w = -P<sub>i</sub>.(V<sub>f</sub> - V<sub>i</sub>)</p>
+        </div>
+        </div>
+        <h2>Work From a PV Diagram phase-2</h2>
+        <div class="diagram">
+          <div class="diagram-img"><img  src="assets/pv-2.png" alt="image" width="500" height="450"></div>
+          <div class="diagram-exp"><p>The pressure of the gas is increased</p>
+            <p>from P<sub>i</sub> to P<sub>f</sub> at a constant volume.</p>
+            <p>The volume is decreased from V<sub>i</sub> to V<sub>f</sub>.</p>
+            <p>w = -P<sub>f</sub>.(V<sub>f</sub> - V<sub>i</sub>)</p>
+        </div>
+        </div>
+        <h2>Work From a PV Diagram phase-3</h2>
+        <div class="diagram">
+          <div class="diagram-img"><img  src="assets/pv-3.png" alt="image" width="500" height="450"></div>
+          <div class="diagram-exp"><p>The pressure and the volume continually change.</p>
+            <p>The work is some intermediate value</p>
+            <p>between  -P<sub>f</sub> ( V<sub>f</sub> - V<sub>i</sub> ) and -P<sub>i</sub> ( V<sub>f</sub> - V<sub>i</sub> )</p>
+            <p>To evaluate the actual amount of work,</p>
+            <p>the function PV  must be</p>
+        </div>
+        </div>
+      </div>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">Sec.4</div>
+      <div class="expandable-content">Soon</div>
+    </li>
+    <li class="expandable-item">
       <div class="expandable-title">FINAL</div>
       <div class="expandable-content">Say ان شاء الله</div>
     </li>
@@ -424,5 +524,4 @@
     });
   </script>
 </body>
-
 </Html>
