@@ -124,6 +124,119 @@ h1 .A0 {
 .A5{
   margin-right: 1230px;
 }
+
+.title {
+    text-align: center;
+    color: red;
+  }
+
+  .container-of-question {
+        max-width: 500px;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 20px;
+
+    }
+
+    .question-block {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        margin: 15px;
+        margin-top: 0;
+    }
+
+    .question-block h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .options label {
+        margin-bottom: 10px;
+    }
+
+    .options input[type="radio"] {
+        display: none;
+    }
+
+    .options label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .options label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #666;
+        border-radius: 50%;
+    }
+
+    .options input[type="radio"]:checked + label:before {
+        background-color: #ffcf20;
+        border-color: #ffcf20;
+    }
+
+    .feedback {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .true {
+        color: #5cb85c;
+        font-size: 30px;
+        animation: fade 2s linear;
+    }
+
+    .false {
+        color: #d9534f;
+        font-size: 31px;
+        animation: fade 2s linear;
+    }
+
+    @keyframes fade {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    .explanation {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        display: none;
+    }
+
+    button {
+        background-color: #ffcf20;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        transition: color 0.3s;
+        margin: 10px;
+    }
+    button:hover {
+        background-color: #dab01b;
+        color:#000
+    }
+
 </style>
 <head>
     <title>JUSTforHELP</title>
@@ -146,11 +259,436 @@ h1 .A0 {
     <ul class="expandable-list">
       <li class="expandable-item">
         <div class="expandable-title">Lect 1</div>
-        <div class="expandable-content">Soon</div>
+        <div class="expandable-content">
+          P.P.Ts are enough
+        </div>
       </li>
       <li class="expandable-item">
-        <div class="expandable-title">Sec 1</div>
-        <div class="expandable-content">Soon</div>
+        <div class="expandable-title">TEST</div>
+        <div class="expandable-content">
+
+          <div class="container-of-question">
+            <div class="question-block">
+                <h2>Question 1: Someone who creates and runs a business is called an........</h2>
+                <div class="options">
+                    <input type="radio" id="q1_True" name="q1" value="True">
+                    <label for="q1_True">entrepreneur</label>
+                    <input type="radio" id="q1_False1" name="q1" value="False">
+                    <label for="q1_False1">employee</label>
+                    <input type="radio" id="q1_False2" name="q1" value="False-5als">
+                    <label for="q1_False2">manager</label>
+                    <input type="radio" id="q1_False3" name="q1" value="False">
+                    <label for="q1_False3">Intrapreneur</label>
+                </div>
+                <button onclick="checkAnswer(1)">Check Answer</button>
+                <div id="feedback1" class="feedback"></div>
+                <div id="explanation1" class="explanation">
+                    <h2>Explanation:</h2>
+                    <p>Someone who creates and runs a business is called an entrepreneur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-of-question">
+          <div class="question-block">
+              <h2>Question 2: When an entrepreneur starts a new business, ...... is involved</h2>
+              <div class="options">
+                  <input type="radio" id="q2_False1" name="q2" value="False">
+                  <label for="q2_False1">technique</label>
+                  <input type="radio" id="q2_False2" name="q2" value="False-5als">
+                  <label for="q2_False2">profet</label>
+                  <input type="radio" id="q2_True" name="q2" value="True">
+                  <label for="q2_True">risk</label>
+                  <input type="radio" id="q2_False3" name="q2" value="False">
+                  <label for="q2_False3">losse</label>
+              </div>
+              <button onclick="checkAnswer(2)">Check Answer</button>
+              <div id="feedback2" class="feedback"></div>
+              <div id="explanation2" class="explanation">
+                  <h2>Explanation:</h2>
+                  <p>When an entrepreneur starts a new business, risk is involved “Risk is the chance of losing something”</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="container-of-question">
+        <div class="question-block">
+            <h2>Question 3: <strong>Oxford</strong> dictionaries definition</h2>
+            <div class="options">
+                <input type="radio" id="q3_False1" name="q3" value="False">
+                <label for="q3_False1">entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</label>
+                <input type="radio" id="q3_False2" name="q3" value="False-5als">
+                <label for="q3_False2">It is derived from the French word means ‘to undertake or to try’.</label>
+                <input type="radio" id="q3_True" name="q3" value="True">
+                <label for="q3_True">An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit”</label>
+                <input type="radio" id="q3_False3" name="q3" value="False">
+                <label for="q3_False3">person who creates and innovatesto build something of recognized value around perceived opportunities</label>
+            </div>
+            <button onclick="checkAnswer(3)">Check Answer</button>
+            <div id="feedback3" class="feedback"></div>
+            <div id="explanation3" class="explanation">
+                <h2>Explanation:</h2>
+                <p>An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit” ( Oxford dictionaries definition)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-of-question">
+      <div class="question-block">
+          <h2>Question 4: Richard Cantillon, 1775.</h2>
+          <div class="options">
+              <input type="radio" id="q4_False1" name="q4" value="False">
+              <label for="q4_False1">entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</label>
+              <input type="radio" id="q4_True" name="q4" value="True">
+              <label for="q4_True">It is derived from the French word means ‘to undertake or to try’.</label>
+              <input type="radio" id="q4_False2" name="q4" value="False">
+              <label for="q4_False2">An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit”</label>
+              <input type="radio" id="q4_False3" name="q4" value="False">
+              <label for="q4_False3">person who creates and innovatesto build something of recognized value around perceived opportunities</label>
+          </div>
+          <button onclick="checkAnswer(4)">Check Answer</button>
+          <div id="feedback4" class="feedback"></div>
+          <div id="explanation4" class="explanation">
+              <h2>Explanation:</h2>
+              <p>It is derived from the French word means ‘to undertake or to try’.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="container-of-question">
+    <div class="question-block">
+        <h2>Question 5: Schumpeter,1965.</h2>
+        <div class="options">
+            <input type="radio" id="q5_True" name="q5" value="True">
+            <label for="q5_True">entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</label>
+            <input type="radio" id="q5_False1" name="q5" value="False">
+            <label for="q5_False1">It is derived from the French word means ‘to undertake or to try’.</label>
+            <input type="radio" id="q5_False2" name="q5" value="False">
+            <label for="q5_False2">An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit”</label>
+            <input type="radio" id="q5_False3" name="q5" value="False">
+            <label for="q5_False3">person who creates and innovatesto build something of recognized value around perceived opportunities</label>
+        </div>
+        <button onclick="checkAnswer(5)">Check Answer</button>
+        <div id="feedback5" class="feedback"></div>
+        <div id="explanation5" class="explanation">
+            <h2>Explanation:</h2>
+            <p>entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 6: Bolton and Thompson, 2000.</h2>
+      <div class="options">
+          <input type="radio" id="q6_False3" name="q6" value="False">
+          <label for="q6_False3">entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</label>
+          <input type="radio" id="q6_False1" name="q6" value="False">
+          <label for="q6_False1">It is derived from the French word means ‘to undertake or to try’.</label>
+          <input type="radio" id="q6_False2" name="q6" value="False">
+          <label for="q6_False2">An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit”</label>
+          <input type="radio" id="q6_True" name="q6" value="True">
+          <label for="q6_True">person who creates and innovatesto build something of recognized value around perceived opportunities</label>
+      </div>
+      <button onclick="checkAnswer(6)">Check Answer</button>
+      <div id="feedback6" class="feedback"></div>
+      <div id="explanation6" class="explanation">
+          <h2>Explanation:</h2>
+          <p>person who creates and innovatesto build something of recognized value around perceived opportunities</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 7: Kuratko and Hodgetts ,2001</h2>
+      <div class="options">
+          <input type="radio" id="q7_False3" name="q7" value="False">
+          <label for="q7_False3">entrepreneurs as individuals who exploit market opportunity through technical and/or organizational innovation</label>
+          <input type="radio" id="q7_False1" name="q7" value="False">
+          <label for="q7_False1">It is derived from the French word means ‘to undertake or to try’.</label>
+          <input type="radio" id="q7_False2" name="q7" value="False">
+          <label for="q7_False2">An entrepreneur is some one “ who sets up a business or businesses, taking on financial risks in the hope of profit”</label>
+          <input type="radio" id="q7_True" name="q7" value="True">
+          <label for="q7_True">an entrepreneur is an individual who organizes, manages, and assumes the risks of a business.</label>
+      </div>
+      <button onclick="checkAnswer(7)">Check Answer</button>
+      <div id="feedback7" class="feedback"></div>
+      <div id="explanation7" class="explanation">
+          <h2>Explanation:</h2>
+          <p>an entrepreneur is an individual who organizes, manages, and assumes the risks of a business.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 8: ...... one who starts new line of business within a large organization.</h2>
+      <div class="options">
+          <input type="radio" id="q8_True" name="q8" value="True">
+          <label for="q8_True">Intrapreneur</label>
+          <input type="radio" id="q8_False1" name="q8" value="False">
+          <label for="q8_False1">entrepreneur</label>
+          <input type="radio" id="q8_False2" name="q8" value="False">
+          <label for="q8_False2">manager</label>
+          <input type="radio" id="q8_False3" name="q8" value="False">
+          <label for="q8_False3">employee</label>
+      </div>
+      <button onclick="checkAnswer(8)">Check Answer</button>
+      <div id="feedback8" class="feedback"></div>
+      <div id="explanation8" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Intrapreneuris one who starts new line of business within a large organization.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 9: Who's an entrepreneur?</h2>
+      <div class="options">
+          <input type="radio" id="q9_True" name="q9" value="True">
+          <label for="q9_True">A person who brings his unique/innovative idea to run a startup company </label>
+          <input type="radio" id="q9_False1" name="q9" value="False">
+          <label for="q9_False1">A man is oriented toward profit. </label>
+          <input type="radio" id="q9_False2" name="q9" value="False">
+          <label for="q9_False2">Is a market player. </label>
+          <input type="radio" id="q9_False3" name="q9" value="False">
+          <label for="q9_False3">A person who starts a business on an old concept or idea. </label>
+      </div>
+      <button onclick="checkAnswer(9)">Check Answer</button>
+      <div id="feedback9" class="feedback"></div>
+      <div id="explanation9" class="explanation">
+          <h2>Explanation:</h2>
+          <p>entrepreneur A person who brings his unique/innovative idea to run a startup company</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 10: Who's an entrepreneur?</h2>
+      <div class="options">
+          <input type="radio" id="q10_False1" name="q10" value="False">
+          <label for="q10_False1">A man is oriented toward profit.</label>
+          <input type="radio" id="q10_True" name="q10" value="True">
+          <label for="q10_True">Creates the market for his own business.</label>
+          <input type="radio" id="q10_False2" name="q10" value="False">
+          <label for="q10_False2">Is a market player. </label>
+          <input type="radio" id="q10_False3" name="q10" value="False">
+          <label for="q10_False3">A person who starts a business on an old concept or idea.</label>
+      </div>
+      <button onclick="checkAnswer(10)">Check Answer</button>
+      <div id="feedback10" class="feedback"></div>
+      <div id="explanation10" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Creates the market for his own business.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 11: Who's an entrepreneur?</h2>
+      <div class="options">
+          <input type="radio" id="q11_False1" name="q11" value="False">
+          <label for="q11_False1">Is a market player.</label>
+          <input type="radio" id="q11_False2" name="q11" value="False">
+          <label for="q11_False2">A man is oriented toward profit.</label>
+          <input type="radio" id="q11_True" name="q11" value="True">
+          <label for="q11_True">Is a market leader because he is the first to start such a kind of enterprise</label>
+          <input type="radio" id="q11_False3" name="q11" value="False">
+          <label for="q11_False3">A person who starts a business on an old concept or idea.</label>
+      </div>
+      <button onclick="checkAnswer(11)">Check Answer</button>
+      <div id="feedback11" class="feedback"></div>
+      <div id="explanation11" class="explanation">
+          <h2>Explanation:</h2>
+          <p>An entrepreneur is a market leader because he is the first to start such a kind of enterprise.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 12: Who's an entrepreneur?</h2>
+      <div class="options">
+          <input type="radio" id="q12_False1" name="q12" value="False">
+          <label for="q12_False1">A man is oriented toward profit.</label>
+          <input type="radio" id="q12_False2" name="q12" value="False">
+          <label for="q12_False2">Is a market player.</label>
+          <input type="radio" id="q12_True" name="q12" value="True">
+          <label for="q12_True">He gives more importance to its employees, customers. </label>
+          <input type="radio" id="q12_False3" name="q12" value="False">
+          <label for="q12_False3">A person who starts a business on an old concept or idea.</label>
+      </div>
+      <button onclick="checkAnswer(12)">Check Answer</button>
+      <div id="feedback12" class="feedback"></div>
+      <div id="explanation12" class="explanation">
+          <h2>Explanation:</h2>
+          <p>An entrepreneur gives more importance to its employees, customers.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 13: Who's a businessman?</h2>
+      <div class="options">
+          <input type="radio" id="q13_True" name="q13" value="True">
+          <label for="q13_True">A person who starts a business on a nold concept or idea. </label>
+          <input type="radio" id="q13_False1" name="q13" value="False">
+          <label for="q13_False1">Creates the market for his own business. </label>
+          <input type="radio" id="q13_False2" name="q13" value="False">
+          <label for="q13_False2">Is a market leader because he is the first to start such a kind of enterprise. </label>
+          <input type="radio" id="q13_False3" name="q13" value="False">
+          <label for="q13_False3">He gives more importance to its employees, customers. </label>
+      </div>
+      <button onclick="checkAnswer(13)">Check Answer</button>
+      <div id="feedback13" class="feedback"></div>
+      <div id="explanation13" class="explanation">
+          <h2>Explanation:</h2>
+          <p>A businessman is a person who starts a business on a nold concept or idea.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 14: Who's a businessman?</h2>
+      <div class="options">
+          <input type="radio" id="q14_True" name="q14" value="True">
+          <label for="q14_True">Makes his place in the market with his efforts and dedication.</label>
+          <input type="radio" id="q14_False1" name="q14" value="False">
+          <label for="q14_False1">Creates the market for his own business. </label>
+          <input type="radio" id="q14_False2" name="q14" value="False">
+          <label for="q14_False2">Is a market leader because he is the first to start such a kind of enterprise. </label>
+          <input type="radio" id="q14_False3" name="q14" value="False">
+          <label for="q14_False3">He gives more importance to its employees, customers. </label>
+      </div>
+      <button onclick="checkAnswer(14)">Check Answer</button>
+      <div id="feedback14" class="feedback"></div>
+      <div id="explanation14" class="explanation">
+          <h2>Explanation:</h2>
+          <p>A businessman makes his place in the market with his efforts and dedication.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 15: Who's a businessman?</h2>
+      <div class="options">
+          <input type="radio" id="q15_True" name="q15" value="True">
+          <label for="q15_True">Is a market player. </label>
+          <input type="radio" id="q15_False1" name="q15" value="False">
+          <label for="q15_False1">Creates the market for his own business.</label>
+          <input type="radio" id="q15_False2" name="q15" value="False">
+          <label for="q15_False2">Is a market leader because he is the first to start such a kind of enterprise.</label>
+          <input type="radio" id="q15_False3" name="q15" value="False">
+          <label for="q15_False3">He gives more importance to its employees, customers. </label>
+      </div>
+      <button onclick="checkAnswer(15)">Check Answer</button>
+      <div id="feedback15" class="feedback"></div>
+      <div id="explanation15" class="explanation">
+          <h2>Explanation:</h2>
+          <p>A businessman is a market player.</p>
+      </div>
+  </div>
+</div>
+
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 16: ..... is the dynamic process of creating incremental wealth. This wealth is created by individuals who assume the major risks in terms of equity, time, and/or career commitment of providing value for some product or service.</h2>
+      <div class="options">
+          <input type="radio" id="q16_False1" name="q16" value="False">
+          <label for="q16_False1">Entrepreneurship</label>
+          <input type="radio" id="q16_True" name="q16" value="True">
+          <label for="q16_True">Management</label>
+          <input type="radio" id="q16_False2" name="q16" value="False">
+          <label for="q16_False2">Investment</label>
+          <input type="radio" id="q16_False3" name="q16" value="False">
+          <label for="q16_False3">Employment</label>
+      </div>
+      <button onclick="checkAnswer(16)">Check Answer</button>
+      <div id="feedback16" class="feedback"></div>
+      <div id="explanation16" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Entrepreneurship</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 17: Entrepreneur has to invest in what is required for the economy, in products and services which the people need.</h2>
+      <div class="options">
+          <input type="radio" id="q17_False1" name="q17" value="False">
+          <label for="q17_False1">Entrepreneurship</label>
+          <input type="radio" id="q17_True" name="q17" value="True">
+          <label for="q17_True">Investment</label>
+          <input type="radio" id="q17_False2" name="q17" value="False">
+          <label for="q17_False2">Management</label>
+          <input type="radio" id="q17_False3" name="q17" value="False">
+          <label for="q17_False3">Employment</label>
+      </div>
+      <button onclick="checkAnswer(17)">Check Answer</button>
+      <div id="feedback17" class="feedback"></div>
+      <div id="explanation17" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Investment</p>
+      </div>
+  </div>
+</div>
+
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 18: An entrepreneur by setting up various businesses and establishments is generating employment in the economy. This is a major contribution to provide income to an employee who can meet his or her needs.</h2>
+      <div class="options">
+          <input type="radio" id="q18_False1" name="q18" value="False">
+          <label for="q18_False1">Entrepreneurship</label>
+          <input type="radio" id="q18_True" name="q18" value="True">
+          <label for="q18_True">Employment</label>
+          <input type="radio" id="q18_False2" name="q18" value="False">
+          <label for="q18_False2">Management</label>
+          <input type="radio" id="q18_False3" name="q18" value="False">
+          <label for="q18_False3">Investment</label>
+      </div>
+      <button onclick="checkAnswer(18)">Check Answer</button>
+      <div id="feedback18" class="feedback"></div>
+      <div id="explanation18" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Employment</p>
+      </div>
+  </div>
+</div>
+
+<div class="container-of-question">
+  <div class="question-block">
+      <h2>Question 19: ...... Acting like an entrepreneur or having an entrepreneurial mind set.</h2>
+      <div class="options">
+          <input type="radio" id="q19_True" name="q19" value="True">
+          <label for="q19_True">Entrepreneurial</label>
+          <input type="radio" id="q19_False1" name="q19" value="False">
+          <label for="q19_False1">Efficient</label>
+          <input type="radio" id="q19_False2" name="q19" value="False">
+          <label for="q19_False2">Innovative</label>
+          <input type="radio" id="q19_False3" name="q19" value="False">
+          <label for="q19_False3">Resourceful</label>
+      </div>
+      <button onclick="checkAnswer(19)">Check Answer</button>
+      <div id="feedback19" class="feedback"></div>
+      <div id="explanation19" class="explanation">
+          <h2>Explanation:</h2>
+          <p>Entrepreneurial : Acting like an entrepreneur or having an entrepreneurial mind set.</p>
+      </div>
+  </div>
+</div>
+
+
+        </div>
       </li>
       <li class="expandable-item">
         <div class="expandable-title">FINAL</div>
@@ -158,15 +696,61 @@ h1 .A0 {
       </li>
     </ul>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const expandableTitles = document.querySelectorAll('.expandable-title');
-    
-        expandableTitles.forEach(title => {
-          title.addEventListener('click', () => {
-            title.parentNode.classList.toggle('expanded');
-          });
+    document.addEventListener('DOMContentLoaded', function () {
+      const expandableTitles = document.querySelectorAll('.expandable-title');
+
+      expandableTitles.forEach(title => {
+        title.addEventListener('click', () => {
+          title.parentNode.classList.toggle('expanded');
         });
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            for (var i = 1; i <= 4; i++) {
+                var selectedAnswer = localStorage.getItem("selectedAnswer" + i);
+                 if (selectedAnswer) {
+              document.querySelector('input[value="' + selectedAnswer + '"]').checked = true;
+               }
+           }
+         });
+
+        function checkAnswer(questionNumber) {
+            var options = document.getElementsByName("q" + questionNumber);
+            var feedback = document.getElementById("feedback" + questionNumber);
+            var explanation = document.getElementById("explanation" + questionNumber);
+            var selectedOption = "";
+            
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedOption = options[i].value;
+                    break;
+                }
+            }
+
+            if (selectedOption === "True") {
+                feedback.innerText = "Nice One!";
+                feedback.classList.add("true");
+                feedback.classList.remove("false");
+                explanation.style.display = "none";
+            } 
+
+            else if (selectedOption === "False-5als") {
+                feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
+                feedback.classList.add("false");
+                feedback.classList.remove("add");
+                explanation.style.display = "none";
+            } 
+
+            else {
+                feedback.innerText = "Incorrect. Try another!";
+                feedback.classList.add("false");
+                feedback.classList.remove("true");
+                explanation.style.display = "block";
+            }
+
+            localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
+        }
     </script>
 </body>
 </Html>

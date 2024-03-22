@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Animation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.loading-screen {
+  text-align: center;
+  width: 25%;
+  height: 290px;
+  padding-top: 100px;
+}
+
+.text {
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  background-color: #0d126e;
+  border-radius: 50%;
+  margin: 0 13px;
+  animation: moveUpDown 1s infinite alternate ease-in-out;
+}
+
+.dott {
+  width: 50px;
+  height: 50px;
+  background-color: #ffcf20;
+  border-radius: 50%;
+  margin: 0 13px;
+  animation: moveUpDown 1s infinite alternate ease-in-out;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.dott:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dott:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.dott:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+      .loading-screen {
+        width: 50%;
+      }
+    }
+@media screen and (max-width: 900px) {
+      .loading-screen {
+        width: 50%;
+      }
+    }
+
+</style>
+<body>
+  <div class="loading-screen">
+    <div class="text"><span style="color:#ffcf20">A</span>.<span style="color:#0d126e">A</span>.<span style="color:#ffcf20">S</span>.<span style="color:#0d126e">T</span></div>
+    <div class="dots-container">
+      <div class="dot"></div>
+      <div class="dott"></div>
+      <div class="dot"></div>
+      <div class="dott"></div>
+    </div>
+  </div>
+  <script>
+    // Remove the loading screen after a delay (e.g. 2 seconds)
+    setTimeout(function() {
+      document.body.removeChild(document.querySelector('.loading-screen'));
+    }, 2000);
+  </script>
+</body>
+
+</html>

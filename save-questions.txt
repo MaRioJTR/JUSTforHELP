@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .options label {
+        margin-bottom: 10px;
+    }
+
+    .options input[type="radio"] {
+        display: none;
+    }
+
+    .options label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .options label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #666;
+        border-radius: 50%;
+    }
+
+    .options input[type="radio"]:checked + label:before {
+        background-color: #ffcf20;
+        border-color: #ffcf20;
+    }
+
+    .feedback {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .true {
+        color: #5cb85c;
+        
+    }
+
+    .false {
+        color: #d9534f;
+        
+    }
+
+    @keyframes fade {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    button {
+        background-color: #ffcf20;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #dab01b;
+    }
+
+    
+    .explanation {
+        max-width: 500px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        margin-left: 10px;
+        display: none;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="question-block">
+            <h2>Question 1: What is the capital of France?</h2>
+            <div class="options">
+                <input type="radio" id="True" name="q1" value="True">
+                <label for="True">Paris</label>
+                <input type="radio" id="False1" name="q1" value="False">
+                <label for="False1">London</label>
+                <input type="radio" id="False2" name="q1" value="False">
+                <label for="False2">Berlin</label>
+                <input type="radio" id="False3" name="q1" value="False">
+                <label for="False3">Rome</label>
+            </div>
+            <button onclick="checkAnswer(1)">Check Answer</button>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+    </div>
+    <div id="explanation1" class="explanation">
+        <h2>Explanation:</h2>
+        <p>If you chose an incorrect answer, the explanation for why it is wrong would appear here.</p>
+    </div>
+    <div class="container">
+        <div class="question-block">
+            <h2>Question 1: What is the capital of France?</h2>
+            <div class="options">
+                <input type="radio" id="True" name="q1" value="True">
+                <label for="True">Paris2</label>
+                <input type="radio" id="False1" name="q1" value="False">
+                <label for="False1">London3</label>
+                <input type="radio" id="False2" name="q1" value="False">
+                <label for="False2">Berlin45</label>
+                <input type="radio" id="False3" name="q1" value="False">
+                <label for="False3">Rome5</label>
+            </div>
+            <button onclick="checkAnswer(1)">Check Answer</button>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+    </div>
+    <div id="explanation1" class="explanation">
+        <h2>Explanation56547:</h2>
+        <p>If you chose an incorrect answer, the explanation for why it is wrong would appear here.</p>
+    </div>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            var selectedAnswer = localStorage.getItem("selectedAnswer");
+            if (selectedAnswer) {
+                document.querySelector('input[value="' + selectedAnswer + '"]').checked = true;
+            }
+        });
+
+        function checkAnswer(questionNumber) {
+            var options = document.getElementsByName("q" + questionNumber);
+            var feedback = document.getElementById("feedback" + questionNumber);
+            var explanation = document.getElementById("explanation" + questionNumber);
+            var selectedOption = "";
+
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedOption = options[i].value;
+                    break;
+                }
+            }
+
+            if (selectedOption === "True") {
+                feedback.innerText = "Correct!";
+                feedback.classList.add("true");
+                feedback.classList.remove("false");
+                explanation.style.display = "none"; // Hide explanation if the answer is correct
+            } else {
+                feedback.innerText = "Incorrect. Try again!";
+                feedback.classList.add("false");
+                feedback.classList.remove("true");
+                explanation.style.display = "block"; // Show explanation if the answer is incorrect
+            }
+
+            localStorage.setItem("selectedAnswer", selectedOption);
+
+
+            setTimeout(function() {
+                feedback.innerText = "";
+                feedback.classList.remove("true");
+                feedback.classList.remove("false");
+            }, 5000);
+        }
+
+    </script>
+</body>
+</html>

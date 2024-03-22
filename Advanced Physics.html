@@ -13,7 +13,7 @@
   }
 
   .expandable-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
     cursor: pointer;
   }
 
@@ -274,6 +274,162 @@
   flex: 1; /* Allow content to take up remaining space */
 }
 
+
+
+    .container-of-question {
+        max-width: 500px;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 20px;
+
+    }
+
+    .question-block {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        margin: 15px;
+        margin-top: 0;
+    }
+
+    .question-block h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .options label {
+        margin-bottom: 10px;
+    }
+
+    .options input[type="radio"] {
+        display: none;
+    }
+
+    .options label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .options label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #666;
+        border-radius: 50%;
+    }
+
+    .options input[type="radio"]:checked + label:before {
+        background-color: #ffcf20;
+        border-color: #ffcf20;
+    }
+
+    .feedback {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .true {
+        color: #5cb85c;
+        font-size: 30px;
+        animation: fade 2s linear;
+    }
+
+    .false {
+        color: #d9534f;
+        font-size: 31px;
+        animation: fade 2s linear;
+    }
+
+    @keyframes fade {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    .explanation {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        display: none;
+    }
+
+    button {
+        background-color: #ffcf20;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        transition: color 0.3s;
+        margin: 10px;
+    }
+    button:hover {
+        background-color: #dab01b;
+        color:#000
+    }
+    
+    .comparison {
+        display: flex;
+        justify-content: center;
+    }
+    .comparison table {
+        border-collapse: collapse;
+        margin: 5px;
+    }
+    .comparison th, .comparison td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    .comparison th {
+        background-color: #f2f2f2;
+    }
+    .comparison tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .comparison tr:hover {
+        background-color: #ddd;
+    }
+
+    .wave-characteristics{
+      display: flex;
+      justify-content: space-between;
+    }
+    .wave-characteristics-image{
+      width:1000px;
+      height:600px;
+    }
+
+    .light-spectrum{
+      display: flex;
+      justify-content: space-between;
+    }
+    .light-spectrum-img{
+      max-width: 900px;
+      max-height: 400px;
+    }
+
+    .reflection {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
 </style>
 
 <head>
@@ -505,13 +661,153 @@
     </li>
     <li class="expandable-item">
       <div class="expandable-title">Sec.4</div>
-      <div class="expandable-content">Soon</div>
+      <div class="expandable-content">Same</div>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">Lect.5</div>
+      <div class="expandable-content">
+        <h1 class="title">Waves</h1>
+        <h2>Disturbance through a medium and propagate</h2>
+        <div class="comparison">
+          <table>
+              <caption style="font-size: 30px; color: red; font-weight: bold;">Comparison between Longitudinal and Transverse</caption>
+              <tr>
+                  <th>Aspect</th>
+                  <th>Longitudinal</th>
+                  <th style="border: red solid;">Transverse</th>
+              </tr>
+              <tr>
+                  <td>Direction of oscillation</td>
+                  <td>Parallel to the direction of propagation</td>
+                  <td>Perpendicular to the direction of propagation</td>
+              </tr>
+              <tr>
+                  <td>Example</td>
+                  <td>Sound waves</td>
+                  <td>Light waves</td>
+              </tr>
+              <tr>
+                  <td>Wave Motion</td>
+                  <td>Particles move back and forth along the direction of the wave</td>
+                  <td>Particles move up and down perpendicular to the direction of the wave</td>
+              </tr>
+          </table>
+          <table>
+             <tr>
+                  <th>Aspect</th>
+                  <th>Mechanical Wave</th>
+                  <th>Electro-magnatic Wave</th>
+             </tr>
+             <tr>
+                  <td>Medium</td>
+                  <td>(Needed)</td>
+                  <td>(No need)</td>
+             </tr>
+          </table>
+      </div>
+      <h1 class="title">Wave Characteristics</h1>
+      <div class="wave-characteristics">
+      <div>
+      <h2>Wave length : &lambda; <span style="font-size:25px">distance bet 2 same points on wave</span></h2>
+      <h2>Frequancy : F (HZ)</h2>
+      <h2>Time-period : T (S)</h2>
+      <h2>Amplitude : A <span style="text-align: right; font-size:25px; color:brown;">اقصى مسافة توصلها الموجة</span></h2>
+      <h2>Angular Freq : &omega; == 2&pi;F</h2>
+      <h2>Speed : V == &lambda;*F </h2>
+      <h2>Energy : E == h*F (h ثابت بلانك )</h2>
+      </div>
+      <div><img class="wave-characteristics-image" src="assets/wave-characteristics.png"></div>
+      </div>
+      <h1 class="title">light Spectrum</h1>
+      <div class="light-spectrum">
+      <div>
+        <h2>The Greatest :-</h2>
+        <h3>&lambda; : Radio</h3>
+        <h3>F : &alpha;.Ray </h3>
+        <h3>Energy : &alpha;.Ray</h3>
+        <h2>Visible light = 200 : 400 nm</h2>
+      </div>
+      <div><img class="light-spectrum-img" src="assets/light_spectrum.png"></div>
+      </div>
+    </div>
+    <li class="expandable-item">
+      <div class="expandable-title">Sec.5</div>
+      <div class="expandable-content">تجربة electric equivalent & spacific heat</div>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">Lect.6</div>
+      <div class="expandable-content">
+        <h1 class="title">Photoelectric Effects</h1>
+        <h2>Reflection, Refraction, Dispersion, Diffraction and Interference</h2>
+        <h3 style="color:brown;"> الضوء له طبيعتين. طبيعة موجية كما فوق , وطبيعة جسيمية</h3>
+        <h1 class="title">Reflection</h1>
+        <div class="reflection">
+        <div>
+        <h2>incident ray</h2>
+        <h2>incident angle</h2>
+        <h2>reflected ray</h2>
+        <h2>reflected angle</h2>
+        <h2>Normal</h2>
+        <h2>Note : &theta;<sub>i</sub> = &theta;<sub>r</sub></h2></div>
+        <div><img src="assets/laws-of-reflection.png"></div>
+        </div>
+        <h1 class="title">Refraction</h1>
+        <div class="reflection">
+        <div>
+        <h2>incident ray</h2>
+        <h2>incident angle</h2>
+        <h2>refracted ray</h2>
+        <h2>refracted angle</h2>
+        <h2>Normals</h2>
+        <h2>Note : &theta;<sub>i</sub> <strong style="color:red;">!=</strong> &theta;<sub>r</sub></h2>
+        <h2>If V<sub>1</sub> > V<sub>2</sub> then &theta;<sub>1</sub> > &theta;<sub>1</sub></h2>
+        <h2 style="color:brown; text-align: right;">يعني لو سرعة الضوء في وسط اللي ساقط منه اكبر من سرعته في الوسط اللي انكسر فيه فا بالتالي زاوية سقوطه اكبر من زاوية انكساره و العكس صحيح</h2>
+        <h2>Public Law : V<sub>1</sub> / V<sub>2</sub> == sin &theta;<sub>1</sub> / sin &theta;<sub>2</sub> == <span style="color:red;">N<sub>2</sub> / N<sub>1</sub></span> == &lambda;<sub>1</sub> / &lambda;<sub>2</sub></h2>
+      </div class="image-of-refracted-law">
+        <div><img src="assets/refraction-of-light.png"></div>
+        </div>
+        <h1>Index of Refraction : N = C<sub>سرعة الضوء</sub> / V</h1>
+        <h2>V = F<sub>const</sub> * &lambda;<sub>of medium</sub> || C = F <sub>const</sub> * &lambda;<sub>of air</sub></h2>
+        <h1 class="title">Snell's Law</h1>
+        <img src="assets/snell-law.jpg">
+        <h1 class="title">Critical Point</h1>
+        <img src="assets/critical-angle.jpg">
+      </div>
+    </li>
+    </li>
+    <li class="expandable-item">
+      <div class="expandable-title">TEST</div>
+      <div class="expandable-content">
+
+        <div class="container-of-question">
+          <div class="question-block">
+              <h2>Question 1: What is 1+1</h2>
+              <div class="options">
+                  <input type="radio" id="q1_True" name="q1" value="True">
+                  <label for="q1_True">11</label>
+                  <input type="radio" id="q1_False1" name="q1" value="False">
+                  <label for="q1_False1">3</label>
+                  <input type="radio" id="q1_False2" name="q1" value="False-5als">
+                  <label for="q1_False2">2</label>
+                  <input type="radio" id="q1_False3" name="q1" value="False">
+                  <label for="q1_False3">4</label>
+              </div>
+              <button onclick="checkAnswer(1)">Check Answer</button>
+              <div id="feedback1" class="feedback"></div>
+              <div id="explanation1" class="explanation">
+                  <h2>Explanation:</h2>
+                  <p>Print 1+1</p>
+              </div>
+          </div>
+      </div>
+      </div>
     </li>
     <li class="expandable-item">
       <div class="expandable-title">FINAL</div>
       <div class="expandable-content">Say ان شاء الله</div>
     </li>
   </ul>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const expandableTitles = document.querySelectorAll('.expandable-title');
@@ -522,6 +818,52 @@
         });
       });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            for (var i = 1; i <= 4; i++) {
+                var selectedAnswer = localStorage.getItem("selectedAnswer" + i);
+                 if (selectedAnswer) {
+              document.querySelector('input[value="' + selectedAnswer + '"]').checked = true;
+               }
+           }
+         });
+
+        function checkAnswer(questionNumber) {
+            var options = document.getElementsByName("q" + questionNumber);
+            var feedback = document.getElementById("feedback" + questionNumber);
+            var explanation = document.getElementById("explanation" + questionNumber);
+            var selectedOption = "";
+            
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedOption = options[i].value;
+                    break;
+                }
+            }
+
+            if (selectedOption === "True") {
+                feedback.innerText = "Nice One!";
+                feedback.classList.add("true");
+                feedback.classList.remove("false");
+                explanation.style.display = "none";
+            } 
+
+            else if (selectedOption === "False-5als") {
+                feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
+                feedback.classList.add("false");
+                feedback.classList.remove("add");
+                explanation.style.display = "none";
+            } 
+
+            else {
+                feedback.innerText = "Incorrect. Try another!";
+                feedback.classList.add("false");
+                feedback.classList.remove("true");
+                explanation.style.display = "block";
+            }
+
+            localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
+        }
   </script>
 </body>
 </Html>

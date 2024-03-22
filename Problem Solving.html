@@ -180,11 +180,22 @@ h1 .A0 {
     padding: 0; /* Remove padding */
     position: relative;
 }
-  .input-container, .output-container {
+  .input-container {
     width: auto;
     margin: 0; /* Remove margin */
-    padding: 0px;
+    padding: 0 10px 0px 10px;
     border: solid #272822;
+    border-radius:50px 0 0 50px;
+    height: 50vh;
+    position: relative;
+
+  }
+  .output-container {
+    width: auto;
+    margin: 0; /* Remove margin */
+    padding: 0px 10px 0px 10px;
+    border: solid #272822;
+    border-radius:0 50px 50px 0px;
     height: 50vh;
     position: relative;
   }
@@ -205,7 +216,7 @@ details p{
   height: 50px;
   background-color: #ccc;
   border-radius: 50px;
-
+  
 }
 </style>
 <head>
@@ -231,7 +242,12 @@ details p{
     <ul class="expandable-list">
       <li class="expandable-item">
         <div class="expandable-title">Lect 1</div>
-        <div class="expandable-content">Pointers</div>
+        <div class="expandable-content">
+          <h1 class="title">Pointers</h1>
+          <p>A <strong>pointer</strong> is a variable that stores <strong>the memory address</strong> of another variable as its value.
+            A pointer variable points to a data type <span style="color:#bd0404">(like int)</span> of the same type, and is created with the<span style="color:#bd0404">( * )</span>operator.
+            The address of the variable you are working with is assigned to the pointer </p>
+        </div>
       </li>
       <li class="expandable-item">
       <div class="expandable-title">Sec 1</div>
