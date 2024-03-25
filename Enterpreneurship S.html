@@ -696,61 +696,60 @@ h1 .A0 {
       </li>
     </ul>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const expandableTitles = document.querySelectorAll('.expandable-title');
+document.addEventListener('DOMContentLoaded', function () {
+  const expandableTitles = document.querySelectorAll('.expandable-title');
 
-      expandableTitles.forEach(title => {
-        title.addEventListener('click', () => {
-          title.parentNode.classList.toggle('expanded');
-        });
-      });
+  expandableTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      title.parentNode.classList.toggle('expanded');
     });
+  });
 
-    document.addEventListener("DOMContentLoaded", function () {
-            for (var i = 1; i <= 4; i++) {
-                var selectedAnswer = localStorage.getItem("selectedAnswer" + i);
-                 if (selectedAnswer) {
-              document.querySelector('input[value="' + selectedAnswer + '"]').checked = true;
-               }
-           }
-         });
+  // Load selected answers from localStorage
+  for (let i = 1; i <= 4; i++) {
+    const selectedAnswer = localStorage.getItem("selectedAnswer" + i);
+    if (selectedAnswer) {
+      const radioButton = document.querySelector(`input[name="q${i}"][value="${selectedAnswer}"]`);
+      if (radioButton) {
+        radioButton.checked = true;
+      }
+    }
+  }
+});
 
-        function checkAnswer(questionNumber) {
-            var options = document.getElementsByName("q" + questionNumber);
-            var feedback = document.getElementById("feedback" + questionNumber);
-            var explanation = document.getElementById("explanation" + questionNumber);
-            var selectedOption = "";
-            
-            for (var i = 0; i < options.length; i++) {
-                if (options[i].checked) {
-                    selectedOption = options[i].value;
-                    break;
-                }
-            }
+function checkAnswer(questionNumber) {
+  const options = document.getElementsByName("q" + questionNumber);
+  const feedback = document.getElementById("feedback" + questionNumber);
+  const explanation = document.getElementById("explanation" + questionNumber);
+  let selectedOption = "";
 
-            if (selectedOption === "True") {
-                feedback.innerText = "Nice One!";
-                feedback.classList.add("true");
-                feedback.classList.remove("false");
-                explanation.style.display = "none";
-            } 
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      selectedOption = options[i].value;
+      break;
+    }
+  }
 
-            else if (selectedOption === "False-5als") {
-                feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
-                feedback.classList.add("false");
-                feedback.classList.remove("add");
-                explanation.style.display = "none";
-            } 
+  if (selectedOption === "True") {
+    feedback.innerText = "Nice One!";
+    feedback.classList.add("true");
+    feedback.classList.remove("false");
+    explanation.style.display = "none";
+  } else if (selectedOption === "False-5als") {
+    feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
+    feedback.classList.add("false");
+    feedback.classList.remove("true");
+    explanation.style.display = "none";
+  } else {
+    feedback.innerText = "Incorrect. Try another!";
+    feedback.classList.add("false");
+    feedback.classList.remove("true");
+    explanation.style.display = "block";
+  }
 
-            else {
-                feedback.innerText = "Incorrect. Try another!";
-                feedback.classList.add("false");
-                feedback.classList.remove("true");
-                explanation.style.display = "block";
-            }
-
-            localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
-        }
+  // Save selected answer to localStorage
+  localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
+}
     </script>
 </body>
 </Html>
