@@ -5,18 +5,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
-  .expandable-list {
+@import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);  
+          /*font-family: 'Scheherazade', serif;*/
+
+
+.expandable-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  
 }
 
 .expandable-item {
   border-bottom: 1px solid #ccc;
   cursor: pointer;
-  
+  margin-bottom: 10px;
 }
 
 .expandable-title {
@@ -31,10 +35,13 @@
   display: none;
   font-size: 30px;
   font-family: sans-serif;
+  cursor: default;
 }
+
 .expandable-item.expanded .expandable-content {
   display: block;
 }
+
 body{
   background:no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -45,25 +52,22 @@ body{
   width: 100%;
   height: 100%;
 }
+
 nav {
   background-color: #0d126e;
   border: 15px;
   border-radius: 20px ;
   
 }
-
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 15px;
-  
 }
-
 nav ul li {
   display: inline-block;
   margin: 0 19px;
 }
-
 nav ul li a {
   color: #ffcf20;
   text-decoration: none;
@@ -95,16 +99,12 @@ h1 .A0 {
   color: rgb(102, 59, 151);
   display: inline-block;
 }
-.moved-image{
-  width: 50%; /* Adjust the width of the image column */
-}
 .A2 p {
   margin-bottom: 5px; 
   margin-top: 5px;
 }
 .A3{
-  background-color: blue;
-  
+  background-color: blue; 
 }
 
 /* Styles for screens smaller than 600px */
@@ -137,6 +137,7 @@ h1 .A0 {
     margin-right: auto;
   }
 }
+
 .A4{
  font-size: 30px;
  margin-left: 700px;
@@ -144,11 +145,24 @@ h1 .A0 {
 .A5{
   margin-right: 1230px;
 }
+.important{
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  color:red;
+  font-weight: 10px;
+  padding:25px;
+  background-color: #eeeeee;
+  border-radius: 25px;
+  margin: 25px;
+}
+
 .first-line{
   margin-left: 10px;
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
 }
+
 .second-line{
   display: flex;
   justify-content: center;
@@ -157,10 +171,16 @@ h1 .A0 {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-bottom: 20px;
 }
+.arabic{
+  text-align: end;
+  font-family: 'Scheherazade', serif;
+  font-size: 50px;
+}
 .title{
   text-align: center;
   color:red;
 }
+
 .container {
     display: flex;
     justify-content: center; /* Center the container horizontally */
@@ -169,18 +189,21 @@ h1 .A0 {
     margin-bottom:30px ;
     position: relative;
 }
+
 .code-container {
     width: 100%; /* Adjust the width as needed */
     max-width: 900px; /* Optional: Set a maximum width for responsiveness */
-    height: auto;
+    height: fit-content;
     border: solid #272822;
-    height: 50vh;
+    max-height: 50vh;
     overflow: auto;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
     position: relative;
+    margin: 0px;
+    padding: 0px;
+
 }
-  .input-container {
+
+.input-container {
     width: auto;
     margin: 0; /* Remove margin */
     padding: 0 10px 0px 10px;
@@ -188,9 +211,9 @@ h1 .A0 {
     border-radius:50px 0 0 50px;
     height: 50vh;
     position: relative;
-
   }
-  .output-container {
+
+.output-container {
     width: auto;
     margin: 0; /* Remove margin */
     padding: 0px 10px 0px 10px;
@@ -198,26 +221,47 @@ h1 .A0 {
     border-radius:0 50px 50px 0px;
     height: 50vh;
     position: relative;
+    background-color: black;
+    color: white;
   }
+
   .code-container code.language-c {
-    font-size: 14px; /* Adjust the font size as needed */
+    font-size: 16px; /* Adjust the font size as needed */
     margin: 0px;
     padding: 0px;
     position: relative;
 }
+
+.code-container pre.language-c {
+    font-size: 14px; /* Adjust the font size as needed */
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    height: 50vh;
+}
+
 .explain-short-if{
   display:flex;
 }
+
 details p{
   margin: 5px;
 }
+
 .copy-button{
   width: 100px;
   height: 50px;
   background-color: #ccc;
   border-radius: 50px;
-  
+  cursor: pointer;
 }
+
+.show-example-code{
+  background-color: #ebe9e9;
+  border-radius: 25px;
+  padding: 10px;
+}
+
 </style>
 <head>
     <title>JUSTforHELP</title>
@@ -236,17 +280,284 @@ details p{
     <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
     </ul>
     </nav>  
+    <div id="important" class="important">لازم تعرف\ي ان المادة دي مش يعني لازم تكون فاهم كل حاجة راحة فين وفاهم كل حاجة بتعمل ايه في الميموري او ايا كان</div>
     <div class="first-line"><p><a class="first-link" href="https://youtube.com/@yrmohamed1?si=-RMHhTbvdcxR7xxL">Dr.Yasser Dahab</a> Channel on youtube <i style="color:red;" class="fa-brands fa-youtube"></i></p></div>
-    <div class="first-line"><p><a class="first-link" href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Dr.Yasser Eltaher</a> imprtant resource <i style="color:gold;" class="fa-solid fa-star"></i></p></div>
+    <div class="first-line"><p><a class="first-link" href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Eng.Yasser Eltaher</a> imprtant resource <i style="color:gold;" class="fa-solid fa-star"></i></p></div>
     <div class="second-line"><strong>Note that this content isn't in order of problem solving course order</strong></div>
     <ul class="expandable-list">
       <li class="expandable-item">
-        <div class="expandable-title">Lect 1</div>
+        <div class="expandable-title">The Pointers +more</div>
         <div class="expandable-content">
           <h1 class="title">Pointers</h1>
           <p>A <strong>pointer</strong> is a variable that stores <strong>the memory address</strong> of another variable as its value.
             A pointer variable points to a data type <span style="color:#bd0404">(like int)</span> of the same type, and is created with the<span style="color:#bd0404">( * )</span>operator.
             The address of the variable you are working with is assigned to the pointer </p>
+          <h3 class="arabic">البوينتر بيشاور على عنوان الفاريبل</h3>
+
+          <div class="show-example-code">
+          <h1>For Example</h1>
+
+          <div class="container">
+            <div class="input-container">
+            <h2>Input</h2>
+            <p style="color:gray;">non_input</p>
+            <button class="copy-button">Copy</button>       
+            </div>
+            <div class="code-container">
+            <pre>
+            <code class="language-c">
+            #include &lt;stdio.h&gt;  
+            int main() {
+              int myAge = 43; // an int variable
+
+              printf("%d", myAge);  // Outputs the value of myAge (43)
+              printf("%p", &myAge); // Outputs the memory address of myAge (0x7ffe5367e044)
+            return 0;
+            }
+            </code>
+            </pre>
+            </div>
+            <div class="output-container">
+            <h2>Output</h2>
+            <p>43
+              0x7ffe5367e044
+            </p>            
+            </div>
+            </div>
+
+            <h3 class="arabic"> في الاول عرضلك القيمة المتغير عادي اللي هي 43</h3>
+            <h3 class="arabic"> 0x7ffe5367e044 انما هنا عرضلك عنوان المتفير نفسه اللي هو </h3>
+          </div>
+
+          <h1 class="arabic" style="color: brown;">وعندك كمان طريقة مختلفة تعرض  بيها البوينتر</h1>
+
+          <div class="show-example-code">
+
+            <h1>For Example</h1>
+          
+          <div class="container">
+            <div class="input-container">
+            <h2>Input</h2>
+            <p style="color:gray;">non_input</p>
+            <button class="copy-button">Copy</button>       
+            </div>
+            <div class="code-container">
+            <pre>
+            <code class="language-c">
+            #include &lt;stdio.h&gt;  
+            int main() {
+              int myAge = 43;     // An int variable
+              int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
+
+              // Output the value of myAge (43)
+              printf("%d\n", myAge);
+              // Output the memory address of myAge (0x7ffe5367e044)
+              printf("%p\n", &myAge);
+              // Output the memory address of myAge with the pointer (0x7ffe5367e044)
+              printf("%p\n", ptr);
+            return 0;
+            }
+            </code>
+            </pre>
+            </div>
+            <div class="output-container">
+            <h2>Output</h2>
+            <p>43</p> 
+            <p>0x7ffe5367e044</p> 
+            <p>0x7ffe5367e044</p>      
+            </div>
+            </div>
+
+            <h1 class="arabic">عشان يعرضلك العنوان %p ممكن تستخدم & قبل اسم الفاريبل بس اهم حاجة ان الادينتيفاير يكون </h1>
+          
+          </div>
+
+          <h1 class="arabic" style="color: brown;">و هنا دا كدا الاربع حالات اللي انت محتاج تعرفهم في بوينتر</h1>
+
+          <div class="show-example-code">
+
+            <h1>For Example</h1>
+          
+            <div class="container">
+              <div class="input-container">
+              <h2>Input</h2>
+              <p style="color:gray;">non_input</p>
+              <button class="copy-button">Copy</button>       
+              </div>
+              <div class="code-container">
+              <pre>
+              <code class="language-c">
+              #include &lt;stdio.h&gt;  
+              int main() {
+
+                int x = 46;         // Variable declaration
+                int *ptr = &x;      // Pointer declaration
+            
+                printf("%d\n", x); // Here you mention value of variable 
+            
+                printf("%d\n", *ptr); // Here you mention value of variable " by using * of pointer "
+            
+                printf("%p\n", ptr); // Here you mention address of variable 
+            
+                printf("%p\n", &x); // Here you mention address of variable " by using & "
+
+              return 0;
+              }
+              </code>
+              </pre>
+              </div>
+              <div class="output-container">
+              <h2>Output</h2>
+              <p>46</p> 
+              <p>46</p> 
+              <p>0000008B9991FCB4</p> 
+              <p>0000008B9991FCB4</p>      
+              </div>
+              </div>
+
+            </div>
+              <h1 class="arabic">و كدا انت عرفت ازاي تمنشن فاريبل بالبوينتر وازاي تمنشن بوينتر بفاريبل </h1>
+
+          <h1 class="title">Arrays with Pointer</h1>
+          <h2 class="arabic">احنا قلنا ان البوينتر بيمنشن عنوان المتغير . طيب ما هو كمان ممكن نستخدمه عشان نعرف عنوان كل متغير داخل المصفوفة  </h2>
+
+          <div class="show-example-code">
+
+            <h1>For Example</h1>
+          
+            <div class="container">
+              <div class="input-container">
+              <h2>Input</h2>
+              <p style="color:gray;">non_input</p>
+              <button class="copy-button">Copy</button>       
+              </div>
+              <div class="code-container">
+              <pre>
+              <code class="language-c">
+              #include &lt;stdio.h&gt;  
+              int main() {
+
+                int myNumbers[4] = { 25, 50, 75, 100 };
+                int* ptr = &myNumbers[4];
+
+                for (int i = 0; i < 4; i++) {
+                    printf("%d\n", myNumbers[i]);
+                    printf("%p\n", &myNumbers[i]); 
+                }
+
+              return 0;
+              }
+              </code>
+              </pre>
+              </div>
+              <div class="output-container" style="font-size: 18px;">
+              <h2>Output</h2>
+              <p>25</p> 
+              <p>0x7fff77aafa40</p> 
+              <p>50</p> 
+              <p>0x7fff77aafa44</p>
+              <p>75</p> 
+              <p>0x7fff77aafa48</p>
+              <p>100</p>
+              <p>0x7fff77aafa4c</p>
+              </div>
+              </div>
+              <h2 class="arabic">انت عملت مصفوفة دخلتها في لوب هتعدي علي كل عنصر في المصفوفة تجيبلك عنوانه و قيمته</h2>
+              </div>
+
+              <h1 class="title">Some additional NOTES</h1>
+              <h2>To get size of array or any element , by using " sizeof() ".</h2>
+
+            <div class="show-example-code">
+
+            <h1>For Example</h1>
+          
+            <div class="container">
+              <div class="input-container">
+              <h2>Input</h2>
+              <p style="color:gray;">non_input</p>
+              <button class="copy-button">Copy</button>       
+              </div>
+              <div class="code-container">
+              <pre>
+              <code class="language-c">
+              #include &lt;stdio.h&gt;  
+              int main() {
+
+                int myNumbers[4] = { 25, 50, 75, 100 };
+                int myInt;
+            
+                // Get the memory size of an int -- it depends on "Data-Type"
+                printf("%lu\n", sizeof(myInt));
+            
+                // Get the size of the whole array 
+                // ( 4 * array size ) " in this case ( 4 * 4 = 16)"
+                printf("%lu\n", sizeof(myNumbers));
+            
+                // Get the size of  the single element in array 
+                printf("%lu", sizeof(myNumbers) / sizeof(myNumbers[0]));
+              return 0;
+              }
+              </code>
+              </pre>
+              </div>
+              <div class="output-container">
+              <h2>Output</h2>
+              <p>4</p> 
+              <p>16</p> 
+              <p>4</p> 
+              </div>
+              </div>
+              <h4>size by bytes</h4>
+              <p>char = 1</p>
+              <p>short = 2</p>
+              <p>int = 4</p>
+              <p>float = 4</p>
+              <p>long = 4</p>
+              <p>double = 8</p>
+              <p>long long = 8</p>
+              <p>Pointer : The size of a pointer depends on the architecture. It's typically 4 bytes on 32-bit systems and 8 bytes on 64-bit systems.</p>
+              </div>
+
+              <h2>The memory address of the first element is the same as the name of the array</h2>
+
+              <div class="show-example-code">
+
+                <h1>For Example</h1>
+              
+                <div class="container">
+                  <div class="input-container">
+                  <h2>Input</h2>
+                  <p style="color:gray;">non_input</p>
+                  <button class="copy-button">Copy</button>       
+                  </div>
+                  <div class="code-container">
+                  <pre>
+                  <code class="language-c">
+                  #include &lt;stdio.h&gt;  
+                  int main() {
+    
+                    int myNumbers[4] = {25, 50, 75, 100};
+
+                    // Get the memory address of the myNumbers array
+                    printf("%p\n", myNumbers);
+                    
+                    // Get the memory address of the first array element
+                    printf("%p\n", &myNumbers[0]);
+
+                  return 0;
+                  }
+                  </code>
+                  </pre>
+                  </div>
+                  <div class="output-container">
+                  <h2>Output</h2>
+                  <p>0x7ffe70f9d8f0</p> 
+                  <p>0x7ffe70f9d8f0</p> 
+                  </div>
+                  </div> 
+                  </div>
+
         </div>
       </li>
       <li class="expandable-item">
@@ -254,6 +565,7 @@ details p{
       <div class="expandable-content">
       <h1 class="title">Short "IF"</h1>
       <h2>Short If : is exactly IF condition in <span style="color:green">EXCEL</span></h2>
+
     <div class="container">
     <div class="input-container">
     <h2>Input</h2>
@@ -285,6 +597,7 @@ details p{
     </div> 
     <h1 class="title">Switch Case</h1>
     <h3>A switch statement allows programmers to execute different blocks of code based on the value of a single variable or expression.</h3>
+    
     <details>
       <summary><strong>How it looks like</strong></summary>
       <p>switch(expression)</p>
@@ -376,7 +689,229 @@ details p{
           the first loop execute for one time and it turn to the another loop to execute it completly then tern back to first one if condition still work it prints the number then turn to internal loop and execute it . until the extrnal-loop condition expires.
         </details>
   </div>
-      </li>
+  <li class="expandable-item">
+    <div class="expandable-title">Structures</div>
+    <div class="expandable-content">
+      <h1 class="title">Structures</h1>
+      <h2>Structures (also called structs) are a way to group several related variables into one place. 
+        Each variable in the structure is known as a member of the structure.</h2>
+      <h3><span style="color:red;">Unlike an array</span>, a structure can contain many different data types (<span style="color:#2b6ec6">int</span>, <span style="color:#2b6ec6">float</span>, <span style="color:#2b6ec6">char</span>, etc.).</h3>
+    
+      <div class="show-example-code">
+
+        <h1>To Creat Structure</h1>
+      
+        <div class="container">
+          <div class="input-container">
+          <h2>Input</h2>
+          <p style="color:gray;">non_input</p>
+          <button class="copy-button">Copy</button>       
+          </div>
+          <div class="code-container">
+          <pre>
+          <code class="language-c">
+          #include &lt;stdio.h&gt; 
+
+          // Create a structure called myStructure
+
+          struct MyStructure {   // Structure declaration
+            int myNum;           // Member (int variable)
+            char myLetter;       // Member (char variable)
+          };                     // End the structure with a semicolon
+          
+          int main() {
+
+            // Create a structure variable of myStructure called s1
+            struct myStructure s1;
+          
+            // Assign values to members of s1
+            s1.myNum = 1;
+            s1.myLetter = 'M';
+          
+            // Print values
+            printf("My number: %d\n", s1.myNum);
+            printf("My letter: %c\n", s1.myLetter);
+          
+            return 0;
+          }
+          </code>
+          </pre>
+          </div>
+          <div class="output-container">
+          <h2>Output</h2>
+          <p>My Number: 1</p> 
+          <p>My letter: M</p>      
+          </div>
+          </div>
+          <h2 class="arabic">اقرأ\ي الكومنت اللي في الكود هيشرحلك كل خطوة</h2>
+          </div>
+
+          <h2>You also can create multiple structure variables with different values.</h2>
+
+          <div class="show-example-code">
+
+            <h1>For Example</h1>
+          
+            <div class="container">
+              <div class="input-container">
+              <h2>Input</h2>
+              <p style="color:gray;">non_input</p>
+              <button class="copy-button">Copy</button>       
+              </div>
+              <div class="code-container">
+              <pre>
+              <code class="language-c">
+              #include &lt;stdio.h&gt; 
+    
+              struct MyStructure {   // Structure declaration
+                int myNum;           // Member (int variable)
+                char myLetter;       // Member (char variable)
+            };                     // End the structure with a semicolon
+        
+            int main() {
+        
+                // Create a structure variables of myStructure called s1 and s2
+                struct MyStructure s1 , s2; 
+        
+                // Assign values to members of s1
+                s1.myNum = 1;
+                s1.myLetter = 'M';
+        
+                // Assign values to members of s2
+                s2.myNum = 2;
+                s2.myLetter = 'N';
+        
+                // Print values
+                printf("My number: %d\n", s1.myNum);
+                printf("My letter: %c\n", s1.myLetter);
+                printf("My number: %d\n", s2.myNum);
+                printf("My letter: %c\n", s2.myLetter);
+        
+                return 0;
+            }
+              </code>
+              </pre>
+              </div>
+              <div class="output-container">
+              <h2>Output</h2>
+              <p>My Number: 1</p> 
+              <p>My letter: M</p>      
+              </div>
+              </div>
+              <h2 class="arabic">وبكدا دا هيسهل عليك بدل ما تعمل فاريبل جديد وكل اما تعوز تزود فاريبل تقعد تعرف واحد واحد ودا هياخد معاك مساحة من الميموري و دا بيتقل من البرنامج فا الاستركشر بتساعدك تتجنب المشاكل دي</h2>
+              </div>
+ 
+              <h1 class="title">Additional Notes</h1>
+              
+              <h2>we all know i you want to add text you will declare it as an array of characters and it call string "%s"</h2>
+              <h2>but in structures seem different</h2>
+              <div class="show-example-code" style="margin-bottom: 10px;">
+              <p>if u create member and declare it : <span style="color:#2b6ec6">char</span> MyString[<span style="color:red">30</span>]</p>
+              <p>and after creating s1 structure variable </p>
+              <p>you will assign it like that : s1.myString = "I love pizza"; and it unfortunately wrong -- <span style="color:gray">error</span></p>
+              <p>the correct way to assign string by using structure is by using : <strong>strcpy</strong> .</p>
+              <p>it will be : strcpy(s1.myString, "Some text"); <span style="color:green">launched successfully</span></p>
+              <p>and we use <strong>#include string.h</strong> to include the string.h library for strcpy()</p>
+              </div>
+
+              <div class="show-example-code">
+
+                <h1>For Example</h1>
+              
+                <div class="container">
+                  <div class="input-container">
+                  <h2>Input</h2>
+                  <p style="color:gray;">non_input</p>
+                  <button class="copy-button">Copy</button>       
+                  </div>
+                  <div class="code-container">
+                  <pre>
+                  <code class="language-c">
+                  #include &lt;stdio.h&gt; 
+                  #include &lt;string.h&gt;     // Include the string.h library for strcpy()
+        
+                  struct MyStructure {   // Structure declaration
+                    int myNum;           // Member (int variable)
+                    char myLetter;       // Member (char variable)
+                    char myString[30];   // String
+                };                    // End the structure with a semicolon
+            
+                int main() {
+            
+                    // Create a structure variables of myStructure called s1 and s2
+                    struct MyStructure s1 ; 
+            
+                    // Assign values to members of s1
+                    s1.myNum = 1;
+                    s1.myLetter = 'M';
+                    strcpy(s1.myString, "it's me MArIooo");
+                       
+                    // Print values
+                    printf("My number: %d\n", s1.myNum);
+                    printf("My letter: %c\n", s1.myLetter);
+                    printf("My string: %s", s1.myString);
+            
+                    return 0;
+                }
+                  </code>
+                  </pre>
+                  </div>
+                  <div class="output-container">
+                  <h2>Output</h2>
+                  <p>My Number: 1</p> 
+                  <p>My letter: M</p> 
+                  <p>My string: it's me MArIooo</p>     
+                  </div>
+                  </div>
+                  </div>
+
+                  <h2>You can make it simple for yourself</h2>
+                  <div class="show-example-code">
+
+                    <h1>For Example</h1>
+                  
+                    <div class="container">
+                      <div class="input-container">
+                      <h2>Input</h2>
+                      <p style="color:gray;">non_input</p>
+                      <button class="copy-button">Copy</button>       
+                      </div>
+                      <div class="code-container">
+                      <pre>
+                      <code class="language-c">
+                      #include &lt;stdio.h&gt; 
+                      #include &lt;string.h&gt;     // Include the string.h library for strcpy()
+            
+                      // Create a structure
+                      struct myStructure {
+                        int myNum;
+                        char myLetter;
+                        char myString[30];
+                      };
+                      
+                      int main() {
+                        // Create a structure variable and assign values to it
+                        struct myStructure s1 = {1, 'M', "it's me MArIooo"};
+                      
+                        // Print values
+                        printf("%d\n%c\n%s", s1.myNum, s1.myLetter, s1.myString);
+                      
+                        return 0;
+                      }
+                      </code>
+                      </pre>
+                      </div>
+                      <div class="output-container">
+                      <h2>Output</h2>
+                      <p>My Number: 1</p> 
+                      <p>My letter: M</p> 
+                      <p>My string: it's me MArIooo</p>     
+                      </div>
+                      </div>
+                      </div>
+    </div>
+  </li>
+
       <li class="expandable-item">
         <div class="expandable-title">FINAL</div>
         <div class="expandable-content">Say ان شاء الله</div>
@@ -427,10 +962,27 @@ details p{
           });
       });
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('important');
+    const text = "لازم تعرف (ي) ان المادة دي مش بتتبصمج يعني لازم تكون فاهم كل حاجة راحة فين وفاهم كل حاجة بتعمل ايه في الميموري او ايا كان";
+    let index = 0;
+
+    function writeText() {
+        textElement.textContent = text.slice(0, index);
+        index++;
+
+        if (index > text.length) {
+            clearInterval(timer);
+        }
+    }
+
+    const timer = setInterval(writeText, 46); // Adjust speed as needed
+});
+
 </script>
-  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-c.min.js"></script>
 </body>
 </Html>
 
