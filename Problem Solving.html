@@ -2099,9 +2099,9 @@ int main() {
       }</code></pre>
             <div class="options">
                 <input type="radio" id="q41_True" name="q41" value="True">
-                <label for="q41_True">A. 1</label>
+                <label for="q41_True">A. 10</label>
                 <input type="radio" id="q41_False1" name="q41" value="False">
-                <label for="q41_False1">B. 10</label>
+                <label for="q41_False1">B. 1</label>
                 <input type="radio" id="q41_False2" name="q41" value="False">
                 <label for="q41_False2">C. Compiler Error</label>
                 <input type="radio" id="q41_False3" name="q41" value="False">
@@ -2190,19 +2190,19 @@ int main() {
         <div class="question-block">
             <h2>Question 44: What will be the output of the following C code?</h2>
             <pre><code>#include &lt;stdio.h&gt;
-      
-      void func(int **ptr) {
-          static int num = 100;
-          *ptr = &num;
-      }
-      
-      int main() {
-          int val = 10;
-          int *ptr = &val;
-          func(&ptr);
-          printf("%d\n", *ptr);
-          return 0;
-      }</code></pre>
+              void func(int **ptr) {
+                static int num = 100;
+                *ptr = &num ; 
+            }
+            
+            int main() {
+                int val = 10;
+                int *ptr = &val;
+                func(&ptr);
+                printf("%d\n", *ptr); 
+                return 0;
+            }
+            </code></pre>
             <div class="options">
                 <input type="radio" id="q44_True" name="q44" value="True">
                 <label for="q44_True">A. 100</label>
@@ -2471,7 +2471,7 @@ int main() {
       
       void func(int *ptr) {
           ptr += 1;
-          printf("%d\n", *ptr);
+          printf("%d\n", ptr);
       }
       
       int main() {
@@ -2480,14 +2480,14 @@ int main() {
           return 0;
       }</code></pre>
             <div class="options">
-                <input type="radio" id="q52_True" name="q52" value="True">
-                <label for="q52_True">A. 20</label>
+                <input type="radio" id="q52_False3" name="q52" value="False">
+                <label for="q52_False3">A. 20</label>
                 <input type="radio" id="q52_False1" name="q52" value="False">
                 <label for="q52_False1">B. 30</label>
                 <input type="radio" id="q52_False2" name="q52" value="False">
-                <label for="q52_False2">C. Compiler Error</label>
-                <input type="radio" id="q52_False3" name="q52" value="False">
-                <label for="q52_False3">D. Undefined Behavior</label>
+                <label for="q52_False2">C. 10</label>
+                <input type="radio" id="q52_True" name="q52" value="True">
+                <label for="q52_True">D. Undefined Behavior</label>
             </div>
             <button onclick="checkAnswer(52)">Check Answer</button>
             <div id="feedback52" class="feedback"></div>
