@@ -266,8 +266,6 @@
             
             var password = document.getElementById("passwordInput").value;
             if (password === "Ju$TF0rH31p") {
-                var hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Base64);
-                if (hashedPassword === "U2FsdGVkX19uk2r83Zg9ZlOXK/4jzqDz7Us3Fw9P0tg=") { "try another idiot"}
                 setTimeout(function() {
                  window.location.href = "dark-sector.html"; }, 2000);
                  document.getElementById("message").innerText = "Welcome home mate";
