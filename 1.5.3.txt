@@ -1,1 +1,2 @@
-1.5.3 == fixing some errors and correcting questions in #p_s
+1.5.3 == Fixing some errors and correcting questions in #p_s
+1.6   == New secret
