@@ -165,6 +165,10 @@ h1 .A0 {
             <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
         </ul>
     </nav>  
+    <div id="warning" class="warning" style="display: none;">
+      <h2>This site is not optimized for mobile devices.</h2>
+      <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+  </div>
     
     <ul class="expandable-list">
       <li class="expandable-item">
@@ -246,20 +250,7 @@ h1 .A0 {
             <p>(cot<sup>-1</sup>(x))' = -1 / (1 + x<sup>2</sup>)</p>
             </div>
         </div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">Sec 2</div>
-        <div class="expandable-content">same content</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">lect 3</div>
-        <div class="expandable-content">same content</div>
-      </li>
-      <li class="expandable-item">
-        <div class="expandable-title">Sec 3</div>
-        <div class="expandable-content">same content</div>
-      </li>
-      
+      </li>      
       <li class="expandable-item">
         <div class="expandable-title">FINAL</div>
         <div class="expandable-content">Say ان شاء الله</div>
@@ -275,6 +266,15 @@ h1 .A0 {
           });
         });
       });
+              // JavaScript to redirect mobile users to the desktop version
+              window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+
+        if (isMobile) {
+            document.getElementById("warning").style.display = "block";
+        }
+    };
     </script>
 </body>
 </Html>

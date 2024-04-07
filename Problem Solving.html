@@ -397,6 +397,11 @@ details p{
     <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
     </ul>
     </nav>  
+    <div id="warning" class="warning" style="display: none;">
+      <h2>This site is not optimized for mobile devices.</h2>
+      <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+  </div>
+
     <div id="important" class="important">لازم تعرف\ي ان المادة دي مش يعني لازم تكون فاهم كل حاجة راحة فين وفاهم كل حاجة بتعمل ايه في الميموري او ايا كان</div>
     <div class="first-line"><p><a class="first-link" href="https://youtube.com/@yrmohamed1?si=-RMHhTbvdcxR7xxL">Dr.Yasser Dahab</a> Channel on youtube <i style="color:red;" class="fa-brands fa-youtube"></i></p></div>
     <div class="first-line"><p><a class="first-link" href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Eng.Yasser Eltaher</a> imprtant resource <i style="color:gold;" class="fa-solid fa-star"></i></p></div>
@@ -2711,7 +2716,15 @@ function checkAnswer(questionNumber) {
   
   localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
 }
+        // JavaScript to redirect mobile users to the desktop version
+        window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
+        if (isMobile) {
+            document.getElementById("warning").style.display = "block";
+        }
+    };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
