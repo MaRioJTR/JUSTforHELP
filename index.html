@@ -24,7 +24,7 @@ nav {
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding: 15px;
+  padding: 1.4vw;
   
 }
 
@@ -37,9 +37,10 @@ nav ul li a {
   color: #ffcf20;
   text-decoration: none;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 25px;
+  font-size: 1.45vw;
   transition: color 0.3s ease-in-out;
 }
+
 nav ul li a:hover {
     color: #ffffff;
 }
@@ -95,6 +96,15 @@ h1 .A0 {
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
+  nav ul li a {
+  color: #ffcf20;
+  text-decoration: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3vw;
+  transition: color 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
   .A2 p {
     font-size: 20px; 
   }
@@ -119,6 +129,29 @@ h1 .A0 {
   }
 }
 
+.warning {
+        background-color: #ffcccc;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+    .warning h2 {
+        margin-top: 0;
+    }
+    .warning button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .warning button:hover {
+        background-color: #45a049;
+    }
+
+    
 </style>
 <head>
     <title>JUSTforHELP</title>
@@ -154,6 +187,29 @@ h1 .A0 {
     <div class="A3">
       <p>This is an individual's work and has no affiliation with the campus</p>
     </div>
+
+    <div id="warning" class="warning" style="display: none;">
+      <h2>This site is not optimized for mobile devices.</h2>
+      <p>Please switch to the desktop version for a better experience.</p>
+      <button onclick="redirectToDesktop()">Switch to Desktop Site</button>
+  </div>
+
+  <script>
+        // JavaScript to redirect mobile users to the desktop version
+        window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+
+        if (isMobile) {
+            document.getElementById("warning").style.display = "block";
+        }
+    };
+
+    function redirectToDesktop() {
+        // Redirect to the desktop site
+        window.location.href = "https://example.com/desktop";
+    }
+  </script>
   
 </body>
 
