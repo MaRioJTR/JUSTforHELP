@@ -850,6 +850,20 @@ function checkAnswer(questionNumber) {
   // Save selected answer to localStorage
   localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
 }
+        // JavaScript to redirect mobile users to the desktop version
+        window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+
+        if (isMobile) {
+            document.getElementById("warning").style.display = "block";
+        }
+    };
+
+    function redirectToDesktop() {
+        // Redirect to the desktop site
+        window.location.href = "https://example.com/desktop";
+    }
     </script>
 </body>
 </Html>
