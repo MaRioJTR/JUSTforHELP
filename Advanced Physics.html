@@ -7,71 +7,70 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
   .expandable-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .expandable-item {
-    border-bottom: 1px solid #cccccc;
-    cursor: pointer;
-  }
+.expandable-item {
+  margin: 5px;
+  cursor: pointer;
 
-  .expandable-title {
+}
+
+.expandable-title {
   padding: 10px;
-  background-color: #f3f3f3;
+  background-color: #142f8f;
   font-size: 30px;
   font-family: sans-serif;
+  border-radius: 25px;
 }
 
 .expandable-content {
   padding: 10px;
   display: none;
+  color: #edeff8;
   font-size: 30px;
   font-family: sans-serif;
   cursor: default;
 }
 
-  .expandable-item.expanded .expandable-content {
-    display: block;
-  }
+.expandable-item.expanded .expandable-content {
+  display: block;
+}
 
-  body {
-    background: no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 100%;
-  }
+body{
+        background-color: #04040b;
+        color: #edeff8;
+        padding: 0px; 
+        margin: 0; 
+        font-family:Arial, Helvetica, sans-serif;
+    }
 
-  nav {
-    background-color: #0d126e;
-    border: 15px;
-    border-radius: 20px;
-  }
+    nav ul{
+        display: flex;
+        justify-content: space-around;
+        background-color: #375ff1;
+        padding: 1.2vw;
+        margin: 0;
+    }
 
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 15px;
+    nav ul li{
+        list-style-type: none; 
+    }
 
-  }
+    nav ul li a{
+        text-decoration: none;
+        color: #ede9f9;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.4vw;
+        transition: color 0.3s ease-in-out;
+    }
 
-  nav ul li {
-    display: inline-block;
-    margin: 0 19px;
-  }
-
-  nav ul li a {
+    nav ul li a:hover {
     color: #ffcf20;
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 25px;
     transition: color 0.3s ease-in-out;
-  }
+    }
 
   nav ul li a:hover {
     color: #ffffff;
@@ -115,10 +114,16 @@
     margin-top: 5px;
   }
 
-  .A3 {
-    background-color: blue;
-
-  }
+  .A3{
+    border: 3px solid #ffcf20;
+    max-width: 90vw;
+    margin: 3vw;
+    font-size: 2vw;
+    background-color: #142f8f;
+    border-radius: 25px;
+    padding: 13px;
+    text-align: center;
+    }
 
   /* Styles for screens smaller than 600px */
   @media (max-width: 600px) {
@@ -286,7 +291,7 @@
     }
 
     .question-block {
-        background-color: #fff;
+        background-color: #8297e3;
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -296,7 +301,7 @@
     }
 
     .question-block h2 {
-        color: #333;
+        color: #edeff8;
         margin-bottom: 20px;
     }
 
@@ -318,7 +323,7 @@
         position: relative;
         padding-left: 30px;
         cursor: pointer;
-        color: #666;
+        color: #cdcfd8;
     }
 
     .options label:before {
@@ -333,8 +338,8 @@
     }
 
     .options input[type="radio"]:checked + label:before {
-        background-color: #ffcf20;
-        border-color: #ffcf20;
+        background-color: #375ff1;
+        border-color: #375ff1;
     }
 
     .feedback {
@@ -832,6 +837,9 @@
       <div class="expandable-content">Say ان شاء الله</div>
     </li>
   </ul>
+  <div class="A3">
+    <p>Remember, what you sow, you shall reap. Do your best Mate. <i class="fa-regular fa-handshake"></i></p>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
