@@ -10,7 +10,6 @@
 @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);  
           /*font-family: 'Scheherazade', serif;*/
 
-
 .expandable-list {
   list-style: none;
   padding: 0;
@@ -263,11 +262,24 @@ details p{
   padding: 10px;
 }
 
+.function-link-def{
+  display: flex;
+  justify-content: space-between;
+}
+
 .fuction-link{
   display: flex;
+  justify-content: space-between;
+}
+
+.fuction-link iframe{
+  margin: .5vw;
+  border: solid rgb(255, 0, 0);
+}
+
+.fuction-link-address{
+  display: flex;
   justify-content: space-around;
-  background-color: #e2dfdf;
-  border-radius: 25px;
 }
 
 .container-of-question {
@@ -1060,12 +1072,21 @@ details p{
   <li class="expandable-item">
     <div class="expandable-title">Function</div>
     <div class="expandable-content">
+      <div class="function-link-def">
       <h1>By Prof.Yasser Dahab</h1>
+      <img style="width: 10vw;" src="assets/aast-maritime-transport-logo.png">
+    </div>
       <div class="fuction-link">
-      <h3><a href="https://youtu.be/iykMdFPnMIM?si=HlRXPf42jwOz8nKP">Part 1</a></h3>
-      <h3><a href="https://youtu.be/GUN6tynjHKI?si=CCt-8Hz2czlBJuXX">Part 2</a></h3>
-      <h3><a href="https://youtu.be/ozihBHTNW2o?si=9ZtcySthO5kEfMjN">Part 3</a></h3>
-      <h3><a href="https://youtu.be/rkyPTOYkWqk?si=aNsFnnJvibxWMTIB">Part 4</a></h3></div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iykMdFPnMIM?si=2Pc1NM9rKbfBRfEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/GUN6tynjHKI?si=FgQ1J1CUyGlHTItz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ozihBHTNW2o?si=9lmUwPamwIH0EkEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/rkyPTOYkWqk?si=y8WpcoX7fUZr1jJm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="fuction-link-address">
+      <h1>Part 1</h1>
+      <h1>Part 2</h1>
+      <h1>Part 3</h1>
+      <h1>Part 4</h1>
     </div>
   </li>
 

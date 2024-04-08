@@ -5,129 +5,90 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  <meta name="description" content="Discover a wealth of resources and assistance at JUSTforHELP. Navigate through insightful content, tools, and support to tackle various challenges. Empower yourself with knowledge and guidance on diverse topics, all in one accessible platform.">
 <style>
+
 body{
-  background:no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 100vh;
-}
-nav {
-  background-color: #0d126e;
-  border: 15px;
-  border-radius: 20px ;
-}
+        background-color: #010104;
+        color: #eae9fc;
+        padding: 0px; 
+        margin: 0; 
+        font-family:Arial, Helvetica, sans-serif;
+    }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 1.4vw;
-  
-}
+    nav ul{
+        display: flex;
+        justify-content: space-around;
+        background-color: #0600c2;
+        padding: 1.2vw;
+        margin: 0;
+    }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 19px;
-}
+    nav ul li{
+        list-style-type: none;
+        
+    }
 
-nav ul li a {
-  color: #ffcf20;
-  text-decoration: none;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1.45vw;
-  transition: color 0.3s ease-in-out;
-}
+    nav ul li a{
+        text-decoration: none;
+        color: #ffcf20;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.4vw;
+        transition: color 0.3s ease-in-out;
+    }
 
-nav ul li a:hover {
-    color: #ffffff;
-}
-.A1{
-  font-size: 30px;
-  color: rgb(102, 59, 151);
-}
-div .highlite{
-  color : #ffcf20
-}
-.container{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  height: 640px;
-  
-}
-.A2{
-  width: 90%; 
-  height: 80%;
-  padding: 20px; 
-  box-sizing: border-box;
-  font-size: 50px;
-  color: #0c116d;
-  font-family:fantasy ;
-  max-width: 1000px;
-}
+    nav ul li a:hover {
+    color: #eae9fc;
+    transition: color 0.3s ease-in-out;
+    }
 
-h1 .A0 {
-  color: rgb(102, 59, 151);
-  display: inline-block;
-}
-.container img{
-  width: 50%; 
-}
-.A2 p {
-  margin-top: 5px;
-  width: 70%;
-}
+    .first-line{
+        max-width: 85vw;
+        max-height: 50vh;
+        font-size: 2vw;
+        border-radius: 25px;
+        padding: 3vw;
+        display: flex;
+        justify-content: space-between;
+    }
 
-  
-
-.A3{
-  border: 3px solid red;
-  border-radius: 40px;
-  color: red;
-  font-size: 30px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  font-weight: bold;
-  margin-top: auto;
-}
-
-/* Styles for screens smaller than 600px */
-@media (max-width: 600px) {
-  nav ul li a {
-  color: #ffcf20;
-  text-decoration: none;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 3vw;
-  transition: color 0.3s ease-in-out;
-  margin-top: 20px;
-}
-
-  .A2 p {
-    font-size: 20px; 
-  }
-  .A3{
-    font-size: 10px;
-  }
-}
+    .first-line p{
+        max-width: 40vw;
+        max-height: 45vh;
+        margin: 1vh;
+        font-size: 2vw;
+        background-color: #3a31d8;
+        border-radius: 2vw;
+        padding: 3vw;
+        text-align: center;    
+    }
 
 
-/* Styles for screens between 601px and 900px */
-@media (min-width: 601px) and (max-width: 900px) {
-  .A3{
-    margin-top: 125vh;
-    font-size: 10px;
-  }
-}
+    .logo{
+        max-width: 70vw;
+        min-width: 30vw;
+        max-height: 65vh;
+        min-height: 32.5vh;
+        margin: 0vw;
+        margin-left: 3vw;
+        background-color: #eae9fcfa;
+        border-radius: 2vw;
+        padding: 0vw;
+    }
 
-/* Styles for screens larger than 901px */
-@media (min-width: 901px) and (max-width: 1343px){
-  .A3{
-    margin-top: 50vh;
-  }
-}
+    .highlite{
+        color: #ffcf20;
+    }
+
+    .A3{
+    border: 3px solid #ffcf20;
+    max-width: 90vw;
+    margin: 3vw;
+    font-size: 2vw;
+    background-color: #020024;
+    border-radius: 25px;
+    padding: 13px;
+    text-align: center;
+    }
+
 
 .warning {
         background-color: #ffcccc;
@@ -174,26 +135,20 @@ h1 .A0 {
       <h2>This site is not optimized for mobile devices.</h2>
       <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
   </div>
-  <div class="container">
-    <div class="A2">
-      <p>Whasup ! <span class="highlite"> AAST </span> Mates i hope you all 
-      good. So as you can see
-      this website designed by 
-      your colleague Mario.
-      The structure encompasses of
-      courses scheduled for the semester 2,
-      trying to cover a significant portion
-      of the curriculum...</p>
-      
-    </div> 
-    <img src="assets/aast-logo.png" alt="Logo" class="moved-image">   
+  <div class="first-line">
+    <p>Whasup ! <span class="highlite"> AAST </span> Mates i hope you all 
+        good. So as you can see
+        this website designed by 
+        your colleague Mario.
+        The structure encompasses of
+        courses scheduled for the semester 2,
+        trying to cover a significant portion
+        of the curriculum...</p>
+        <img class="logo" src="assets/aast-logo.png">
+   </div>
+   <div class="A3">
+    <p>This is an individual's work and has no affiliation with the campus</p>
   </div>
-    <div class="A3">
-      <p>This is an individual's work and has no affiliation with the campus</p>
-    </div>
-
-
-
   <script>
         // JavaScript to redirect mobile users to the desktop version
         window.onload = function() {
