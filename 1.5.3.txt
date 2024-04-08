@@ -1,4 +1,5 @@
 1.5.3 == Fixing some errors and correcting questions in #p_s.
 1.6   == New secret.
-1.6.1 == Try 1 to fix password and safety.             /*[not fixed yet]*/
+1.6.1 == Try 1 to fix password and safety.             
 1.7   == adding embed video for "PROF.Yasser" && New style for home page.
+1.7.1 == Successfully tring to half-hiding the P.W [50%success]
