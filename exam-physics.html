@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Tilt+Neon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="assets/testing.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <title>ادي بصة</title>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e8e8fd;
+  color: #030421;
+  padding: 0;
+  margin: 0;
+  font-family: 'Fira Sans';
+}
+
+nav {
+  position: fixed;
+  height: 100%;
+  overflow-y:hidden; 
+}
+
+nav .nav-0 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  background-color: #0b0f7f;
+  padding: .9vw 0 0 0;
+  justify-content: center;
+}
+
+nav .nav-0 li {
+  list-style-type: none;
+  margin-bottom: 4.0vw;
+  padding: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+nav .nav-0 li a {
+  text-decoration: none;
+  font-size: 1.3vw;
+  color: #e8e8fd;
+  padding: 1vw 1vw 1vw 1vw;
+  transition:  0.3s ease-in-out;
+}
+
+nav .nav-0 li :hover{
+  background-color: rgba(255, 255, 255, 0.418);
+  border-radius: 2.5vw;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-0 img{
+  width: 5vw;
+  margin-bottom: 3vw;
+}
+
+.nav-1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, #0b0f7f 20%,#9e10c1 80%);
+  padding: 1.5vw;
+  margin: 0;
+}
+
+.nav-1  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 1.1vw;
+  margin: 0;
+}
+
+.nav-1  li {
+  margin: 0;
+}
+
+.nav-1  li a {
+  text-decoration: none;
+  font-size: 1.5vw;
+  color: #e8e8fd;
+  padding: 0vw 1vw 0vw 1vw;
+  margin: .5vw;
+  font-family: 'cairo';
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 2.5vw;
+}
+
+nav .nav-1 li :hover{
+  background-color: rgba(255, 255, 255, 0.418);
+  border-radius: 2.5vw;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test-logo{
+  display: flex;
+  justify-content: space-between;
+  color: #e8e8fd;
+  font-size: 1.5vw;
+  font-family: 'cairo';
+}
+
+.main {
+  padding-top: 8vw; 
+  padding-left: 18vw; 
+}
+
+.question-pairs{
+  display: flex;
+  justify-content: space-around;
+}
+
+#questions {
+    margin-bottom: 4vw;
+}
+
+.question {
+    margin-bottom: 1.5vw;
+    background-color: #ddddf6;
+    width: 35vw;
+    padding: 1.5vw;
+    border-radius: 1.3vw;
+    font-size: 1.04vw;
+    color: #030421;
+}
+
+.question h2 {
+    margin-top: 0;
+}
+
+.options {
+    margin-top: 1.5vw;
+    font-size: 1.2vw;
+}
+
+.options input[type="radio"] {
+
+  width: 1.0vw;
+  height: 1.0vw;
+  border: .1vw solid #030421;
+  border-radius: 50vw;
+  padding: 0.3vw;
+  top: 0.2vw;
+  cursor: pointer;
+}
+
+.options input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 1.0vw;
+  height: 1.0vw;
+  background-color: #bf6ef2;
+  border-radius: 50vw;
+
+}
+
+button {
+  background-color: #bf6ef2;
+  color: white;
+  font-size: .99vw;
+  border: none;
+  padding: 1.0vw 2.1vw;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1.5vw;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #cd94f0;
+  color: #030421;
+  transition: color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.feedback {
+  margin: .5vw 0 0 .2vw;
+  font-weight: bold;
+  background-color: #e8e8fd;
+  color: #030421;
+  font-size: 1.3vw;
+  border-radius: .5vw;
+  width: fit-content;
+  padding: 0.5vw;
+}
+
+.explanation {
+  margin: .5vw 0 0 .2vw;
+  font-weight: bold;
+  background-color: #e8e8fd;
+  color: #030421;
+  font-size: 1.3vw;
+  border-radius: .5vw;
+  width: 90%;
+  padding: 0.5vw;
+  display: none;
+}
+
+.total-result{
+  width: 54vw;
+  font-size: 3.8vw;
+  margin: 3vw;
+  background-color: #030421;
+  display: none;
+  color: white;
+  text-align: center;
+  border: .01vw solid white;
+  padding: 0.9vw;
+  border-radius: 1.3vw;
+  font-family: "VT323", monospace;
+}
+
+.expandable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expandable-item {
+  margin: 5px;
+  cursor: pointer;
+
+}
+
+.expandable-title {
+  padding: .9vw;
+  background-color: #bf6ef2;
+  font-size: 2vw;
+  font-family: sans-serif;
+  border-radius: .6vw;
+}
+
+.expandable-content {
+  padding: 10px;
+  display: none;
+  color: #ede9f9;
+  font-size: 30px;
+  font-family: sans-serif;
+  cursor: default;
+}
+
+.expandable-item.expanded .expandable-content {
+  display: block;
+}
+
+  </style>
+</head>
+
+<body>
+    <audio id="music" >
+        <source src="music/eid-song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+  
+    <nav>
+        <ul class="nav-1">
+          <li><a href="">.....</a></li>
+          <li><a href="links-page.html">شبرق نفسك</a></li>
+          <li><a href="index.html">موقع الاساسي</a></li>
+          <li><a href="non-studing.html">بصمجها</a></li>
+        </ul>
+      </nav>
+
+  <nav > 
+    <ul class="nav-0">
+      <div class="test-logo"><img src="assets/testing.png" ><p style="margin: .5vw;">ادي_بصة#</p></div>
+      <li class="A1"> <a href="exam-jfr.html"><i class="fa-solid fa-building-columns"></i> Home</a></li>
+      <li><a href="exam-calculus.html"><i class="fa-solid fa-calculator"></i> Calculus I</a></li>
+      <li><a href="exam-academic-writing.html"><i class="fa-solid fa-book-bookmark"></i> Academic Writing</a></li>
+      <li><a href="exam-physics.html"><i class="fa-solid fa-flask-vial"></i> Advanced Physics</a></li>
+      <li><a href="exam-problem-solving.html"><i class="fa-solid fa-code-branch"></i> Problem Solving</a></li>
+      <li><a href="exam-business.html"><i class="fa-solid fa-briefcase"></i> Enterpreneurship </a></li>
+      <li><a href="exam-discrete-math.html"><i class="fa-solid fa-brain"></i> Discrete Structures</a></li>
+    </ul>
+  </nav>
+
+  <div class="main"><!--White Space Start-->
+
+    <h1>TEST-JS-CODE</h1>
+
+    <li class="expandable-item">
+      <div class="expandable-title">TEST</div>
+      <div class="expandable-content" id="questions-sec-2">
+
+    <div id="questions">
+
+      <div class="question-pairs">
+        <div class="question">
+            <h2>Question 1:  1 + 1 = ?</h2>
+            <div class="options">
+                <input type="radio" name="q1" value="true"> 2<br>
+                <input type="radio" name="q1" value="f1"> 5<br>
+                <input type="radio" name="q1" value="f1"> 6<br>
+            </div>
+            <div id="feedback1" class="feedback"></div>
+              <div id="explanation1" class="explanation">
+                  <h2>Explanation:</h2>
+                  <p>Print 1+1</p>
+              </div>
+        </div>
+
+        <div class="question">
+            <h2>Question 2: Which one is the Motherland </h2>
+            <div class="options">
+                <input type="radio" name="q2" value="true"> Soviet Russia<br>
+                <input type="radio" name="q2" value="f2"> Egypt <br>
+                <input type="radio" name="q2" value="f2"> Aswan <br>
+            </div>
+            <div id="feedback2" class="feedback"></div>
+              <div id="explanation2" class="explanation">
+                  <h2>Explanation:</h2>
+                  <p>The Mother Russia</p>
+              </div>
+        </div><!--question pairs end -->
+
+        </div><!--question end ID-->
+
+      <button onclick="calculateResult('questions-sec-2')">Submit Answers</button>
+      <div id="result-questions-sec-2" class="total-result">
+          <!-- Result will be displayed here -->
+      </div>
+
+    </div>
+  </li>
+
+  <li class="expandable-item">
+    <div class="expandable-title">TEST</div>
+    <div class="expandable-content" id="questions-sec-3">
+
+  <div id="questions-1">
+
+  <div class="question-pairs">
+    <div class="question">
+        <h2>Question 3:  2 + 2 = ?</h2>
+        <div class="options">
+            <input type="radio" name="q3" value="true"> 4<br>
+            <input type="radio" name="q3" value="f3"> 2<br>
+            <input type="radio" name="q3" value="f3"> 7<br>
+        </div>
+        <div id="feedback3" class="feedback"></div>
+        <div id="explanation3" class="explanation">
+            <h2>Explanation:</h2>
+            <p>Print 2+2</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>Question 4: what is lala land </h2>
+        <div class="options">
+            <input type="radio" name="q4" value="true"> Series<br>
+            <input type="radio" name="q4" value="f4"> Island <br>
+            <input type="radio" name="q4" value="f4"> State<br>
+        </div>
+        <div id="feedback4" class="feedback"></div>
+        <div id="explanation4" class="explanation">
+            <h2>Explanation:</h2>
+            <p>It's a comedy series</p>
+        </div>
+    </div><!--question pairs end-->
+
+</div><!--question end ID-->
+
+<button onclick="calculateResult('questions-sec-3')">Submit Answers</button>
+<div id="result-questions-sec-3" class="total-result">
+    <!-- Result will be displayed here -->
+</div>
+
+</div>
+</li>
+
+    </div><!--the end of questions-->
+  </div>
+</body>
+
+
+<footer></footer>
+
+
+<script>
+function calculateResult(questionId) {
+  let totalQuestions = 0;
+  let correctAnswers = 0;
+
+  // Iterate over each question in the specific expandable content
+  document.querySelectorAll(`#${questionId} .question`).forEach(question => {
+    totalQuestions++;
+
+    // Get the selected option for this question
+    const selectedOption = question.querySelector('input[type="radio"]:checked');
+
+    // If an option is selected, check if it's correct
+    if (selectedOption) {
+      const value = selectedOption.value;
+      if (value === "true" ) {
+        correctAnswers++;
+        const feedback = question.querySelector('.feedback');
+        const explanation = question.querySelector('.explanation');
+        feedback.innerText = "Nice One!";
+        explanation.style.display = "none";
+        question.style.backgroundColor = "#66caa4";
+      } else {
+        const feedback = question.querySelector('.feedback');
+        const explanation = question.querySelector('.explanation');
+        feedback.innerText = "Incorrect. Try another!";
+        explanation.style.display = "block";
+        question.style.backgroundColor = "#eb6374";
+      }
+    }
+  });
+
+  // Calculate the score
+  const score = (correctAnswers / totalQuestions) * 100;
+
+  if (score <= .5 * 100 ) {
+    const music = document.getElementById("music");
+    music.play();
+  }
+
+  // Display the result
+  const resultDiv = document.getElementById(`result-${questionId}`);
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `You scored ${score.toFixed(2)}% (${correctAnswers}/${totalQuestions} correct).`;
+}
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const expandableTitles = document.querySelectorAll('.expandable-title');
+
+      expandableTitles.forEach(title => {
+        title.addEventListener('click', () => {
+          title.parentNode.classList.toggle('expanded');
+        });
+      });
+    });
+
+</script>
+</html>

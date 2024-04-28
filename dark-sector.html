@@ -23,9 +23,18 @@ body{
     font-style: normal;  
 }
 
-h1 , p {
+h1 , p ,details {
     color:white;
     font-size: 2.3vw; 
+}
+
+pre{
+    color:white;
+    font-size: 1.5vw;  
+}
+
+details pre{
+    font-size: .9vw; 
 }
 
 .title {
@@ -39,6 +48,22 @@ h1 , p {
 
 .emoji{
     width: 2vw;
+}
+
+.copy{
+    padding: .6vw;
+    margin: 1vw;
+    margin-left: 3.5vw;
+    border: solid .1vw white;
+    color: white;
+    background-color: black;
+    font-size: 1.0vw;
+    cursor: pointer;  
+}
+
+.first-block{
+    padding: .6vw;
+    border: solid .3vw white;
 }
 
 </style>
@@ -62,13 +87,113 @@ h1 , p {
 </div>
 <p class="title">/* === Wassup Mates this is the WORLD ("ALPHA") === *\</p>
 <p>this page will contain all helpful qustions, codes, maybe <span style="color: rgb(83, 83, 83);">TASKs</span> <img class="emoji" src="assets/no-thinking.gif">.</p>
-<p style="color: red;">Okey, it might seems like "ILLEGAL CONTENT", but trust me it's not.</p>
+<p style="color: red;">Okey, it might seems like "ILLEGAL CONTENT", but it's not.</p>
 <p>I'm gonna try to provide u with all resources and materials , "maybe answers XD".</p>
 <p>and remeber it's...</p>
 <p class="title">JUSTforHELP</p>
-<p>hi....</p>
+
+<div class="first-block">
+<pre>
+    <strong>//--This Sector Will contain what we need in code--\\</strong>
+                            
+    1- need to learn how to edit content that stored already in file
+    2- need to give access to "Agent" to add specific properties to "Customers"
+    3- need to know what exactly the kind of accessibility that "Admin" need to have   
+    4- need to learn make Log-in and Registration system
+    5- excel file management and link it with the program 
+    6- to be continue XD.....
+</pre>
+<details class="source-code">
+    <summary>Source-Code-For-STEP-1</summary>
+    <button class="copy" onclick="copyCode()">Copy</button>
+    <pre id="codeToCopy">#include &lt;stdio.h&gt;
+        #include &lt;stdlib.h&gt;           
+            struct [str-name]{
+                char name[30];
+                int password;
+            };
+            int main()
+            {
+                //variables
+                struct [.....] [...];
+                FILE *fptr;
+                char storeName[30];
+                char Class[10];
+                int choice;
+                //file
+                fptr = fopen("singin.txt","a");
+                //first-line
+                printf("1 : if you were Admin\t2 : if you were Agent\t3 : if you were Customer\n");
+                scanf("%d",&choice);
+                //user-choice
+                switch(choice) {
+                case 1:
+                    printf("you entered as Admin\n");
+                    strcpy(Class, "Admin");
+                        fprintf(fptr,"\nClass : %s\n",Class);
+            
+                getchar();
+                //user-inputs
+                printf("Enter your name : ");
+                fgets(user.name,sizeof([...].name),stdin);
+                fprintf(fptr,"Name : %s",[...].name);
+                printf("Enter you password : ");
+                scanf("%d",&[...].password);
+                fprintf(fptr,"PassWord : %d\n",[...].password);
+                    break;
+            
+                case 2:
+                    printf("you entered as Agent\n");
+                    strcpy(Class, "Agent");
+                        fprintf(fptr,"\nClass : %s\n",Class);
+            
+                getchar();
+                //user-inputs
+                printf("Enter your name : ");
+                fgets(user.name,sizeof([...].name),stdin);
+                fprintf(fptr,"Name : %s",[...].name);
+                printf("Enter you password : ");
+                scanf("%d",&[...].password);
+                fprintf(fptr,"PassWord : %d\n",[...].password);
+                    break;
+            
+                case 3:
+                    printf("you entered as Customer\n");
+                    strcpy(Class, "Customer");
+                        fprintf(fptr,"\nClass : %s\n",Class);
+            
+                getchar();
+                //user-inputs
+                printf("Enter your name : ");
+                fgets(user.name,sizeof([...].name),stdin);
+                fprintf(fptr,"Name : %s",[...].name);
+                printf("Enter you password : ");
+                scanf("%d",&[...].password);
+                fprintf(fptr,"PassWord : %d\n",[...].password);
+                    break;
+            
+                default:
+                    printf("invalid choice\n");
+                }
+
+                //End
+                fclose(fptr);
+                return 0;
+            }
+    </pre>
+</details>
+</div>
 <p>bye....</p>
 </body>
 <script>
+    function copyCode() {
+        const codeToCopy = document.getElementById('codeToCopy');
+        const textarea = document.createElement('textarea');
+        textarea.value = codeToCopy.innerText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }
 </script>
 </html>
