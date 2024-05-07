@@ -203,8 +203,11 @@ details pre{
     <details class="source-code">
         <summary>Source-Code-For-STEP-2</summary>
         <button class="copy" onclick="copyCode('codeToCopy2')">Copy</button>
-        <pre id="codeToCopy2">#include &lt;stdio.h&gt;
-            #include &lt;stdlib.h&gt;           
+        <pre id="codeToCopy2">
+            #include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;
+            #include &lt;string.h&gt;    
+                   
             struct singin {
                 char name[30];
                 char password[30];
@@ -225,14 +228,18 @@ details pre{
                 char storeAdminPassword[30];
             
                 //agent-sector
-                struct singin agent;
+                struct singin agent[50];
                 FILE *fptrAgent;
+                FILE *fptrAgentID;
                 char storeAgentName[30];
+                char storeAgentPassword[30];
             
                 //customer-sector
-                struct singin customer;
+                struct singin customer[500];
                 FILE *fptrCustomer;
+                FILE *fptrCustomerID;
                 char storeCustomerName[30];
+                char storeCustomerPassword[30];
             
                 //first-line
                 printf("1 : if you were Admin\t2 : if you were Agent\t3 : if you were Customer\n");
@@ -305,40 +312,140 @@ details pre{
                     break;
             
                 case 2:
-                    fptrAgent = fopen("agent-signin.txt", "a");
-                    printf("you entered as Agent\n");
-                    strcpy(Class, "Agent");
-                    fprintf(fptrAgent, "\nClass : %s\n", Class);
             
+                    printf("you entered as Agent\n");
+                    printf("Sign in : 1\nLog in : 2\n");
+                    scanf("%d", &userChoice);
+            
+                    switch (userChoice) {
+                case 1:
+                    fptrAgent = fopen("agent-signin.txt", "a");
+                    fptrAgentID = fopen("agent-id.txt","a");
+                    strcpy(Class, "Agent");
                     getchar();
-                    //agent-inputs
-                    printf("Enter your name : ");
-                    fgets(agent.name, sizeof(agent.name), stdin);
-                    fprintf(fptrAgent, "Name : %s", agent.name);
-                    printf("Enter you password : ");
-                    scanf("%d", &agent.password);
-                    fprintf(fptrAgent, " PassWord : %d\n", agent.password);
+                    // Agent inputs
+                    printf("Enter your name: ");
+                    fgets(agent[adminNum].name, sizeof(agent[adminNum].name), stdin);
+                    printf("Enter your ID: ");
+                    fgets(agent[adminNum].password, sizeof(agent[adminNum].password), stdin);
+                    fprintf(fptrAgent, "%s%s\n", agent[adminNum].name, agent[adminNum].password);
+                    fprintf(fptrAgentID,"%s ",agent[adminNum].password);
             
                     fclose(fptrAgent);
+                    fclose(fptrAgentID);
                     break;
+                case 2:
+                    adminNum = 0;
+                    fptrAgentID = fopen("agent-id.txt", "r");
+                    if (fptrAgentID == NULL) {
+                        printf("Failed to open agent-id.txt\n");
+                        return 1;
+                    }
             
-                case 3:
-                    fptrCustomer = fopen("customer-signin.txt", "a");
-                    printf("you entered as Customer\n");
-                    strcpy(Class, "Customer");
-                    fprintf(fptrCustomer, "\nClass : %s\n", Class);
+                    // Read agent IDs from file
+                    while (fscanf(fptrAgentID, "%29s ", agent[adminNum].password) != EOF) {
+                        adminNum++;
+                    }
+                    fclose(fptrAgentID);
             
                     getchar();
-                    //customer-inputs
-                    printf("Enter your name : ");
-                    fgets(customer.name, sizeof(customer.name), stdin);
-                    fprintf(fptrCustomer, "Name : %s", customer.name);
-                    printf("Enter you password : ");
-                    scanf("%d", &customer.password);
-                    fprintf(fptrCustomer, " PassWord : %d\n", customer.password);
+                    printf("Enter The ID: ");
+                    fgets(storeAgentPassword, sizeof(storeAgentPassword), stdin);
+                    storeAgentPassword[strcspn(storeAgentPassword, "\n")] = 0; // Remove newline character
+            
+                    int loggedIn = 0;
+            
+                    for (int i = 0; i < adminNum; i++) {
+                        if (strcmp(agent[i].password, storeAgentPassword) == 0) {
+                            loggedIn = 1;
+                            break;
+                        }
+                    }
+            
+                    if (loggedIn) {
+                        printf("Successful login\n");
+                    } else {
+                        printf("Failed login\n");
+                    }
+            
+                        break;
+                    default:
+                        printf("invalid choice\n");
+                    }
+            
+                    //AGENT_CODE_HERE
+            
+                    break;
+            
+            
+            
+            
+                case 3:
+            
+                    printf("you entered as Customer\n");
+                    printf("Sign in : 1\nLog in : 2\n");
+                    scanf("%d", &userChoice);
+            
+                    switch (userChoice) {
+                case 1:
+                    fptrCustomer = fopen("customer-signin.txt", "a");
+                    fptrCustomerID = fopen("customer-id.txt","a");
+                    strcpy(Class, "Customer");
+                    getchar();
+                    // Customer inputs
+                    printf("Enter your name: ");
+                    fgets(customer[adminNum].name, sizeof(customer[adminNum].name), stdin);
+                    printf("Enter your ID: ");
+                    fgets(customer[adminNum].password, sizeof(customer[adminNum].password), stdin);
+                    fprintf(fptrCustomer, "%s%s\n", customer[adminNum].name, customer[adminNum].password);
+                    fprintf(fptrCustomerID,"%s ",customer[adminNum].password);
             
                     fclose(fptrCustomer);
+                    fclose(fptrCustomerID);
                     break;
+                case 2:
+                    adminNum = 0;
+                    fptrCustomerID = fopen("customer-id.txt", "r");
+                    if (fptrCustomerID == NULL) {
+                        printf("Failed to open customer-id.txt\n");
+                        return 1;
+                    }
+            
+                    // Read customer IDs from file
+                    while (fscanf(fptrCustomerID, "%29s ", customer[adminNum].password) != EOF) {
+                        adminNum++;
+                    }
+                    fclose(fptrCustomerID);
+            
+                    getchar();
+                    printf("Enter The ID: ");
+                    fgets(storeCustomerPassword, sizeof(storeCustomerPassword), stdin);
+                    storeCustomerPassword[strcspn(storeCustomerPassword, "\n")] = 0; // Remove newline character
+            
+                    int loggedIn = 0;
+            
+                    for (int i = 0; i < adminNum; i++) {
+                        if (strcmp(customer[i].password, storeCustomerPassword) == 0) {
+                            loggedIn = 1;
+                            break;
+                        }
+                    }
+            
+                    if (loggedIn) {
+                        printf("Successful login\n");
+                    } else {
+                        printf("Failed login\n");
+                    }
+            
+                        break;
+                    default:
+                        printf("invalid choice\n");
+                    }
+            
+                    //Customer_CODE_HERE
+            
+                    break;
+            
             
                 default:
                     printf("invalid choice\n");
