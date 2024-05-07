@@ -64,6 +64,7 @@ details pre{
 .first-block{
     padding: .6vw;
     border: solid .3vw white;
+    margin: 2vw;
 }
 
 </style>
@@ -99,14 +100,14 @@ details pre{
     1- need to learn how to edit content that stored already in file
     2- need to give access to "Agent" to add specific properties to "Customers"
     3- need to know what exactly the kind of accessibility that "Admin" need to have   
-    4- need to learn make Log-in and Registration system
+    4- need to learn make Log-in and Registration system 
     5- excel file management and link it with the program 
     6- to be continue XD.....
 </pre>
 <details class="source-code">
     <summary>Source-Code-For-STEP-1</summary>
-    <button class="copy" onclick="copyCode()">Copy</button>
-    <pre id="codeToCopy">#include &lt;stdio.h&gt;
+    <button class="copy" onclick="copyCode('codeToCopy1')">Copy</button>
+    <pre id="codeToCopy1">#include &lt;stdio.h&gt;
         #include &lt;stdlib.h&gt;           
             struct [str-name]{
                 char name[30];
@@ -183,17 +184,187 @@ details pre{
     </pre>
 </details>
 </div>
+<div class="first-block">
+    <pre>
+        <strong>//--This Sector Will contain what we need in code--\\</strong>
+                                
+        1- need to learn how to edit content that stored already in file
+        2- need to give access to "Agent" to add specific properties to "Customers"
+        3- need to know what exactly the kind of accessibility that "Admin" need to have   
+        <del>4- need to learn make Log-in and Registration system </del>
+        5- excel file management and link it with the program 
+        6- to be continue XD.....
+
+        <strong>//--EDITED--\\</strong>
+
+        1- now each user has his own file 
+        2- each user has structure coordination
+    </pre>
+    <details class="source-code">
+        <summary>Source-Code-For-STEP-2</summary>
+        <button class="copy" onclick="copyCode('codeToCopy2')">Copy</button>
+        <pre id="codeToCopy2">#include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;           
+            struct singin {
+                char name[30];
+                char password[30];
+            };
+            
+            int main() {
+                //general-variables
+                char Class[10];
+                int choice;
+                int userChoice;
+            
+                //admin-sector
+                struct singin admin[5]; // 5 = max admins that can sigin in
+                int adminNum = 0;
+                FILE *fptrAdmin;
+                FILE *fptrAdminID;
+                char storeAdminName[30];
+                char storeAdminPassword[30];
+            
+                //agent-sector
+                struct singin agent;
+                FILE *fptrAgent;
+                char storeAgentName[30];
+            
+                //customer-sector
+                struct singin customer;
+                FILE *fptrCustomer;
+                char storeCustomerName[30];
+            
+                //first-line
+                printf("1 : if you were Admin\t2 : if you were Agent\t3 : if you were Customer\n");
+                scanf("%d", &choice);
+                //user-choice
+                switch (choice) {
+                case 1:
+                    printf("you entered as Admin\n");
+                    printf("Sign in : 1\nLog in : 2\n");
+                    scanf("%d", &userChoice);
+            
+                    switch (userChoice) {
+                case 1:
+                    fptrAdmin = fopen("admin-signin.txt", "a");
+                    fptrAdminID = fopen("admin-id.txt","a");
+                    strcpy(Class, "Admin");
+                    getchar();
+                    // Admin inputs
+                    printf("Enter your name: ");
+                    fgets(admin[adminNum].name, sizeof(admin[adminNum].name), stdin);
+                    printf("Enter your ID: ");
+                    fgets(admin[adminNum].password, sizeof(admin[adminNum].password), stdin);
+                    fprintf(fptrAdmin, "%s%s\n", admin[adminNum].name, admin[adminNum].password);
+                    fprintf(fptrAdminID,"%s ",admin[adminNum].password);
+            
+                    fclose(fptrAdmin);
+                    fclose(fptrAdminID);
+                    break;
+                case 2:
+                    adminNum = 0;
+                    fptrAdminID = fopen("admin-id.txt", "r");
+                    if (fptrAdminID == NULL) {
+                        printf("Failed to open admin-id.txt\n");
+                        return 1;
+                    }
+            
+                    // Read admin IDs from file
+                    while (fscanf(fptrAdminID, "%29s ", admin[adminNum].password) != EOF) {
+                        adminNum++;
+                    }
+                    fclose(fptrAdminID);
+            
+                    getchar();
+                    printf("Enter The ID: ");
+                    fgets(storeAdminPassword, sizeof(storeAdminPassword), stdin);
+                    storeAdminPassword[strcspn(storeAdminPassword, "\n")] = 0; // Remove newline character
+            
+                    int loggedIn = 0;
+            
+                    for (int i = 0; i < adminNum; i++) {
+                        if (strcmp(admin[i].password, storeAdminPassword) == 0) {
+                            loggedIn = 1;
+                            break;
+                        }
+                    }
+            
+                    if (loggedIn) {
+                        printf("Successful login\n");
+                    } else {
+                        printf("Failed login\n");
+                    }
+            
+                        break;
+                    default:
+                        printf("invalid choice\n");
+                    }
+            
+                    //ADMIN_CODE_HERE
+            
+                    break;
+            
+                case 2:
+                    fptrAgent = fopen("agent-signin.txt", "a");
+                    printf("you entered as Agent\n");
+                    strcpy(Class, "Agent");
+                    fprintf(fptrAgent, "\nClass : %s\n", Class);
+            
+                    getchar();
+                    //agent-inputs
+                    printf("Enter your name : ");
+                    fgets(agent.name, sizeof(agent.name), stdin);
+                    fprintf(fptrAgent, "Name : %s", agent.name);
+                    printf("Enter you password : ");
+                    scanf("%d", &agent.password);
+                    fprintf(fptrAgent, " PassWord : %d\n", agent.password);
+            
+                    fclose(fptrAgent);
+                    break;
+            
+                case 3:
+                    fptrCustomer = fopen("customer-signin.txt", "a");
+                    printf("you entered as Customer\n");
+                    strcpy(Class, "Customer");
+                    fprintf(fptrCustomer, "\nClass : %s\n", Class);
+            
+                    getchar();
+                    //customer-inputs
+                    printf("Enter your name : ");
+                    fgets(customer.name, sizeof(customer.name), stdin);
+                    fprintf(fptrCustomer, "Name : %s", customer.name);
+                    printf("Enter you password : ");
+                    scanf("%d", &customer.password);
+                    fprintf(fptrCustomer, " PassWord : %d\n", customer.password);
+            
+                    fclose(fptrCustomer);
+                    break;
+            
+                default:
+                    printf("invalid choice\n");
+                }
+            
+                return 0;
+            }
+            
+        </pre>
+    </details>
+    </div>
 <p>bye....</p>
 </body>
 <script>
-    function copyCode() {
-        const codeToCopy = document.getElementById('codeToCopy');
-        const textarea = document.createElement('textarea');
-        textarea.value = codeToCopy.innerText;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+    function copyCode(targetId) {
+        const codeToCopy = document.getElementById(targetId);
+        if (codeToCopy) {
+            const textarea = document.createElement('textarea');
+            textarea.value = codeToCopy.innerText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        } else {
+            console.error("Element with ID " + targetId + " not found.");
+        }
     }
 </script>
 </html>
