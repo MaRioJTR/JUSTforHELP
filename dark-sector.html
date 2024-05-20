@@ -458,6 +458,663 @@ details pre{
         </pre>
     </details>
     </div>
+    <div class="first-block">
+        <pre>
+            <strong>//--This Sector Will contain what we need in code--\\</strong>
+                                    
+            <del>1- need to learn how to edit content that stored already in file</del>
+            2- need to give access to "Agent" to add specific properties to "Customers"
+            <del>3- need to know what exactly the kind of accessibility that "Admin" need to have</del>   
+            <del>4- need to learn make Log-in and Registration system </del>
+            <del>5- excel file management and link it with the program </del>
+            6- but the code in the loop
+            7- to be continue XD.....
+    
+            <strong>//--EDITED--\\</strong>
+    
+            1- excel file handel
+            2- Admin Sector has Finished
+
+            <div style="border: solid red 1px; ">
+            <strong style="color: red;">//--STILL WANTED--\\</strong>
+
+            1- Agednt Sector 
+            2- Customer Sector
+            </div>
+        </pre>
+        <details class="source-code">
+            <summary>Source-Code-For-STEP-3</summary>
+            <button class="copy" onclick="copyCode('codeToCopy3')">Copy</button>
+            <pre id="codeToCopy3">
+            #include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;
+            #include &lt;string.h&gt;
+                    
+                    struct singin {
+                        char name[30];
+                        char password[30];
+                    };
+                    
+                    int main() {
+                        // General variables
+                        char Class[10];
+                        int choice;
+                        int userChoice;
+                    
+                        // Admin sector
+                        struct singin admin[5]; // 5 = max admins that can sign-in
+                        int adminNum = 0;
+                        FILE *fptrAdmin;
+                        FILE *fptrAdminID;
+                        char storeAdminName[30];
+                        char storeAdminPassword[30];
+                    
+                        // Agent sector
+                        struct singin agent[50]; // 50 = max agents that can sign-in
+                        FILE *fptrAgent;
+                        FILE *fptrAgentID;
+                        char storeAgentName[30];
+                        char storeAgentPassword[30];
+                    
+                        // Customer sector
+                        struct singin customer[500]; // 500 = max customers that can sign-in
+                        FILE *fptrCustomer;
+                        FILE *fptrCustomerID;
+                        FILE *fptrCustomerPolicies;
+                        char storeCustomerName[30];
+                        char storeCustomerPassword[30];
+                    
+                        // First line
+                        printf("\n");
+                        printf("\t*/-Welcome To Insurance Company Management System-\\* \n");
+                        printf("\n");
+                        printf("\t----------------------------------------------------\n");
+                        printf("\n");
+                        printf(" 1 : if you were Admin \t 2 : if you were Agent \t 3 : if you were Customer\n");
+                        scanf("%d", &choice);
+                    
+                        // User choice
+                        switch (choice) {
+                        case 1:
+                            printf("You entered as Admin\n");
+                            printf("Sign in : 1\nLog in : 2\n");
+                            scanf("%d", &userChoice);
+                    
+                            switch (userChoice) {
+                            case 1:
+                                fptrAdmin = fopen("admin-signin.csv", "a");
+                                fptrAdminID = fopen("admin-id.csv", "a");
+                                strcpy(Class, "Admin");
+                                getchar();
+                                // Admin inputs
+                                printf("Enter your name: ");
+                                fgets(admin[adminNum].name, sizeof(admin[adminNum].name), stdin);
+                                printf("Enter your ID: ");
+                                fgets(admin[adminNum].password, sizeof(admin[adminNum].password), stdin);
+                                // Remove newline characters
+                                admin[adminNum].name[strcspn(admin[adminNum].name, "\n")] = 0;
+                                admin[adminNum].password[strcspn(admin[adminNum].password, "\n")] = 0;
+                                fprintf(fptrAdmin, "%s,%s\n", admin[adminNum].name, admin[adminNum].password);
+                                fprintf(fptrAdminID, "%s\n", admin[adminNum].password);
+                    
+                                fclose(fptrAdmin);
+                                fclose(fptrAdminID);
+                                break;
+                            case 2:
+                                adminNum = 0;
+                                fptrAdminID = fopen("admin-id.csv", "r");
+                                if (fptrAdminID == NULL) {
+                                    printf("Failed to open admin-id.csv\n");
+                                    return 1;
+                                }
+                    
+                                // Read admin IDs from file
+                                while (fscanf(fptrAdminID, "%29s", admin[adminNum].password) != EOF) {
+                                    adminNum++;
+                                }
+                                fclose(fptrAdminID);
+                    
+                                getchar();
+                                printf("Enter The ID: ");
+                                fgets(storeAdminPassword, sizeof(storeAdminPassword), stdin);
+                                storeAdminPassword[strcspn(storeAdminPassword, "\n")] = 0; // Remove newline character
+                    
+                                int loggedIn = 0;
+                    
+                                for (int i = 0; i < adminNum; i++) {
+                                    if (strcmp(admin[i].password, storeAdminPassword) == 0) {
+                                        loggedIn = 1;
+                                        break;
+                                    }
+                                }
+                    
+                                if (loggedIn) {
+                                    printf("Successful login\n");
+                                } else {
+                                    printf("Failed login\n");
+                                    return 0;
+                                }
+                    
+                                break;
+                            default:
+                                printf("Invalid choice\n");
+                                return 0;
+                            }
+                    
+                            // Admin code
+                            printf("\n--------------------\n");
+                            printf("1: User Management\n");
+                            printf("2: Policy Management\n");
+                            printf("Enter your choice: ");
+                            scanf("%d", &userChoice);
+                    
+                            switch (userChoice) {
+                            case 1:
+                                printf("1: Create User (Not suggested ,customer must self-signin)\n");
+                                printf("2: Search User\n");
+                                printf("3: Update User\n");
+                                printf("4: Delete User\n");
+                                printf("5: View Users\n");
+                                printf("Enter your choice: ");
+                                scanf("%d", &userChoice);
+                    
+                                switch (userChoice) {
+                                case 1: // Create User
+                                    // Code to create a new user profile
+                                    if (adminNum < 500) {
+                                        printf("Enter customer name: ");
+                                        getchar();
+                                        fgets(customer[adminNum].name, sizeof(customer[adminNum].name), stdin);
+                    
+                                        printf("Enter customer ID: ");
+                                        fgets(customer[adminNum].password, sizeof(customer[adminNum].password), stdin);
+                    
+                                        // Remove newline characters
+                                        customer[adminNum].name[strcspn(customer[adminNum].name, "\n")] = 0;
+                                        customer[adminNum].password[strcspn(customer[adminNum].password, "\n")] = 0;
+                    
+                                        // Assuming you want to store customer data in a file
+                                        fptrCustomer = fopen("customer-signin.csv", "a");
+                                        fptrCustomerID = fopen("customer-id.csv", "a");
+                                        if (fptrCustomer != NULL) {
+                                            fprintf(fptrCustomer, "%s,%s\n", customer[adminNum].name, customer[adminNum].password);
+                                            fprintf(fptrCustomerID, "%s\n", customer[adminNum].password);
+                                            fclose(fptrCustomer);
+                                            fclose(fptrCustomerID);
+                                        } else {
+                                            printf("Failed to open customer data file\n");
+                                        }
+                    
+                                        printf("Customer created successfully\n");
+                                        adminNum++; // Increment the number of customers
+                                    } else {
+                                        printf("Maximum number of customers reached\n");
+                                    }
+                                    break;
+                    
+                                case 2: // Search User
+                                    // Code to search for a specific user profile
+                                    adminNum = 0;
+                                    fptrCustomerID = fopen("customer-id.csv", "r");
+                                    fptrCustomer = fopen("customer-signin.csv", "r");
+                    
+                                    if (fptrCustomerID == NULL || fptrCustomer == NULL) {
+                                        printf("Failed to open customer data files\n");
+                                        if (fptrCustomerID != NULL) fclose(fptrCustomerID);
+                                        if (fptrCustomer != NULL) fclose(fptrCustomer);
+                                        break;
+                                    }
+                    
+                                    // Load customer IDs from file
+                                    while (fscanf(fptrCustomerID, "%29s", customer[adminNum].password) != EOF) {
+                                        adminNum++;
+                                    }
+                                    fclose(fptrCustomerID);
+                    
+                                    getchar(); // Clear input buffer
+                                    printf("Enter customer ID to search: ");
+                                    fgets(storeCustomerPassword, sizeof(storeCustomerPassword), stdin);
+                                    storeCustomerPassword[strcspn(storeCustomerPassword, "\n")] = 0; // Remove newline character
+                    
+                                    int found = 0; // Flag to track if the customer is found
+                                    for (int i = 0; i < adminNum; i++) {
+                                        if (strcmp(customer[i].password, storeCustomerPassword) == 0) {
+                                            // Find corresponding name from the customer-signin.csv file [ CHAT-GPT-EDITED ]
+                    
+                                            while (fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomer) != NULL) {
+                                                if (strstr(storeCustomerName, storeCustomerPassword) != NULL) {
+                                                    printf("Customer found:\n");
+                                                    printf("Name: %s", storeCustomerName);
+                                                    printf("ID: %s\n", customer[i].password);
+                                                    found = 1;
+                                                    break;
+                                                }
+                                            }
+                                            break; // Stop searching once customer is found
+                                        }
+                                    }
+                    
+                                    if (!found) {
+                                        printf("Customer not found\n");
+                                    }
+                    
+                                    fclose(fptrCustomer);
+                                    break;
+                    
+                                case 3: // Update User
+                                    // Code to update an existing user profile
+                                fptrCustomer = fopen("customer-signin.csv", "r+");
+                                fptrCustomerID = fopen("customer-id.csv", "r+");
+                    
+                                if (fptrCustomer == NULL || fptrCustomerID == NULL) {
+                                    printf("Failed to open customer data files for updating\n");
+                                    return 1;
+                                }
+                    
+                                adminNum = 0;
+                                // Load customer IDs from file
+                                while (fscanf(fptrCustomerID, "%29s", customer[adminNum].password) != EOF) {
+                                    adminNum++;
+                                }
+                                rewind(fptrCustomerID); // Reset file pointer to the beginning
+                    
+                                char searchInput[30];
+                                printf("Enter customer ID to update profile: ");
+                                getchar(); // Clear input buffer
+                                fgets(searchInput, sizeof(searchInput), stdin);
+                    
+                                // Remove newline character from the input
+                                searchInput[strcspn(searchInput, "\n")] = '\0';
+                    
+                                found = 0; // Flag to track if the customer is found
+                                for (int i = 0; i < adminNum; i++) {
+                                    if (strcmp(customer[i].password, searchInput) == 0) {
+                                        found = 1;
+                    
+                                        while (fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomer) != NULL) {
+                                                if (strstr(storeCustomerName, storeCustomerPassword) != NULL) {
+                                                    printf("Customer found:\n");
+                                                    printf("Name: %s", storeCustomerName);
+                                                    printf("ID: %s\n", customer[i].password);
+                                                    found = 1;
+                                                    break;
+                                                }
+                                            }
+                    
+                                printf("Enter updated name: ");
+                                fgets(customer[i].name, sizeof(customer[i].name), stdin);
+                                printf("Enter updated ID: ");
+                                fgets(customer[i].password, sizeof(customer[i].password), stdin);
+                    
+                                    // Update customer profile in the file
+                                    fseek(fptrCustomer, 0, SEEK_SET); // Reset file pointer to the beginning
+                                for (int j = 0; j < adminNum; j++) {
+                                    fprintf(fptrCustomer, "%s,%s\n", customer[j].name, customer[j].password);
+                                    fprintf(fptrCustomerID, "%s\n", customer[j].password);
+                                    }
+                                    printf("Customer profile updated successfully\n");
+                                    break; // Stop searching once customer is found
+                                    }
+                                }
+                    
+                                if (!found) {
+                                    printf("Customer not found\n");
+                                }
+                    
+                                fclose(fptrCustomer);
+                                fclose(fptrCustomerID);
+                                break;
+                    
+                                case 4: // Delete User
+                                    // Code to delete a user profile
+                    
+                                fptrCustomer = fopen("customer-signin.csv", "r");
+                                fptrCustomerID = fopen("customer-id.csv", "r");
+                    
+                                if (fptrCustomer == NULL || fptrCustomerID == NULL) {
+                                    printf("Failed to open customer data files for reading\n");
+                                    if (fptrCustomer != NULL) fclose(fptrCustomer);
+                                    if (fptrCustomerID != NULL) fclose(fptrCustomerID);
+                                    break;
+                                }
+                    
+                                // Load customer IDs and names from file
+                                adminNum = 0;
+                                while (fscanf(fptrCustomerID, "%29s", customer[adminNum].password) != EOF &&
+                                    fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomer) != NULL) {
+                                // Remove newline characters from the name
+                                    storeCustomerName[strcspn(storeCustomerName, "\n")] = 0;
+                                    strcpy(customer[adminNum].name, storeCustomerName);
+                                    adminNum++;
+                                }
+                                fclose(fptrCustomerID);
+                                fclose(fptrCustomer);
+                    
+                    
+                                printf("Enter customer ID to delete profile: ");
+                                getchar(); // Clear input buffer
+                                fgets(searchInput, sizeof(searchInput), stdin);
+                                // Remove newline character from the input
+                                searchInput[strcspn(searchInput, "\n")] = '\0';
+                    
+                                found = 0; // Flag to track if the customer is found
+                                for (int i = 0; i < adminNum; i++) {
+                                    if (strcmp(customer[i].password, searchInput) == 0) {
+                                        printf("Customer found:\n");
+                                        printf("Name: %s\n", customer[i].name);
+                                        printf("ID: %s\n", customer[i].password);
+                                        printf("Deleting this customer profile...\n");
+                                // Shift the remaining customers to fill the gap
+                                    for (int j = i; j < adminNum - 1; j++) {
+                                        strcpy(customer[j].name, customer[j + 1].name);
+                                        strcpy(customer[j].password, customer[j + 1].password);
+                                    }
+                                adminNum--; // Decrement the number of customers
+                                found = 1;
+                                break;
+                            }
+                        }
+                                if (found) {
+                                    // Update the customer profile in the file
+                                    fptrCustomer = fopen("customer-signin.csv", "w");
+                                    fptrCustomerID = fopen("customer-id.csv", "w");
+                                if (fptrCustomer == NULL || fptrCustomerID == NULL) {
+                                    printf("Failed to open customer data files for updating\n");
+                                if (fptrCustomer != NULL) fclose(fptrCustomer);
+                                if (fptrCustomerID != NULL) fclose(fptrCustomerID);
+                                    break;
+                                }
+                    
+                                for (int j = 0; j < adminNum; j++) {
+                                    fprintf(fptrCustomer, "%s,%s\n", customer[j].name, customer[j].password);
+                                    fprintf(fptrCustomerID, "%s\n", customer[j].password);
+                                }
+                                fclose(fptrCustomer);
+                                fclose(fptrCustomerID);
+                                    printf("Customer profile deleted successfully\n");
+                                } else {
+                                    printf("Customer not found\n");
+                                }
+                                    break;
+                    
+                                case 5: // view all users
+                                    // Code to View all users
+                                    fptrCustomer = fopen("customer-signin.csv", "r");
+                                    if (fptrCustomer == NULL) {
+                                        printf("Failed to open file\n");
+                                        break;
+                                    }
+                                    while (fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomer) != NULL) {
+                                        printf("\n%s\n", storeCustomerName);
+                                    }
+                                    fclose(fptrCustomer);
+                                    break;
+                                default:
+                                    printf("Invalid choice\n");
+                                    break;
+                                }
+                                break;
+                            case 2:
+                                printf("1. Add Policy\n");
+                                printf("2. View Policies\n");
+                                printf("Enter your choice: ");
+                                userChoice = 0;
+                                scanf("%d", &userChoice);
+                                switch (userChoice) {
+                                    case 1: {
+                                    // Add Policy: Select a customer and assign a policy
+                                    char *policies[] = {
+                                        "Auto Insurance",
+                                        "Health Insurance",
+                                        "Property Insurance",
+                                        "Life Insurance",
+                                        "Commercial Insurance",
+                                        "Travel Insurance",
+                                        "Pet Insurance",
+                                        "Crop Insurance",
+                                        "Marine Insurance",
+                                        "Liability Insurance"
+                                        };
+                                    int numPolicies = sizeof(policies) / sizeof(policies[0]);
+                                    int policyChoice;
+                                    int customerIndex;
+                    
+                                    // Display list of customers with IDs
+                                    fptrCustomer = fopen("customer-signin.csv", "r");
+                                    if (fptrCustomer == NULL) {
+                                        printf("Failed to open customer file\n");
+                                        break;
+                                    }
+                                    // Chat-GPT
+                                    struct singin customers[500]; // Temporary storage for customers
+                                    int customerCount = 0;
+                    
+                                    while (fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomer) != NULL) {
+                                        char *token = strtok(storeCustomerName, ",");
+                                    if (token) {
+                                        strcpy(customers[customerCount].name, token);
+                                        token = strtok(NULL, ",");
+                                    if (token) {
+                                        strcpy(customers[customerCount].password, token);
+                                        customerCount++;
+                                        }
+                                    }
+                                }
+                    
+                                    fclose(fptrCustomer);
+                    
+                                for (int i = 0; i < customerCount; i++) {
+                                    printf("%d: %s\n", i, customers[i].name);
+                                }
+                    
+                                // Get customer choice
+                                printf("Enter customer number: ");
+                                scanf("%d", &customerIndex);
+                                if (customerIndex < 0 || customerIndex >= customerCount) {
+                                printf("Invalid customer number\n");
+                                break;
+                                }
+                    
+                                // Choose policy
+                                printf("Select a policy to assign:\n");
+                                for (int i = 0; i < numPolicies; i++) {
+                                    printf("%d: %s\n", i + 1, policies[i]);
+                                }
+                                printf("Enter policy number: ");
+                                scanf("%d", &policyChoice);
+                                if (policyChoice < 1 || policyChoice > numPolicies) {
+                                    printf("Invalid policy number\n");
+                                    break;
+                                }
+                    
+                                    // Assign policy to customer
+                                fptrCustomerPolicies = fopen("customer-policies.csv", "a");
+                                if (fptrCustomerPolicies != NULL) {
+                                    fprintf(fptrCustomerPolicies, "Name: %s, Policy: %s\n", customers[customerIndex].name, policies[policyChoice - 1]);
+                                    fclose(fptrCustomerPolicies);
+                                    printf("Policy assigned successfully\n");
+                                } else {
+                                    printf("Failed to open customer file for updating\n");
+                                }
+                                    break;
+                                }
+                                    break;
+                                case 2:
+                                    // View Policies: Implement functionality to display information about existing policies
+                                    fptrCustomerPolicies = fopen("customer-policies.csv", "r");
+                                    if (fptrCustomerPolicies == NULL) {
+                                        printf("Failed to open customer file\n");
+                                        break;
+                                    }
+                                    while (fgets(storeCustomerName, sizeof(storeCustomerName), fptrCustomerPolicies) != NULL) {
+                                        printf("%s", storeCustomerName);
+                                    }
+                                    fclose(fptrCustomerPolicies);
+                                    break;
+                    
+                                default:
+                                    printf("Invalid choice\n");
+                                    break;
+                            }
+                                break;
+                    
+                            default:
+                                printf("Invalid choice\n");
+                            }
+                    
+                            break;
+                    
+                        case 2:
+                    
+                            printf("You entered as Agent\n");
+                            printf("Sign in : 1\nLog in : 2\n");
+                            scanf("%d", &userChoice);
+                    
+                            switch (userChoice) {
+                            case 1:
+                                fptrAgent = fopen("agent-signin.csv", "a");
+                                fptrAgentID = fopen("agent-id.csv", "a");
+                                strcpy(Class, "Agent");
+                                getchar();
+                                // Agent inputs
+                                printf("Enter your name: ");
+                                fgets(agent[adminNum].name, sizeof(agent[adminNum].name), stdin);
+                                printf("Enter your ID: ");
+                                fgets(agent[adminNum].password, sizeof(agent[adminNum].password), stdin);
+                                // Remove newline characters
+                                agent[adminNum].name[strcspn(agent[adminNum].name, "\n")] = 0;
+                                agent[adminNum].password[strcspn(agent[adminNum].password, "\n")] = 0;
+                                fprintf(fptrAgent, "%s,%s\n", agent[adminNum].name, agent[adminNum].password);
+                                fprintf(fptrAgentID, "%s\n", agent[adminNum].password);
+                    
+                                fclose(fptrAgent);
+                                fclose(fptrAgentID);
+                                break;
+                            case 2:
+                                adminNum = 0;
+                                fptrAgentID = fopen("agent-id.csv", "r");
+                                if (fptrAgentID == NULL) {
+                                    printf("Failed to open agent-id.csv\n");
+                                    return 1;
+                                }
+                    
+                                // Read agent IDs from file
+                                while (fscanf(fptrAgentID, "%29s", agent[adminNum].password) != EOF) {
+                                    adminNum++;
+                                }
+                                fclose(fptrAgentID);
+                    
+                                getchar();
+                                printf("Enter The ID: ");
+                                fgets(storeAgentPassword, sizeof(storeAgentPassword), stdin);
+                                storeAgentPassword[strcspn(storeAgentPassword, "\n")] = 0; // Remove newline character
+                    
+                                int loggedIn = 0;
+                    
+                                for (int i = 0; i < adminNum; i++) {
+                                    if (strcmp(agent[i].password, storeAgentPassword) == 0) {
+                                        loggedIn = 1;
+                                        break;
+                                    }
+                                }
+                    
+                                if (loggedIn) {
+                                    printf("Successful login\n");
+                                } else {
+                                    printf("Failed login\n");
+                                    return 0;
+                                }
+                    
+                                break;
+                            default:
+                                printf("Invalid choice\n");
+                            }
+                    
+                            // Agent code
+                    
+                            break;
+                    
+                        case 3:
+                    
+                            printf("You entered as Customer\n");
+                            printf("Sign in : 1\nLog in : 2\n");
+                            scanf("%d", &userChoice);
+                    
+                            switch (userChoice) {
+                            case 1:
+                                fptrCustomer = fopen("customer-signin.csv", "a");
+                                fptrCustomerID = fopen("customer-id.csv", "a");
+                                strcpy(Class, "Customer");
+                                getchar();
+                                // Customer inputs
+                                printf("Enter your name: ");
+                                fgets(customer[adminNum].name, sizeof(customer[adminNum].name), stdin);
+                                printf("Enter your ID: ");
+                                fgets(customer[adminNum].password, sizeof(customer[adminNum].password), stdin);
+                                // Remove newline characters
+                                customer[adminNum].name[strcspn(customer[adminNum].name, "\n")] = 0;
+                                customer[adminNum].password[strcspn(customer[adminNum].password, "\n")] = 0;
+                                fprintf(fptrCustomer, "%s,%s\n", customer[adminNum].name, customer[adminNum].password);
+                                fprintf(fptrCustomerID, "%s\n", customer[adminNum].password);
+                    
+                                fclose(fptrCustomer);
+                                fclose(fptrCustomerID);
+                                break;
+                            case 2:
+                                adminNum = 0;
+                                fptrCustomerID = fopen("customer-id.csv", "r");
+                                if (fptrCustomerID == NULL) {
+                                    printf("Failed to open customer-id.csv\n");
+                                    return 1;
+                                }
+                    
+                                // Read customer IDs from file
+                                while (fscanf(fptrCustomerID, "%29s", customer[adminNum].password) != EOF) {
+                                    adminNum++;
+                                }
+                                fclose(fptrCustomerID);
+                    
+                                getchar();
+                                printf("Enter The ID: ");
+                                fgets(storeCustomerPassword, sizeof(storeCustomerPassword), stdin);
+                                storeCustomerPassword[strcspn(storeCustomerPassword, "\n")] = 0; // Remove newline character
+                    
+                                int loggedIn = 0;
+                    
+                                for (int i = 0; i < adminNum; i++) {
+                                    if (strcmp(customer[i].password, storeCustomerPassword) == 0) {
+                                        loggedIn = 1;
+                                        break;
+                                    }
+                                }
+                    
+                                if (loggedIn) {
+                                    printf("Successful login\n");
+                                } else {
+                                    printf("Failed login\n");
+                                    return 0;
+                                }
+                    
+                                break;
+                            default:
+                                printf("Invalid choice\n");
+                            }
+                    
+                            // Customer code
+                    
+                            break;
+                    
+                        default:
+                            printf("Invalid choice\n");
+                        }
+                    
+                        return 0;
+                    }
+                    
+            </pre>
+        </details>
+        </div>
+
 <p>bye....</p>
 </body>
 <script>
