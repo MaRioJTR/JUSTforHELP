@@ -107,7 +107,24 @@ body{
     .warning h2 {
         margin-top: 0;
     }
+    #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #0d126e; /* Set a background color */
+    color: #dab01b; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
 
+#backToTopBtn:hover {
+    background-color: #131a99; /* Darker background on hover */
+}
 </style>
 
 <head>
@@ -133,7 +150,7 @@ body{
     <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
 </div>
 
- 
+<button id="backToTopBtn" title="Go to top">UP</button>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const expandableTitles = document.querySelectorAll('.expandable-title');
@@ -153,6 +170,25 @@ body{
             document.getElementById("warning").style.display = "block";
         }
     };
+    // buttom to top
+let mybutton = document.getElementById("backToTopBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
   </script>
 </body>
 

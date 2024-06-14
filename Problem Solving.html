@@ -414,6 +414,25 @@ details p{
     .warning h2 {
         margin-top: 0;
     }    
+
+    #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #0d126e; /* Set a background color */
+    color: #dab01b; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #131a99; /* Darker background on hover */
+}
 </style>
 <head>
     <title>JUSTforHELP</title>
@@ -421,7 +440,7 @@ details p{
 <body>
   
 <nav>
-    <ul>
+  <ul>
     <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
       <li><a href="Calculu I.html">Calculus I</a></li>
       <li><a href="Academic Writing.html">Academic Writing</a></li>
@@ -430,9 +449,10 @@ details p{
      <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
       <li><a href="Discrete Structures.html">Discrete Structures</a></li>
     <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
-    </ul>
-    </nav>  
-    <div id="warning" class="warning" style="display: none;">
+  </ul>
+</nav>  
+
+  <div id="warning" class="warning" style="display: none;">
       <h2>This site is not optimized for mobile devices.</h2>
       <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
   </div>
@@ -1099,7 +1119,7 @@ details p{
     </div>
 </li> 
 </ul>
-
+<button id="backToTopBtn" title="Go to top">UP</button>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const expandableTitles = document.querySelectorAll('.expandable-title');
@@ -1219,6 +1239,25 @@ function checkAnswer(questionNumber) {
         }
     };
 
+// buttom to top
+let mybutton = document.getElementById("backToTopBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
