@@ -15,7 +15,7 @@
 <style>
 
 body{
-    background-color: black;
+    background-color: #0c0c0c;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -24,14 +24,19 @@ body{
     font-style: normal;  
 }
 
+*::selection{
+        background: white;
+        color:black;
+    }
+
 h1 , p ,details {
     color:white;
-    font-size: 2.3vw; 
+    font-size: 2.0vw; 
 }
 
 pre{
     color:white;
-    font-size: 1.5vw;  
+    font-size: 1.3vw;  
 }
 
 details pre{
@@ -55,11 +60,12 @@ details pre{
     padding: .6vw;
     margin: 1vw;
     margin-left: 3.5vw;
-    border: solid .1vw white;
-    color: white;
-    background-color: black;
-    font-size: 1.0vw;
+    border: solid .1vw #0c0c0c;
+    color: #0c0c0c;
+    background-color: white;
+    font-size: 1.5vw;
     cursor: pointer;  
+    font-family: "VT323", monospace;
 }
 
 .first-block{
@@ -94,6 +100,8 @@ details pre{
 <p>and remeber it's...</p>
 <p class="title">JUSTforHELP</p>
 
+<details>
+    <summary>Insurance Company Management System Project By C Language</summary>
 <div class="first-block">
 <pre>
     <strong>//--This Sector Will contain what we need in code--\\</strong>
@@ -2206,6 +2214,7 @@ details pre{
             </pre>
         </details>
         </div>
+    </details>
 
 <p>bye....</p>
 </body>
