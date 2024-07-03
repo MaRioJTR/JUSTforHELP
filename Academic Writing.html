@@ -40,67 +40,70 @@
   display: block;
 }
 
-body{
-        background-color: #060518;
-        color: #ebe9fa;
-        padding: 0px; 
-        margin: 0; 
-        font-family:Arial, Helvetica, sans-serif;
+html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    *::selection{
+    body {
+        background: linear-gradient(to bottom, #000000, #1a1a1a);
+        color: #eae9fc;
+        font-family: 'Fira Code', monospace;
+        display: flex;
+        flex-direction: column;
+    }
+
+    *::selection {
         background: white;
-        color:black;
+        color: black;
     }
 
-    nav ul{
+    .navimage {
+        max-height: 27vw;
+        padding: 0;
+        margin: 0;
+        width: 27vw;
+        /* Maintain aspect ratio */
+    }
+
+    nav ul {
         display: flex;
         justify-content: space-around;
-        background-color: #d22e96;
+        background-color: #080808;
         padding: 1.2vw;
         margin: 0;
         align-items: center;
+        height: 3vw;
     }
 
-    nav ul li{
-        list-style-type: none; 
+    nav ul li {
+        list-style-type: none;
     }
 
-    nav ul li a{
+    nav ul li a {
         text-decoration: none;
-        color: #ede9f9;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #fffefe;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 1.4vw;
         transition: color 0.3s ease-in-out;
     }
 
     nav ul li a:hover {
-    color: #ffcf20;
-    transition: color 0.3s ease-in-out;
+        padding: .5vw;
+        border-radius: 1.5vw;
+        background-color: #fffefe;
+        color: #080808;
+        transition: background-color 0.3s ease-in-out;
     }
 
-  .A1 {
-    font-size: 30px;
-    color: rgb(102, 59, 151);
-  }
 
   div .highlite {
     color: #ffcf20
   }
 
-  .A2 {
-    width: 50%;
-    /* Adjust the width as needed */
-    float: left;
-    /* Float the paragraph to the left */
-    padding: 20px;
-    /* Optional: Add padding for better readability */
-    box-sizing: border-box;
-    display: block;
-    font-size: 90px;
-    color: #0c116d;
-    font-family: fantasy;
-  }
+
   .warning {
         background-color: #ffcccc;
         text-align: center;
@@ -142,10 +145,9 @@ body{
       <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
       <li><a href="Calculu I.html">Calculus I</a></li>
       <li><a href="Academic Writing.html">Academic Writing</a></li>
+      <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
       <li><a href="Advanced Physics.html">Advanced Physics</a></li>
       <li><a href="Problem Solving.html">Problem Solving</a></li>
-      <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
-      <li><a href="Discrete Structures.html">Discrete Structures</a></li>
       <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
     </ul>
   </nav>

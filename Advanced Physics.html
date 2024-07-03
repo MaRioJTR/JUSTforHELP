@@ -40,97 +40,67 @@
   display: block;
 }
 
-body{
-        background-color: #04040b;
-        color: #edeff8;
-        padding: 0px; 
-        margin: 0; 
-        font-family:Arial, Helvetica, sans-serif;
+html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    *::selection{
+    body {
+        background: linear-gradient(to bottom, #000000, #1a1a1a);
+        color: #eae9fc;
+        font-family: 'Fira Code', monospace;
+        display: flex;
+        flex-direction: column;
+    }
+
+    *::selection {
         background: white;
-        color:black;
+        color: black;
     }
 
-    nav ul{
+    .navimage {
+        max-height: 27vw;
+        padding: 0;
+        margin: 0;
+        width: 27vw;
+        /* Maintain aspect ratio */
+    }
+
+    nav ul {
         display: flex;
         justify-content: space-around;
-        background-color: #375ff1;
+        background-color: #080808;
         padding: 1.2vw;
         margin: 0;
         align-items: center;
+        height: 3vw;
     }
 
-    nav ul li{
-        list-style-type: none; 
+    nav ul li {
+        list-style-type: none;
     }
 
-    nav ul li a{
+    nav ul li a {
         text-decoration: none;
-        color: #ede9f9;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #fffefe;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 1.4vw;
         transition: color 0.3s ease-in-out;
     }
 
     nav ul li a:hover {
-    color: #ffcf20;
-    transition: color 0.3s ease-in-out;
+        padding: .5vw;
+        border-radius: 1.5vw;
+        background-color: #fffefe;
+        color: #080808;
+        transition: background-color 0.3s ease-in-out;
     }
-
-  nav ul li a:hover {
-    color: #ffffff;
-  }
-
-  .A1 {
-    font-size: 30px;
-    color: rgb(102, 59, 151);
-  }
 
   div .highlite {
     color: #ffcf20
   }
-
-  .A2 {
-    width: 50%;
-    /* Adjust the width as needed */
-    float: left;
-    /* Float the paragraph to the left */
-    padding: 20px;
-    /* Optional: Add padding for better readability */
-    box-sizing: border-box;
-    display: block;
-    font-size: 90px;
-    color: #0c116d;
-    font-family: fantasy;
-  }
-
-  h1 .A0 {
-    color: rgb(102, 59, 151);
-    display: inline-block;
-  }
-
-  .moved-image {
-    width: 50%;
-    /* Adjust the width of the image column */
-  }
-
-  .A2 p {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-
-  .A3{
-    border: 3px solid #ffcf20;
-    max-width: 90vw;
-    margin: 3vw;
-    font-size: 2vw;
-    background-color: #142f8f;
-    border-radius: 25px;
-    padding: 13px;
-    text-align: center;
-    }
 
   /* Styles for screens smaller than 600px */
   @media (max-width: 600px) {
@@ -147,335 +117,7 @@ body{
     /* CSS rules for large screens */
   }
 
-  .A4 {
-    font-size: 30px;
-    margin-left: 700px;
-  }
-
-  .A5 {
-    margin-right: 1230px;
-  }
-  .title{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 25vh; 
-    color:red;
-  }
-  .with-arrow {
-    position: relative;
-    padding-left: 20px; /* Adjust as needed */
-}
-
-.with-arrow::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    border-top: 15px solid transparent; /* Adjust size as needed */
-    border-bottom: 15px solid transparent; /* Adjust size as needed */
-    border-left: 15px solid rgb(253, 0, 0); /* Adjust color and size as needed */
-    margin-left: 3px;
-    margin-right: 3px;
-}
-.identify-Thermo{
-  color:rgb(255, 72, 0);
-}
-.State-Variables{
-  display:flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-.State-Variables-Exp{
-  color: brown;
-}
-.bold{
-  color: red;
-}
-.T{
-  border: solid red ;
-  padding: 5px 10px 5px 10px;
-}
-.X{
-  border: solid rgb(0, 0, 0) ;
-  padding: 10px 20px 10px 20px;
-}
-.Notes{
-  display:flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-.Notes-Exp{
-  color: brown;
-}
-.Ared{
-  color: red;
-}
-.Bgreen{
-  color: green;
-}
-.Cblue{
-  color: blue;
-}
-.Zero-Law-Exp{
-  text-align: right;
-  color:brown;
-  margin: 0;
-}
-.Temp-title{
-  margin-top: 50px;
-  font-size: 50px;
-  color:#bb6a00;
-}
-.Volume-costant{
-  display:flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-.Volume-costant-exp{
-  color: brown;
-}
-.for-line{
-  display:flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-.for-line-exp{
-  color: brown;
-}
-.proof-alpha{
-  border: solid red;
-  padding-left: 10px;
-}
-.phase-change{
-  display: flex;
-  justify-content: center;
-}
-.phase-change-image{
-  width:500px;
-  height:100vh;
-}
-.arrow {
-  font-size: 16px; /* Adjust size as needed */
-}
-
-.arrow::after {
-  content: " "; /* Add space between arrow and text */
-}
-
-.arrow::before {
-  content: "\00a0"; /* Add space between arrow and text */
-}
-
-.explanation{
-  font-size: 30px;
-}
-
-.diagram {
-  display: flex;
-  align-items: center; /* Vertically center items */
-}
-
-.diagram-img {
-  flex: 0 0 auto; /* Let the image shrink and grow as necessary */
-  margin-right: 20px; /* Adjust spacing between image and content */
   
-}
-
-.diagram-exp {
-  flex: 1; /* Allow content to take up remaining space */
-}
-
-
-
-    .container-of-question {
-        max-width: 500px;
-        margin: 10px;
-        border-radius: 10px;
-        padding: 20px;
-
-    }
-
-    .question-block {
-        background-color: #8297e3;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        margin: 15px;
-        margin-top: 0;
-    }
-
-    .question-block h2 {
-        color: #edeff8;
-        margin-bottom: 20px;
-    }
-
-    .options {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-    }
-
-    .options label {
-        margin-bottom: 10px;
-    }
-
-    .options input[type="radio"] {
-        display: none;
-    }
-
-    .options label {
-        position: relative;
-        padding-left: 30px;
-        cursor: pointer;
-        color: #cdcfd8;
-    }
-
-    .options label:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 1px;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #666;
-        border-radius: 50%;
-    }
-
-    .options input[type="radio"]:checked + label:before {
-        background-color: #375ff1;
-        border-color: #375ff1;
-    }
-
-    .feedback {
-        margin-top: 20px;
-        font-weight: bold;
-        color: #04040b;
-    }
-
-    .true {
-        color: #5cb85c;
-        font-size: 30px;
-        animation: fade 2s linear;
-    }
-
-    .false {
-        color: #d9534f;
-        font-size: 31px;
-        animation: fade 2s linear;
-    }
-
-    @keyframes fade {
-        from { opacity: 1; }
-        to { opacity: 0; }
-    }
-
-    .explanation {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        display: none;
-        color: #04040b;
-    }
-
-    button {
-        background-color: #375ff1;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        transition: color 0.3s;
-        margin: 10px;
-    }
-    button:hover {
-        background-color: #486df3;
-        color:#000
-    }
-    
-    .comparison {
-        display: flex;
-        justify-content: center;
-    }
-    .comparison table {
-        border-collapse: collapse;
-        margin: 5px;
-    }
-    .comparison th, .comparison td {
-        border: 1px solid #edeff8;
-        padding: 8px;
-        text-align: center;
-    }
-    .comparison th {
-        background-color: #8297E3;
-        color:#04040b;
-    }
-    .comparison tr:nth-child(even) {
-        background-color: #8297E3;
-        color:#04040b;
-    }
-    .comparison tr:hover {
-        background-color: #8297E3;
-        color:#04040b;
-    }
-
-    .wave-characteristics{
-      display: flex;
-      justify-content: space-between;
-    }
-    .wave-characteristics-image{
-      width:1000px;
-      height:600px;
-    }
-
-    .light-spectrum{
-      display: flex;
-      justify-content: space-between;
-    }
-    .light-spectrum-img{
-      max-width: 900px;
-      max-height: 400px;
-    }
-
-    .reflection {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .warning {
-        background-color: #ffcccc;
-        text-align: center;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        color: #000000;
-    }
-    .warning h2 {
-        margin-top: 0;
-    }
-    #backToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #0d126e; /* Set a background color */
-    color: #dab01b; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-}
-
-#backToTopBtn:hover {
-    background-color: #131a99; /* Darker background on hover */
-}
 </style>
 
 <head>
@@ -489,10 +131,9 @@ body{
       <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
       <li><a href="Calculu I.html">Calculus I</a></li>
       <li><a href="Academic Writing.html">Academic Writing</a></li>
+      <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
       <li><a href="Advanced Physics.html">Advanced Physics</a></li>
       <li><a href="Problem Solving.html">Problem Solving</a></li>
-      <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
-      <li><a href="Discrete Structures.html">Discrete Structures</a></li>
       <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
     </ul>
   </nav>

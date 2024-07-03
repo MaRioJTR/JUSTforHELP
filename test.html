@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<Html lang="en">
+<meta charset="Utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="description"
+    content="Discover a wealth of resources and assistance at JUSTforHELP. Navigate through insightful content, tools, and support to tackle various challenges. Empower yourself with knowledge and guidance on diverse topics, all in one accessible platform.">
+<link rel="icon" href="assets/help-favicon.png" type="image/png">
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: linear-gradient(to bottom, #000000, #1a1a1a);
+        color: #eae9fc;
+        font-family: 'Fira Code', monospace;
+        display: flex;
+        flex-direction: column;
+    }
+
+    *::selection {
+        background: white;
+        color: black;
+    }
+
+    .navimage {
+        max-height: 27vw;
+        padding: 0;
+        margin: 0;
+        width: 27vw;
+        /* Maintain aspect ratio */
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        background-color: #080808;
+        padding: 1.2vw;
+        margin: 0;
+        align-items: center;
+        height: 3vw;
+    }
+
+    nav ul li {
+        list-style-type: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fffefe;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+        transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+        padding: .5vw;
+        border-radius: 1.5vw;
+        background-color: #fffefe;
+        color: #080808;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+        padding: 2vw;
+    }
+
+    .first-line {
+        animation: slideIn 2s ease-out;
+        max-width: 60vw;
+        max-height: 10vh;
+        margin: 0vh;
+        font-size: 1.8vw;
+        border-radius: 2vw;
+        padding: 0vw;
+    }
+
+
+
+    .first-line p a {
+        color: #ffcf20;
+    }
+
+    .highlite {
+        color: #ffcf20;
+    }
+
+    .animated-line {
+        animation: slideIn 1.5s ease-out forwards;
+        display: flex;
+        align-items: center;
+        border-radius: 2vw;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        margin-bottom: 4vh;
+        /* Set initial opacity to 0 */
+    }
+
+    .animated-line img {
+        height: 3vw;
+        /* Adjust height to match the line height of p */
+        margin-right: 0.5vw;
+    }
+
+    .animated-line:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .animated-line:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .animated-line:nth-child(3) {
+        animation-delay: .4s;
+    }
+
+    .animated-line:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    .animated-line:nth-child(5) {
+        animation-delay: 0.8s;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .warning {
+        background-color: #ad1f1f;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        color: #ffff;
+    }
+
+    .warning h2 {
+        margin-top: 0;
+    }
+
+    .A3 {
+        max-width: 30vw;
+        max-height: 60vh;
+        margin: 4vh;
+        margin-top: 15vh;
+        font-size: 1.5vw;
+        background-color: rgba(255, 255, 255, 0.103);
+        border-radius: .6vw;
+        padding: 1.5vw;
+        text-align: center;
+    }
+    .A3 img {
+        height: 5vw;
+        /* Adjust height to match the line height of p */
+        margin-right: 0.5vw; 
+    }
+</style>
+
+<head>
+    <title>JUSTforHELP</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i> Home</a></li>
+            <li><a href="Calculu I.html">Calculus I</a></li>
+            <li><a href="Academic Writing.html">Academic Writing</a></li>
+            <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
+            <li><a href="Advanced Physics.html">Advanced Physics</a></li>
+            <li><a href="Problem Solving.html">Problem Solving</a></li>
+            <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i> Gift</a></li>
+        </ul>
+    </nav>
+    <div id="warning" class="warning" style="display: none;">
+        <h2>This site is not optimized for mobile devices.</h2>
+        <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+    </div>
+    <div class="content-container">
+        <div class="first-line">
+            <div class="animated-line">
+                <img src="line-starter.png" alt="Logo">
+                <p>Whasup ! <span class="highlite"> AAST </span> Mates i hope you all good.</p>
+            </div>
+            <div class="animated-line">
+                <img src="line-starter.png" alt="Logo">
+                <p>The structure encompasses of courses scheduled for the semester 3</p>
+            </div>
+            <div class="animated-line">
+                <img src="line-starter.png" alt="Logo">
+                <p>trying to cover a significant portion of the curriculum...</p>
+            </div>
+            <div class="animated-line">
+                <img src="line-starter.png" alt="Logo">
+                <p>Also, Visit <a href="exam-jfr.html" target="_blank">ادي_بصة#</a> site; it's under
+                    construction</p>
+            </div>
+        </div>
+
+        <div class="A3">
+            <p>This is an individual's work and has no affiliation with the campus.</p>
+                <img src="line-starter.png" alt="Logo">
+                <p style = "color: #ffcf20;">So as you can see this website designed by your colleague <span>Mario</span>.</p>
+        </div>
+    </div>
+
+    <script>
+        // to warn mobile users.
+        window.onload = function () {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+
+            if (isMobile) {
+                document.getElementById("warning").style.display = "block";
+            }
+        };
+    </script>
+
+</body>
+
+</Html>

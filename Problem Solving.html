@@ -3,208 +3,204 @@
 <meta charset="Utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="icon" href="assets/help-favicon.png" type="image/png">
 <style>
-@import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);  
-          /*font-family: 'Scheherazade', serif;*/
+  @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
+  /*font-family: 'Scheherazade', serif;*/
 
 
 
-.expandable-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  .expandable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.expandable-item {
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
+  .expandable-item {
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
 
-.expandable-title {
-  padding: 10px;
-  background-color: #f3f3f3;
-  font-size: 30px;
-  font-family: sans-serif;
-}
+  .expandable-title {
+    padding: 10px;
+    background-color: #1a1a1a;
+    font-size: 30px;
+    font-family: sans-serif;
+  }
 
-.expandable-content {
-  padding: 10px;
-  display: none;
-  font-size: 30px;
-  font-family: sans-serif;
-  cursor: default;
-}
+  .expandable-content {
+    padding: 10px;
+    display: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    cursor: default;
+  }
 
-.expandable-item.expanded .expandable-content {
-  display: block;
-}
+  .expandable-item.expanded .expandable-content {
+    display: block;
+  }
 
-body{
-  background:no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: rgb(255, 255, 255);
-}
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-nav ul{
-        display: flex;
-        justify-content: space-around;
-        background-color: #0d126e;
-        border-radius: 25px;
-        padding: 1.2vw;
-        margin: 0;
-        align-items: center;
-    }
-
-    nav ul li{
-        list-style-type: none;
-        
-    }
-
-    nav ul li a{
-        text-decoration: none;
-        color: #ffcf20;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 1.4vw;
-        transition: color 0.3s ease-in-out;
-    }
-
-    nav ul li a:hover {
+  body {
+    background: #000000 ;
     color: #eae9fc;
-    transition: color 0.3s ease-in-out;
-    }
-    
-.A1{
-  font-size: 30px;
-  color: rgb(102, 59, 151);
-}
-div .highlite{
-  color : #ffcf20
-}
-.A2{
-  width: 50%; /* Adjust the width as needed */
-  float: left; /* Float the paragraph to the left */
-  padding: 20px; /* Optional: Add padding for better readability */
-  box-sizing: border-box;
- display: block;
- font-size: 90px;
- color: #0c116d;
- font-family:fantasy ;
-}
-h1 .A0 {
-  color: rgb(102, 59, 151);
-  display: inline-block;
-}
-.A2 p {
-  margin-bottom: 5px; 
-  margin-top: 5px;
-}
-
-.A3{
-    border: 5px solid #ffcf20;
-    max-width: 90vw;
-    margin: 3vw;
-    font-size: 2vw;
-    background-color: #0d126e;
-    color: white;
-    border-radius: 25px;
-    padding: 13px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-/* Styles for screens smaller than 600px */
-@media (max-width: 600px) {
-    /* Your CSS rules for small screens */
-}
-
-/* Styles for screens between 601px and 900px */
-@media (min-width: 601px) and (max-width: 900px) {
-    /* Your CSS rules for medium screens */
-}
-
-/* Styles for screens larger than 901px */
-@media (min-width: 901px) {
-    /* Your CSS rules for large screens */
-}
-@media (max-width: 900px) {
-  /* Adjustments for smaller screens */
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .input-container, .output-container {
-    width: 100%;
-  }
-  
-  .A4 {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.A4{
- font-size: 30px;
- margin-left: 700px;
-}
-.A5{
-  margin-right: 1230px;
-}
-.important{
-  display: flex;
-  justify-content: center;
-  font-size: 35px;
-  color:red;
-  font-weight: 10px;
-  padding:25px;
-  background-color: #eeeeee;
-  border-radius: 25px;
-  margin: 25px;
-}
-
-.first-line{
-  margin-left: 10px;
-  font-size: 30px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.second-line{
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  color: darkred;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-bottom: 20px;
-}
-.arabic{
-  text-align: end;
-  font-family: 'Scheherazade', serif;
-  font-size: 50px;
-}
-.title{
-  text-align: center;
-  color:red;
-}
-
-.container {
+    font-family: 'Fira Code', monospace;
     display: flex;
-    justify-content: center; /* Center the container horizontally */
+    flex-direction: column;
+    background-repeat: no-repeat;
+  }
+
+  *::selection {
+    background: white;
+    color: black;
+  }
+
+  .navimage {
+    max-height: 27vw;
+    padding: 0;
+    margin: 0;
+    width: 27vw;
+    /* Maintain aspect ratio */
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #080808;
+    padding: 1.2vw;
+    margin: 0;
+    align-items: center;
+    height: 3vw;
+  }
+
+  nav ul li {
+    list-style-type: none;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #fffefe;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+    transition: color 0.3s ease-in-out;
+  }
+
+  nav ul li a:hover {
+    padding: .5vw;
+    border-radius: 1.5vw;
+    background-color: #fffefe;
+    color: #080808;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  /* Styles for screens smaller than 600px */
+  @media (max-width: 600px) {
+    /* Your CSS rules for small screens */
+  }
+
+  /* Styles for screens between 601px and 900px */
+  @media (min-width: 601px) and (max-width: 900px) {
+    /* Your CSS rules for medium screens */
+  }
+
+  /* Styles for screens larger than 901px */
+  @media (min-width: 901px) {
+    /* Your CSS rules for large screens */
+  }
+
+  @media (max-width: 900px) {
+
+    /* Adjustments for smaller screens */
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-container,
+    .output-container {
+      width: 100%;
+    }
+
+    .A4 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .A4 {
+    font-size: 30px;
+    margin-left: 700px;
+  }
+
+  .A5 {
+    margin-right: 1230px;
+  }
+
+  .important {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    color: red;
+    font-weight: 10px;
+    padding: 25px;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    margin: 25px;
+  }
+
+  .first-line {
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .second-line {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: darkred;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 20px;
+  }
+
+  .arabic {
+    text-align: end;
+    font-family: 'Scheherazade', serif;
+    font-size: 50px;
+  }
+
+  .title {
+    text-align: center;
+    color: red;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    /* Center the container horizontally */
     align-items: flex-start;
     height: 50vh;
-    margin-bottom:30px ;
+    margin-bottom: 30px;
     position: relative;
-}
+  }
 
-.code-container {
-    width: 100%; /* Adjust the width as needed */
-    max-width: 900px; /* Optional: Set a maximum width for responsiveness */
+  .code-container {
+    width: 100%;
+    /* Adjust the width as needed */
+    max-width: 900px;
+    /* Optional: Set a maximum width for responsiveness */
     height: fit-content;
     border: solid #272822;
     max-height: 50vh;
@@ -213,281 +209,186 @@ h1 .A0 {
     margin: 0px;
     padding: 0px;
 
-}
+  }
 
-.input-container {
+  .input-container {
     width: auto;
-    margin: 0; /* Remove margin */
+    margin: 0;
+    /* Remove margin */
     padding: 0 10px 0px 10px;
     border: solid #272822;
-    border-radius:50px 0 0 50px;
+    border-radius: 50px 0 0 50px;
     height: 50vh;
     position: relative;
   }
 
-.output-container {
+  .output-container {
     width: auto;
-    margin: 0; /* Remove margin */
+    margin: 0;
+    /* Remove margin */
     padding: 0px 10px 0px 10px;
     border: solid #272822;
-    border-radius:0 50px 50px 0px;
+    border-radius: 0 50px 50px 0px;
     height: 50vh;
     position: relative;
     background-color: black;
     color: white;
-    
+
   }
 
   .code-container code.language-c {
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 16px;
+    /* Adjust the font size as needed */
     margin: 0px;
     padding: 0px;
     position: relative;
-}
+  }
 
-.code-container pre.language-c {
-    font-size: 14px; /* Adjust the font size as needed */
+  .code-container pre.language-c {
+    font-size: 14px;
+    /* Adjust the font size as needed */
     margin: 0px;
     padding: 0px;
     position: relative;
     height: 50vh;
-}
+  }
 
-.explain-short-if{
-  display:flex;
-}
+  .explain-short-if {
+    display: flex;
+  }
 
-details p{
-  margin: 5px;
-}
+  details p {
+    margin: 5px;
+  }
 
-.copy-button{
-  width: 100px;
-  height: 50px;
-  background-color: #ccc;
-  border-radius: 50px;
-  cursor: pointer;
-}
+  .copy-button {
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+  }
 
-.show-example-code{
-  background-color: #ebe9e9;
-  border-radius: 25px;
-  padding: 10px;
-}
+  .show-example-code {
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    padding: 10px;
+  }
 
-.function-link-def{
-  display: flex;
-  justify-content: space-between;
-}
+  .function-link-def {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.fuction-link{
-  display: flex;
-  justify-content: space-between;
-}
+  .fuction-link {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.fuction-link iframe{
-  margin: .5vw;
-  border: solid rgb(255, 0, 0);
-}
+  .fuction-link iframe {
+    margin: .5vw;
+    border: solid rgb(255, 0, 0);
+  }
 
-.fuction-link-address{
-  display: flex;
-  justify-content: space-around;
-}
+  .fuction-link-address {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.container-of-question {
-        max-width: 1000px;
-        margin: 10px;
-        border-radius: 10px;
-        padding: 20px;
 
-    }
 
-    .question-block {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        margin: 15px;
-        margin-top: 0;
-    }
+  #backToTopBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #eae9fc;
+    /* Set a background color */
+    color: #1a1a1a;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+  }
 
-    .question-block h2 {
-        color: #242323;
-        margin-bottom: 20px;
-    }
 
-    .options {
-        display: flex;
-        flex-direction: column;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    .options label {
-        margin-bottom: 10px;
-    }
-
-    .options input[type="radio"] {
-        display: none;
-    }
-
-    .options label {
-        position: relative;
-        padding-left: 30px;
-        cursor: pointer;
-        color: #525252;
-    }
-
-    .options label:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 1px;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #666;
-        border-radius: 50%;
-    }
-
-    .options input[type="radio"]:checked + label:before {
-        background-color: #ffcf20;
-        border-color: #ffcf20;
-    }
-
-    .feedback {
-        margin-top: 20px;
-        font-weight: bold;
-    }
-
-    .true {
-        color: #5cb85c;
-        font-size: 30px;
-        animation: fade 2s linear;
-    }
-
-    .false {
-        color: #d9534f;
-        font-size: 31px;
-        animation: fade 2s linear;
-    }
-
-    @keyframes fade {
-        from { opacity: 1; }
-        to { opacity: 0; }
-    }
-
-    .explanation {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        display: none;
-    }
-
-    button {
-        background-color: #ffcf20;
-        color: #000000;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        transition: color 0.3s;
-        margin: 10px;
-        font-size: 25px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    button:hover {
-        background-color: #dab01b;
-        color:#ffffff
-    }
-
-    .warning {
-        background-color: #ffcccc;
-        text-align: center;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        color: #000000;
-    }
-    .warning h2 {
-        margin-top: 0;
-    }    
-
-    #backToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #0d126e; /* Set a background color */
-    color: #dab01b; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-}
-
-#backToTopBtn:hover {
-    background-color: #131a99; /* Darker background on hover */
-}
 </style>
+
 <head>
-    <title>JUSTforHELP</title>
+  <title>JUSTforHELP</title>
 </head>
+
 <body>
-  
-<nav>
-  <ul>
-    <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
+
+  <nav>
+    <ul>
+      <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
       <li><a href="Calculu I.html">Calculus I</a></li>
       <li><a href="Academic Writing.html">Academic Writing</a></li>
+      <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
       <li><a href="Advanced Physics.html">Advanced Physics</a></li>
       <li><a href="Problem Solving.html">Problem Solving</a></li>
-     <li><a href="Enterpreneurship S.html">Enterpreneurship S</a></li>
-      <li><a href="Discrete Structures.html">Discrete Structures</a></li>
-    <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
-  </ul>
-</nav>  
+      <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
+    </ul>
+  </nav>
 
   <div id="warning" class="warning" style="display: none;">
-      <h2>This site is not optimized for mobile devices.</h2>
-      <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+    <h2>This site is not optimized for mobile devices.</h2>
+    <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
   </div>
 
   <ul class="expandable-list">
     <li class="expandable-item">
-      <div class="expandable-title">Problem Solving (C language)</div>
-      <div class="expandable-content">  
+      <div class="expandable-title">Problem Solving (C language) NOT IMPORTANT </div>
+      <div class="expandable-content">
 
-    <div class="first-line"><p><a class="first-link" href="https://youtube.com/@yrmohamed1?si=-RMHhTbvdcxR7xxL">Dr.Yasser Dahab</a> Channel on youtube <i style="color:red;" class="fa-brands fa-youtube"></i></p></div>
-    <div class="first-line"><p><a class="first-link" href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Eng.Yasser Eltaher</a> important resource <i style="color:gold;" class="fa-solid fa-star"></i></p></div>
-    <div class="second-line"><strong>Note that this content isn't in order of problem solving course order</strong></div>
-    <ul class="expandable-list">
-      <li class="expandable-item">
-        <div class="expandable-title">The Pointers +more</div>
-        <div class="expandable-content">
-          <h1 class="title">Pointers</h1>
-          <p>A <strong>pointer</strong> is a variable that stores <strong>the memory address</strong> of another variable as its value.
-            A pointer variable points to a data type <span style="color:#bd0404">(like int)</span> of the same type, and is created with the<span style="color:#bd0404">( * )</span>operator.
-            The address of the variable you are working with is assigned to the pointer </p>
-          <h3 class="arabic">البوينتر بيشاور على عنوان الفاريبل</h3>
+        <div class="first-line">
+          <p><a class="first-link" href="https://youtube.com/@yrmohamed1?si=-RMHhTbvdcxR7xxL">Dr.Yasser Dahab</a>
+            Channel on youtube <i style="color:red;" class="fa-brands fa-youtube"></i></p>
+        </div>
+        <div class="first-line">
+          <p><a class="first-link"
+              href="https://yassereltaher.notion.site/Problem-Solving-and-Programming-a7eda002cc60490e9b1fd47c98012f6f">Eng.Yasser
+              Eltaher</a> important resource <i style="color:gold;" class="fa-solid fa-star"></i></p>
+        </div>
+        <div class="second-line"><strong>Note that this content isn't in order of problem solving course order</strong>
+        </div>
+        <ul class="expandable-list">
+          <li class="expandable-item">
+            <div class="expandable-title">The Pointers +more</div>
+            <div class="expandable-content">
+              <h1 class="title">Pointers</h1>
+              <p>A <strong>pointer</strong> is a variable that stores <strong>the memory address</strong> of another
+                variable as its value.
+                A pointer variable points to a data type <span style="color:#bd0404">(like int)</span> of the same type,
+                and is created with the<span style="color:#bd0404">( * )</span>operator.
+                The address of the variable you are working with is assigned to the pointer </p>
+              <h3 class="arabic">البوينتر بيشاور على عنوان الفاريبل</h3>
 
-          <div class="show-example-code">
-          <h1>For Example</h1>
+              <div class="show-example-code">
+                <h1>For Example</h1>
 
-          <div class="container">
-            <div class="input-container">
-            <h2>Input</h2>
-            <p style="color:gray;">non_input</p>
-            <button class="copy-button">Copy</button>       
-            </div>
-            <div class="code-container">
-            <pre>
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
             <code class="language-c">
             #include &lt;stdio.h&gt;  
             int main() {
@@ -499,33 +400,33 @@ details p{
             }
             </code>
             </pre>
-            </div>
-            <div class="output-container">
-            <h2>Output</h2>
-            <p>43
-              0x7ffe5367e044
-            </p>            
-            </div>
-            </div>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>43
+                      0x7ffe5367e044
+                    </p>
+                  </div>
+                </div>
 
-            <h3 class="arabic"> في الاول عرضلك القيمة المتغير عادي اللي هي 43</h3>
-            <h3 class="arabic"> 0x7ffe5367e044 انما هنا عرضلك عنوان المتفير نفسه اللي هو </h3>
-          </div>
+                <h3 class="arabic"> في الاول عرضلك القيمة المتغير عادي اللي هي 43</h3>
+                <h3 class="arabic"> 0x7ffe5367e044 انما هنا عرضلك عنوان المتفير نفسه اللي هو </h3>
+              </div>
 
-          <h1 class="arabic" style="color: brown;">وعندك كمان طريقة مختلفة تعرض  بيها البوينتر</h1>
+              <h1 class="arabic" style="color: brown;">وعندك كمان طريقة مختلفة تعرض بيها البوينتر</h1>
 
-          <div class="show-example-code">
+              <div class="show-example-code">
 
-            <h1>For Example</h1>
-          
-          <div class="container">
-            <div class="input-container">
-            <h2>Input</h2>
-            <p style="color:gray;">non_input</p>
-            <button class="copy-button">Copy</button>       
-            </div>
-            <div class="code-container">
-            <pre>
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
             <code class="language-c">
             #include &lt;stdio.h&gt;  
             int main() {
@@ -542,33 +443,34 @@ details p{
             }
             </code>
             </pre>
-            </div>
-            <div class="output-container">
-            <h2>Output</h2>
-            <p>43</p> 
-            <p>0x7ffe5367e044</p> 
-            <p>0x7ffe5367e044</p>      
-            </div>
-            </div>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>43</p>
+                    <p>0x7ffe5367e044</p>
+                    <p>0x7ffe5367e044</p>
+                  </div>
+                </div>
 
-            <h1 class="arabic">عشان يعرضلك العنوان %p ممكن تستخدم & قبل اسم الفاريبل بس اهم حاجة ان الادينتيفاير يكون </h1>
-          
-          </div>
+                <h1 class="arabic">عشان يعرضلك العنوان %p ممكن تستخدم & قبل اسم الفاريبل بس اهم حاجة ان الادينتيفاير
+                  يكون </h1>
 
-          <h1 class="arabic" style="color: brown;">و هنا دا كدا الاربع حالات اللي انت محتاج تعرفهم في بوينتر</h1>
-
-          <div class="show-example-code">
-
-            <h1>For Example</h1>
-          
-            <div class="container">
-              <div class="input-container">
-              <h2>Input</h2>
-              <p style="color:gray;">non_input</p>
-              <button class="copy-button">Copy</button>       
               </div>
-              <div class="code-container">
-              <pre>
+
+              <h1 class="arabic" style="color: brown;">و هنا دا كدا الاربع حالات اللي انت محتاج تعرفهم في بوينتر</h1>
+
+              <div class="show-example-code">
+
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
               <code class="language-c">
               #include &lt;stdio.h&gt;  
               int main() {
@@ -588,34 +490,35 @@ details p{
               }
               </code>
               </pre>
-              </div>
-              <div class="output-container">
-              <h2>Output</h2>
-              <p>46</p> 
-              <p>46</p> 
-              <p>0000008B9991FCB4</p> 
-              <p>0000008B9991FCB4</p>      
-              </div>
-              </div>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>46</p>
+                    <p>46</p>
+                    <p>0000008B9991FCB4</p>
+                    <p>0000008B9991FCB4</p>
+                  </div>
+                </div>
 
-            </div>
+              </div>
               <h1 class="arabic">و كدا انت عرفت ازاي تمنشن فاريبل بالبوينتر وازاي تمنشن بوينتر بفاريبل </h1>
 
-          <h1 class="title">Arrays with Pointer</h1>
-          <h2 class="arabic">احنا قلنا ان البوينتر بيمنشن عنوان المتغير . طيب ما هو كمان ممكن نستخدمه عشان نعرف عنوان كل متغير داخل المصفوفة  </h2>
+              <h1 class="title">Arrays with Pointer</h1>
+              <h2 class="arabic">احنا قلنا ان البوينتر بيمنشن عنوان المتغير . طيب ما هو كمان ممكن نستخدمه عشان نعرف
+                عنوان كل متغير داخل المصفوفة </h2>
 
-          <div class="show-example-code">
+              <div class="show-example-code">
 
-            <h1>For Example</h1>
-          
-            <div class="container">
-              <div class="input-container">
-              <h2>Input</h2>
-              <p style="color:gray;">non_input</p>
-              <button class="copy-button">Copy</button>       
-              </div>
-              <div class="code-container">
-              <pre>
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
               <code class="language-c">
               #include &lt;stdio.h&gt;  
               int main() {
@@ -632,37 +535,38 @@ details p{
               }
               </code>
               </pre>
-              </div>
-              <div class="output-container" style="font-size: 18px;">
-              <h2>Output</h2>
-              <p>25</p> 
-              <p>0x7fff77aafa40</p> 
-              <p>50</p> 
-              <p>0x7fff77aafa44</p>
-              <p>75</p> 
-              <p>0x7fff77aafa48</p>
-              <p>100</p>
-              <p>0x7fff77aafa4c</p>
-              </div>
-              </div>
-              <h2 class="arabic">انت عملت مصفوفة دخلتها في لوب هتعدي علي كل عنصر في المصفوفة تجيبلك عنوانه و قيمته</h2>
+                  </div>
+                  <div class="output-container" style="font-size: 18px;">
+                    <h2>Output</h2>
+                    <p>25</p>
+                    <p>0x7fff77aafa40</p>
+                    <p>50</p>
+                    <p>0x7fff77aafa44</p>
+                    <p>75</p>
+                    <p>0x7fff77aafa48</p>
+                    <p>100</p>
+                    <p>0x7fff77aafa4c</p>
+                  </div>
+                </div>
+                <h2 class="arabic">انت عملت مصفوفة دخلتها في لوب هتعدي علي كل عنصر في المصفوفة تجيبلك عنوانه و قيمته
+                </h2>
               </div>
 
               <h1 class="title">Some additional NOTES</h1>
               <h2>To get size of array or any element , by using " sizeof() ".</h2>
 
-            <div class="show-example-code">
+              <div class="show-example-code">
 
-            <h1>For Example</h1>
-          
-            <div class="container">
-              <div class="input-container">
-              <h2>Input</h2>
-              <p style="color:gray;">non_input</p>
-              <button class="copy-button">Copy</button>       
-              </div>
-              <div class="code-container">
-              <pre>
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
               <code class="language-c">
               #include &lt;stdio.h&gt;  
               int main() {
@@ -683,23 +587,24 @@ details p{
               }
               </code>
               </pre>
-              </div>
-              <div class="output-container">
-              <h2>Output</h2>
-              <p>4</p> 
-              <p>16</p> 
-              <p>4</p> 
-              </div>
-              </div>
-              <h4>size by bytes</h4>
-              <p>char = 1</p>
-              <p>short = 2</p>
-              <p>int = 4</p>
-              <p>float = 4</p>
-              <p>long = 4</p>
-              <p>double = 8</p>
-              <p>long long = 8</p>
-              <p>Pointer : The size of a pointer depends on the architecture. It's typically 4 bytes on 32-bit systems and 8 bytes on 64-bit systems.</p>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>4</p>
+                    <p>16</p>
+                    <p>4</p>
+                  </div>
+                </div>
+                <h4>size by bytes</h4>
+                <p>char = 1</p>
+                <p>short = 2</p>
+                <p>int = 4</p>
+                <p>float = 4</p>
+                <p>long = 4</p>
+                <p>double = 8</p>
+                <p>long long = 8</p>
+                <p>Pointer : The size of a pointer depends on the architecture. It's typically 4 bytes on 32-bit systems
+                  and 8 bytes on 64-bit systems.</p>
               </div>
 
               <h2>The memory address of the first element is the same as the name of the array</h2>
@@ -707,15 +612,15 @@ details p{
               <div class="show-example-code">
 
                 <h1>For Example</h1>
-              
+
                 <div class="container">
                   <div class="input-container">
-                  <h2>Input</h2>
-                  <p style="color:gray;">non_input</p>
-                  <button class="copy-button">Copy</button>       
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
                   </div>
                   <div class="code-container">
-                  <pre>
+                    <pre>
                   <code class="language-c">
                   #include &lt;stdio.h&gt;  
                   int main() {
@@ -734,29 +639,29 @@ details p{
                   </pre>
                   </div>
                   <div class="output-container">
-                  <h2>Output</h2>
-                  <p>0x7ffe70f9d8f0</p> 
-                  <p>0x7ffe70f9d8f0</p> 
+                    <h2>Output</h2>
+                    <p>0x7ffe70f9d8f0</p>
+                    <p>0x7ffe70f9d8f0</p>
                   </div>
-                  </div> 
-                  </div>
+                </div>
+              </div>
 
-        </div>
-      </li>
-      <li class="expandable-item">
-      <div class="expandable-title">Sec 1</div>
-      <div class="expandable-content">
-      <h1 class="title">Short "IF"</h1>
-      <h2>Short If : is exactly IF condition in <span style="color:green">EXCEL</span></h2>
+            </div>
+          </li>
+          <li class="expandable-item">
+            <div class="expandable-title">Sec 1</div>
+            <div class="expandable-content">
+              <h1 class="title">Short "IF"</h1>
+              <h2>Short If : is exactly IF condition in <span style="color:green">EXCEL</span></h2>
 
-    <div class="container">
-    <div class="input-container">
-    <h2>Input</h2>
-    <p style="color:gray;">Default input= 10</p>
-    <button class="copy-button">Copy</button>       
-    </div>
-    <div class="code-container">
-    <pre>
+              <div class="container">
+                <div class="input-container">
+                  <h2>Input</h2>
+                  <p style="color:gray;">Default input= 10</p>
+                  <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-container">
+                  <pre>
     <code class="language-c">
     #include &lt;stdio.h&gt;  
     int main() {
@@ -766,46 +671,56 @@ details p{
     }
     </code>
     </pre>
-    </div>
-    <div class="output-container">
-    <h2>Output</h2>
-    <p>positive.</p>            
-    </div>
-    </div>
-    
-    <h2><strong>Explain >></strong></h2>
-    <div class="explain-short-if"><ruby>( x > 0 )___<rp>(</rp><rt style="color:purple">condition  </rt><rp>)</rp></ruby>
-    <ruby>printf("positive.\n")___<rp>(</rp><rt style="color:rgb(5, 197, 5)">if condition is TRUE  </rt><rp>)</rp></ruby>
-    <ruby>printf("negative.\n")___<rp>(</rp><rt style="color:rgb(173, 4, 4)">if condition is FALSE  </rt><rp>)</rp></ruby>
-    </div> 
-    <h1 class="title">Switch Case</h1>
-    <h3>A switch statement allows programmers to execute different blocks of code based on the value of a single variable or expression.</h3>
-    
-    <details>
-      <summary><strong>How it looks like</strong></summary>
-      <p>switch(expression)</p>
-      <p>{</p>
-      <p>case value1: statement_1;</p>
-      <p>break;</p>
-      <p>case value2: statement_2;</p>
-      <p>break;</p>
-      <p>.</p>
-      <p>.</p>
-      <p>.</p>
-      <p>case value_n: statement_n;</p>
-      <p>break;</p>
-      <p>default: default_statement;</p>
-      <p>}</p>
-    </details>
-    <h3><strong>Example</strong></h3>
-    <div class="container">
-      <div class="input-container">
-      <h2>Input</h2>
-      <p>2</p>   
-      <button class="copy-button">Copy</button>    
-      </div>
-      <div class="code-container">
-      <pre>
+                </div>
+                <div class="output-container">
+                  <h2>Output</h2>
+                  <p>positive.</p>
+                </div>
+              </div>
+
+              <h2><strong>Explain >></strong></h2>
+              <div class="explain-short-if"><ruby>( x > 0 )___<rp>(</rp>
+                  <rt style="color:purple">condition </rt>
+                  <rp>)</rp>
+                </ruby>
+                <ruby>printf("positive.\n")___<rp>(</rp>
+                  <rt style="color:rgb(5, 197, 5)">if condition is TRUE </rt>
+                  <rp>)</rp>
+                </ruby>
+                <ruby>printf("negative.\n")___<rp>(</rp>
+                  <rt style="color:rgb(173, 4, 4)">if condition is FALSE </rt>
+                  <rp>)</rp>
+                </ruby>
+              </div>
+              <h1 class="title">Switch Case</h1>
+              <h3>A switch statement allows programmers to execute different blocks of code based on the value of a
+                single variable or expression.</h3>
+
+              <details>
+                <summary><strong>How it looks like</strong></summary>
+                <p>switch(expression)</p>
+                <p>{</p>
+                <p>case value1: statement_1;</p>
+                <p>break;</p>
+                <p>case value2: statement_2;</p>
+                <p>break;</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>case value_n: statement_n;</p>
+                <p>break;</p>
+                <p>default: default_statement;</p>
+                <p>}</p>
+              </details>
+              <h3><strong>Example</strong></h3>
+              <div class="container">
+                <div class="input-container">
+                  <h2>Input</h2>
+                  <p>2</p>
+                  <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-container">
+                  <pre>
       <code class="language-c">
       #include &lt;stdio.h&gt;  
       int main() {
@@ -830,23 +745,23 @@ details p{
       }
       </code>
       </pre>
-      </div>
-      <div class="output-container">
-      <h2>Output</h2>
-      <p>You entered 2.</p>            
-      </div>
-      </div>
-      <h1 class="title">Listed For</h1>
-      <h3>loop inside loop</h3>
-      <h3><strong>Example</strong></h3>
-      <div class="container">
-        <div class="input-container">
-        <h2>Input</h2>
-        <p style="color:gray;">"loop"</p>   
-        <button class="copy-button">Copy</button>    
-        </div>
-        <div class="code-container">
-        <pre>
+                </div>
+                <div class="output-container">
+                  <h2>Output</h2>
+                  <p>You entered 2.</p>
+                </div>
+              </div>
+              <h1 class="title">Listed For</h1>
+              <h3>loop inside loop</h3>
+              <h3><strong>Example</strong></h3>
+              <div class="container">
+                <div class="input-container">
+                  <h2>Input</h2>
+                  <p style="color:gray;">"loop"</p>
+                  <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-container">
+                  <pre>
         <code class="language-c">
         #include &lt;stdio.h&gt;  
         int main() {
@@ -861,37 +776,41 @@ details p{
         }
         </code>
         </pre>
-        </div>
-        <div class="output-container">
-        <h2>Output</h2>
-        <p>11232123</p>            
-        </div>
-        </div>
-        <details>
-          <summary><strong>More Details</strong></summary>
-          the first loop execute for one time and it turn to the another loop to execute it completly then tern back to first one if condition still work it prints the number then turn to internal loop and execute it . until the extrnal-loop condition expires.
-        </details>
-  </div>
-  <li class="expandable-item">
-    <div class="expandable-title">Structures</div>
-    <div class="expandable-content">
-      <h1 class="title">Structures</h1>
-      <h2>Structures (also called structs) are a way to group several related variables into one place. 
-        Each variable in the structure is known as a member of the structure.</h2>
-      <h3><span style="color:red;">Unlike an array</span>, a structure can contain many different data types (<span style="color:#2b6ec6">int</span>, <span style="color:#2b6ec6">float</span>, <span style="color:#2b6ec6">char</span>, etc.).</h3>
-    
-      <div class="show-example-code">
+                </div>
+                <div class="output-container">
+                  <h2>Output</h2>
+                  <p>11232123</p>
+                </div>
+              </div>
+              <details>
+                <summary><strong>More Details</strong></summary>
+                the first loop execute for one time and it turn to the another loop to execute it completly then tern
+                back to first one if condition still work it prints the number then turn to internal loop and execute it
+                . until the extrnal-loop condition expires.
+              </details>
+            </div>
+          <li class="expandable-item">
+            <div class="expandable-title">Structures</div>
+            <div class="expandable-content">
+              <h1 class="title">Structures</h1>
+              <h2>Structures (also called structs) are a way to group several related variables into one place.
+                Each variable in the structure is known as a member of the structure.</h2>
+              <h3><span style="color:red;">Unlike an array</span>, a structure can contain many different data types
+                (<span style="color:#2b6ec6">int</span>, <span style="color:#2b6ec6">float</span>, <span
+                  style="color:#2b6ec6">char</span>, etc.).</h3>
 
-        <h1>To Creat Structure</h1>
-      
-        <div class="container">
-          <div class="input-container">
-          <h2>Input</h2>
-          <p style="color:gray;">non_input</p>
-          <button class="copy-button">Copy</button>       
-          </div>
-          <div class="code-container">
-          <pre>
+              <div class="show-example-code">
+
+                <h1>To Creat Structure</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
           <code class="language-c">
           #include &lt;stdio.h&gt; 
 
@@ -919,30 +838,30 @@ details p{
           }
           </code>
           </pre>
-          </div>
-          <div class="output-container">
-          <h2>Output</h2>
-          <p>My Number: 1</p> 
-          <p>My letter: M</p>      
-          </div>
-          </div>
-          <h2 class="arabic">اقرأ\ي الكومنت اللي في الكود هيشرحلك كل خطوة</h2>
-          </div>
-
-          <h2>You also can create multiple structure variables with different values.</h2>
-
-          <div class="show-example-code">
-
-            <h1>For Example</h1>
-          
-            <div class="container">
-              <div class="input-container">
-              <h2>Input</h2>
-              <p style="color:gray;">non_input</p>
-              <button class="copy-button">Copy</button>       
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>My Number: 1</p>
+                    <p>My letter: M</p>
+                  </div>
+                </div>
+                <h2 class="arabic">اقرأ\ي الكومنت اللي في الكود هيشرحلك كل خطوة</h2>
               </div>
-              <div class="code-container">
-              <pre>
+
+              <h2>You also can create multiple structure variables with different values.</h2>
+
+              <div class="show-example-code">
+
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
               <code class="language-c">
               #include &lt;stdio.h&gt; 
     
@@ -974,43 +893,49 @@ details p{
             }
               </code>
               </pre>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>My Number: 1</p>
+                    <p>My letter: M</p>
+                    <p>My Number: 2</p>
+                    <p>My letter: N</p>
+                  </div>
+                </div>
+                <h2 class="arabic">وبكدا دا هيسهل عليك بدل ما تعمل فاريبل جديد وكل اما تعوز تزود فاريبل تقعد تعرف واحد
+                  واحد ودا هياخد معاك مساحة من الميموري و دا بيتقل من البرنامج فا الاستركشر بتساعدك تتجنب المشاكل دي
+                </h2>
               </div>
-              <div class="output-container">
-              <h2>Output</h2>
-              <p>My Number: 1</p> 
-              <p>My letter: M</p>
-              <p>My Number: 2</p> 
-              <p>My letter: N</p>       
-              </div>
-              </div>
-              <h2 class="arabic">وبكدا دا هيسهل عليك بدل ما تعمل فاريبل جديد وكل اما تعوز تزود فاريبل تقعد تعرف واحد واحد ودا هياخد معاك مساحة من الميموري و دا بيتقل من البرنامج فا الاستركشر بتساعدك تتجنب المشاكل دي</h2>
-              </div>
- 
+
               <h1 class="title">Additional Notes</h1>
-              
-              <h2>we all know i you want to add text you will declare it as an array of characters and it call string "%s"</h2>
+
+              <h2>we all know i you want to add text you will declare it as an array of characters and it call string
+                "%s"</h2>
               <h2>but in structures seem different</h2>
               <div class="show-example-code" style="margin-bottom: 10px;">
-              <p>if u create member and declare it : <span style="color:#2b6ec6">char</span> MyString[<span style="color:red">30</span>]</p>
-              <p>and after creating s1 structure variable </p>
-              <p>you will assign it like that : s1.myString = "I love pizza"; and it unfortunately wrong -- <span style="color:gray">error</span></p>
-              <p>the correct way to assign string by using structure is by using : <strong>strcpy</strong> .</p>
-              <p>it will be : strcpy(s1.myString, "Some text"); <span style="color:green">launched successfully</span></p>
-              <p>and we use <strong>#include string.h</strong> to include the string.h library for strcpy()</p>
+                <p>if u create member and declare it : <span style="color:#2b6ec6">char</span> MyString[<span
+                    style="color:red">30</span>]</p>
+                <p>and after creating s1 structure variable </p>
+                <p>you will assign it like that : s1.myString = "I love pizza"; and it unfortunately wrong -- <span
+                    style="color:gray">error</span></p>
+                <p>the correct way to assign string by using structure is by using : <strong>strcpy</strong> .</p>
+                <p>it will be : strcpy(s1.myString, "Some text"); <span style="color:green">launched successfully</span>
+                </p>
+                <p>and we use <strong>#include string.h</strong> to include the string.h library for strcpy()</p>
               </div>
 
               <div class="show-example-code">
 
                 <h1>For Example</h1>
-              
+
                 <div class="container">
                   <div class="input-container">
-                  <h2>Input</h2>
-                  <p style="color:gray;">non_input</p>
-                  <button class="copy-button">Copy</button>       
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
                   </div>
                   <div class="code-container">
-                  <pre>
+                    <pre>
                   <code class="language-c">
                   #include &lt;stdio.h&gt; 
                   #include &lt;string.h&gt;     // Include the string.h library for strcpy()
@@ -1042,27 +967,27 @@ details p{
                   </pre>
                   </div>
                   <div class="output-container">
-                  <h2>Output</h2>
-                  <p>My Number: 1</p> 
-                  <p>My letter: M</p> 
-                  <p>My string: it's me MArIooo</p>     
+                    <h2>Output</h2>
+                    <p>My Number: 1</p>
+                    <p>My letter: M</p>
+                    <p>My string: it's me MArIooo</p>
                   </div>
-                  </div>
-                  </div>
+                </div>
+              </div>
 
-                  <h2>You can make it simple for yourself</h2>
-                  <div class="show-example-code">
+              <h2>You can make it simple for yourself</h2>
+              <div class="show-example-code">
 
-                    <h1>For Example</h1>
-                  
-                    <div class="container">
-                      <div class="input-container">
-                      <h2>Input</h2>
-                      <p style="color:gray;">non_input</p>
-                      <button class="copy-button">Copy</button>       
-                      </div>
-                      <div class="code-container">
-                      <pre>
+                <h1>For Example</h1>
+
+                <div class="container">
+                  <div class="input-container">
+                    <h2>Input</h2>
+                    <p style="color:gray;">non_input</p>
+                    <button class="copy-button">Copy</button>
+                  </div>
+                  <div class="code-container">
+                    <pre>
                       <code class="language-c">
                       #include &lt;stdio.h&gt; 
                       #include &lt;string.h&gt;     // Include the string.h library for strcpy()
@@ -1085,184 +1010,197 @@ details p{
                       }
                       </code>
                       </pre>
-                      </div>
-                      <div class="output-container">
-                      <h2>Output</h2>
-                      <p>1</p> 
-                      <p>M</p> 
-                      <p>it's me MArIooo</p>     
-                      </div>
-                      </div>
-                      </div>
-    </div>
-  </li>
+                  </div>
+                  <div class="output-container">
+                    <h2>Output</h2>
+                    <p>1</p>
+                    <p>M</p>
+                    <p>it's me MArIooo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
 
-  <li class="expandable-item">
-    <div class="expandable-title">Function</div>
-    <div class="expandable-content">
-      <div class="function-link-def">
-      <h1>By Prof.Yasser Dahab</h1>
-      <img style="width: 10vw;" src="assets/aast-maritime-transport-logo.png">
-    </div>
-      <h1>Total minutes = 39 min up to 42 min</h1>
-      <div class="fuction-link">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/iykMdFPnMIM?si=2Pc1NM9rKbfBRfEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/GUN6tynjHKI?si=FgQ1J1CUyGlHTItz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ozihBHTNW2o?si=9lmUwPamwIH0EkEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/rkyPTOYkWqk?si=y8WpcoX7fUZr1jJm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="fuction-link-address">
-      <h1>Part 1</h1>
-      <h1>Part 2</h1>
-      <h1>Part 3</h1>
-      <h1>Part 4</h1>
-    </div>
-  </li>
-    </div>
-</li> 
-</ul>
-<button id="backToTopBtn" title="Go to top">UP</button>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const expandableTitles = document.querySelectorAll('.expandable-title');
-    
-        expandableTitles.forEach(title => {
-          title.addEventListener('click', () => {
-            title.parentNode.classList.toggle('expanded');
-          });
+          <li class="expandable-item">
+            <div class="expandable-title">Function</div>
+            <div class="expandable-content">
+              <div class="function-link-def">
+                <h1>By Prof.Yasser Dahab</h1>
+                <img style="width: 10vw;" src="assets/aast-maritime-transport-logo.png">
+              </div>
+              <h1>Total minutes = 39 min up to 42 min</h1>
+              <div class="fuction-link">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iykMdFPnMIM?si=2Pc1NM9rKbfBRfEM"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GUN6tynjHKI?si=FgQ1J1CUyGlHTItz"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ozihBHTNW2o?si=9lmUwPamwIH0EkEb"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rkyPTOYkWqk?si=y8WpcoX7fUZr1jJm"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="fuction-link-address">
+                <h1>Part 1</h1>
+                <h1>Part 2</h1>
+                <h1>Part 3</h1>
+                <h1>Part 4</h1>
+              </div>
+          </li>
+      </div>
+    </li>
+  </ul>
+  <button id="backToTopBtn" title="Go to top">UP</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const expandableTitles = document.querySelectorAll('.expandable-title');
+
+      expandableTitles.forEach(title => {
+        title.addEventListener('click', () => {
+          title.parentNode.classList.toggle('expanded');
         });
       });
-    </script>
-    <script>
-     document.addEventListener('DOMContentLoaded', function() {
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
       const copyButtons = document.querySelectorAll('.copy-button');
 
       copyButtons.forEach(button => {
-          button.addEventListener('click', () => {
-              // Find the closest container that contains the code block
-              const container = button.closest('.container');
-              const codeBlock = container.querySelector('code');
-              const code = codeBlock.innerText;
+        button.addEventListener('click', () => {
+          // Find the closest container that contains the code block
+          const container = button.closest('.container');
+          const codeBlock = container.querySelector('code');
+          const code = codeBlock.innerText;
 
-              // Create a textarea element to hold the code temporarily
-              const textarea = document.createElement('textarea');
-              textarea.value = code;
-              textarea.setAttribute('readonly', '');
-              textarea.style.position = 'absolute';
-              textarea.style.left = '-9999px'; // Move it off screen
-              document.body.appendChild(textarea);
+          // Create a textarea element to hold the code temporarily
+          const textarea = document.createElement('textarea');
+          textarea.value = code;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'absolute';
+          textarea.style.left = '-9999px'; // Move it off screen
+          document.body.appendChild(textarea);
 
-              // Copy the code from the textarea
-              textarea.select();
-              document.execCommand('copy');
+          // Copy the code from the textarea
+          textarea.select();
+          document.execCommand('copy');
 
-              // Remove the textarea from the DOM
-              document.body.removeChild(textarea);
+          // Remove the textarea from the DOM
+          document.body.removeChild(textarea);
 
-              // Change the button text briefly to indicate copying
-              button.textContent = 'Copied!';
-              setTimeout(() => {
-                  button.textContent = 'Copy';
-              }, 1500);
-          });
+          // Change the button text briefly to indicate copying
+          button.textContent = 'Copied!';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 1500);
+        });
       });
-  });
-  document.addEventListener('DOMContentLoaded', function () {
-    const textElement = document.getElementById('important');
-    const text = "لازم تعرف (ي) ان المادة دي مش بتتبصمج يعني لازم تكون فاهم كل حاجة راحة فين وفاهم كل حاجة بتعمل ايه في الميموري او ايا كان";
-    let index = 0;
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      const textElement = document.getElementById('important');
+      const text = "لازم تعرف (ي) ان المادة دي مش بتتبصمج يعني لازم تكون فاهم كل حاجة راحة فين وفاهم كل حاجة بتعمل ايه في الميموري او ايا كان";
+      let index = 0;
 
-    function writeText() {
+      function writeText() {
         textElement.textContent = text.slice(0, index);
         index++;
 
         if (index > text.length) {
-            clearInterval(timer);
+          clearInterval(timer);
         }
-    }
+      }
 
-    const timer = setInterval(writeText, 46); // Adjust speed as needed
+      const timer = setInterval(writeText, 46); // Adjust speed as needed
 
-    
-});
 
-   // Load selected answers from localStorage
-   for (let i = 1; i <= 4; i++) {
-    const selectedAnswer = localStorage.getItem("selectedAnswer" + i);
-    if (selectedAnswer) {
-      const radioButton = document.querySelector(`input[name="q${i}"][value="${selectedAnswer}"]`);
-      if (radioButton) {
-        radioButton.checked = true;
+    });
+
+    // Load selected answers from localStorage
+    for (let i = 1; i <= 4; i++) {
+      const selectedAnswer = localStorage.getItem("selectedAnswer" + i);
+      if (selectedAnswer) {
+        const radioButton = document.querySelector(`input[name="q${i}"][value="${selectedAnswer}"]`);
+        if (radioButton) {
+          radioButton.checked = true;
+        }
       }
     }
-  }
 
 
-function checkAnswer(questionNumber) {
-  const options = document.getElementsByName("q" + questionNumber);
-  const feedback = document.getElementById("feedback" + questionNumber);
-  const explanation = document.getElementById("explanation" + questionNumber);
-  let selectedOption = "";
+    function checkAnswer(questionNumber) {
+      const options = document.getElementsByName("q" + questionNumber);
+      const feedback = document.getElementById("feedback" + questionNumber);
+      const explanation = document.getElementById("explanation" + questionNumber);
+      let selectedOption = "";
 
-  for (let i = 0; i < options.length; i++) {
-    if (options[i].checked) {
-      selectedOption = options[i].value;
-      break;
-    }
-  }
-
-  if (selectedOption === "True") {
-    feedback.innerText = "Nice One!";
-    feedback.classList.add("true");
-    feedback.classList.remove("false");
-    explanation.style.display = "none";
-  } else if (selectedOption === "False-5als") {
-    feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
-    feedback.classList.add("false");
-    feedback.classList.remove("true");
-    explanation.style.display = "none";
-  } else {
-    feedback.innerText = "Incorrect. Try another!";
-    feedback.classList.add("false");
-    feedback.classList.remove("true");
-    explanation.style.display = "block";
-  }
-
-  
-  localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
-}
-        // JavaScript to redirect mobile users to the desktop version
-        window.onload = function() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
-
-        if (isMobile) {
-            document.getElementById("warning").style.display = "block";
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+          selectedOption = options[i].value;
+          break;
         }
+      }
+
+      if (selectedOption === "True") {
+        feedback.innerText = "Nice One!";
+        feedback.classList.add("true");
+        feedback.classList.remove("false");
+        explanation.style.display = "none";
+      } else if (selectedOption === "False-5als") {
+        feedback.innerText = "غلط يا بطيخة, جرب اجابة تاني!";
+        feedback.classList.add("false");
+        feedback.classList.remove("true");
+        explanation.style.display = "none";
+      } else {
+        feedback.innerText = "Incorrect. Try another!";
+        feedback.classList.add("false");
+        feedback.classList.remove("true");
+        explanation.style.display = "block";
+      }
+
+
+      localStorage.setItem("selectedAnswer" + questionNumber, selectedOption);
+    }
+    // JavaScript to redirect mobile users to the desktop version
+    window.onload = function () {
+      var userAgent = navigator.userAgent.toLowerCase();
+      var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+
+      if (isMobile) {
+        document.getElementById("warning").style.display = "block";
+      }
     };
 
-// buttom to top
-let mybutton = document.getElementById("backToTopBtn");
+    // buttom to top
+    let mybutton = document.getElementById("backToTopBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
-    } else {
+      } else {
         mybutton.style.display = "none";
+      }
     }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", function() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-c.min.js"></script>
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-c.min.js"></script>
 </body>
+
 </Html>
