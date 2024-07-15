@@ -174,6 +174,66 @@
         /* Adjust height to match the line height of p */
         margin-right: 0.5vw;
     }
+
+    @media (max-width: 480px) {
+    html, body {
+        font-size: 10px; /* Adjust base font size for smaller screens */
+        overflow-y: hidden;
+    }
+
+    .navimage {
+        max-height: 15vw; /* Decrease image size in the navigation */
+        width: 15vw;
+    }
+
+    nav ul {
+        justify-content: center; /* Center align navigation items */
+        padding: 8px;
+        height: auto;
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Adjust margin between navigation items */
+    }
+
+    nav ul li a {
+        font-size: 7px;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align items */
+        padding: 10px;
+        min-height: 100vh; /* Ensure content container takes full height */
+    }
+
+    .first-line {
+        font-size: 14px;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px; /* Adjust padding for smaller screens */
+        text-align: center;
+    }
+
+    .animated-line img {
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .A3 {
+        margin-bottom: 17vh;
+        font-size: 12px;
+        padding: 10vw;
+        text-align: center;
+        max-width: 30vw;
+    }
+
+    .A3 img {
+        height: 30px;
+    }
+}
+
 </style>
 
 <head>
@@ -193,10 +253,11 @@
             <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i> Gift</a></li>
         </ul>
     </nav>
-    <div id="warning" class="warning" style="display: none;">
+     <!--<div id="warning" class="warning" style="display: none;"> 
         <h2>This site is not optimized for mobile devices.</h2>
         <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
-    </div>
+    </div> -->
+    
     <div class="content-container">
         <div class="first-line">
             <div class="animated-line">
@@ -221,7 +282,8 @@
         <div class="A3">
             <p>This is an individual's work and has no affiliation with the campus.</p>
             <img src="line-starter.png" alt="Logo">
-            <p style="color: #ffcf20;"> This website designed by your colleague <span style="font-size:2vw;">Mario</span>.</p>
+            <p style="color: #ffcf20;"> This website designed by your colleague <span
+                    style="font-size:2vw;">Mario</span>.</p>
         </div>
     </div>
 
