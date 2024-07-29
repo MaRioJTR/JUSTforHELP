@@ -7,7 +7,7 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="line-starter.png" type="image/png">
 <style>
-  .expandable-list {
+   .expandable-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -21,7 +21,7 @@
 
 .expandable-title {
   padding: 10px;
-  background-color: #142f8f;
+  background-color: #811c82;
   font-size: 30px;
   font-family: sans-serif;
   border-radius: 25px;
@@ -30,7 +30,7 @@
 .expandable-content {
   padding: 10px;
   display: none;
-  color: #edeff8;
+  color: #ede9f9;
   font-size: 30px;
   font-family: sans-serif;
   cursor: default;
@@ -98,53 +98,41 @@ html,
         transition: background-color 0.3s ease-in-out;
     }
 
+
   div .highlite {
     color: #ffcf20
   }
 
-  /* Styles for screens smaller than 600px */
-  @media (max-width: 600px) {
-    /* CSS rules for small screens */
-  }
 
-  /* Styles for screens between 601px and 900px */
-  @media (min-width: 601px) and (max-width: 900px) {
-    /* CSS rules for medium screens */
-  }
+  .warning {
+        background-color: #ffcccc;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        color: #000000;
+    }
+    .warning h2 {
+        margin-top: 0;
+    }
+    #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #0d126e; /* Set a background color */
+    color: #dab01b; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
 
-  /* Styles for screens larger than 901px */
-  @media (min-width: 901px) {
-    /* CSS rules for large screens */
-  }
-
-  #backToTopBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: #eae9fc;
-    /* Set a background color */
-    color: #1a1a1a;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 15px;
-    /* Some padding */
-    border-radius: 10px;
-    /* Rounded corners */
-  }
-
-  
+#backToTopBtn:hover {
+    background-color: #131a99; /* Darker background on hover */
+}
 </style>
 
 <head>
@@ -152,25 +140,22 @@ html,
 </head>
 
 <body>
-
   <nav>
     <ul>
-      <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i></a></li>
-      <li><a href="Calculu I.html">Calculus I</a></li>
-      <li><a href="Academic Writing.html">Academic Writing</a></li>
-      <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
-      <li><a href="Advanced Physics.html">Advanced Physics</a></li>
-      <li><a href="Problem Solving.html">Problem Solving</a></li>
-      <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i></a></li>
+        <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i> Home</a></li>
+        <li><a href="database-system.html">Database System</a></li>
+        <li><a href="digital-logic-design.html">Digital Logic Design</a></li>
+        <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
+        <li><a href="introduction-to-networks.html">Intro To Networks</a></li>
+        <li><a href="OOP.html">OOP</a></li>
+        <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i> Gift</a></li>
     </ul>
-  </nav>
-  
+</nav>
+
   <div id="warning" class="warning" style="display: none;">
     <h2>This site is not optimized for mobile devices.</h2>
     <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
 </div>
-
-
 
 <button id="backToTopBtn" title="Go to top">UP</button>
   <script>
@@ -183,8 +168,8 @@ html,
         });
       });
     });
-                // JavaScript to redirect mobile users to the desktop version
-    window.onload = function() {
+            // JavaScript to redirect mobile users to the desktop version
+            window.onload = function() {
         var userAgent = navigator.userAgent.toLowerCase();
         var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
@@ -213,4 +198,5 @@ mybutton.addEventListener("click", function() {
 });
   </script>
 </body>
+
 </Html>
