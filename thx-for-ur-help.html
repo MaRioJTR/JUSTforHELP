@@ -9,21 +9,42 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="line-starter.png" type="image/png">
     <style>
+        html,
         body {
-            background-color: #0a030a;
-            color: #f1daf2;
-            padding: 0px;
+            height: 100%;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            color: #eae9fc;
+            font-family: 'Fira Code', monospace;
+            display: flex;
+            flex-direction: column;
+        }
+
+        *::selection {
+            background: white;
+            color: black;
+        }
+
+        .navimage {
+            max-height: 27vw;
+            padding: 0;
+            margin: 0;
+            width: 27vw;
+            /* Maintain aspect ratio */
         }
 
         nav ul {
             display: flex;
             justify-content: space-around;
-            background-color: #53c25c;
+            background-color: #080808;
             padding: 1.2vw;
             margin: 0;
             align-items: center;
+            height: 3vw;
         }
 
         nav ul li {
@@ -32,169 +53,37 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #f1daf2;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #fffefe;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 1.4vw;
             transition: color 0.3s ease-in-out;
         }
 
         nav ul li a:hover {
-            color: #ffcf20;
-            transition: color 0.3s ease-in-out;
-        }
-
-
-
-        .A1 {
-            font-size: 30px;
-            color: rgb(102, 59, 151);
-        }
-
-        .idk {
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .block {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .circle0 {
-            background-color: #11a37f;
-            height: 300px;
-            width: 300px;
-            clip-path: circle();
-            margin: 60px;
-            position: relative;
-            /* Required for positioning the description */
-        }
-
-        .circle1 {
-            background-color: #000000;
-            height: 300px;
-            width: 300px;
-            clip-path: circle();
-            margin: 60px;
-            position: relative;
-
-        }
-
-        .circle2 {
-            background-color: #f1daf2;
-            height: 300px;
-            width: 300px;
-            clip-path: circle();
-            margin: 60px;
-            position: relative;
-        }
-
-        .circle3 {
-            background-image: linear-gradient(to bottom, #01C3CC, #2A89DA, #7D2AE7);
-            height: 300px;
-            width: 300px;
-            clip-path: circle();
-            margin: 60px;
-            position: relative;
-        }
-
-        .circle4 {
-            background-color: #f1daf2;
-            height: 300px;
-            width: 300px;
-            clip-path: circle();
-            margin: 60px;
-            position: relative;
-        }
-
-        .description {
-            display: none;
-            /* Initially hide the description */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f1daf2c7;
-            /* Semi-transparent white background */
-            padding: 100%;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            /* Optional: Add shadow for better visibility */
-            color: black;
-            font-size: 25px;
-            font-family: sans-serif;
-        }
-
-        .circle0:hover .description,
-        .circle1:hover .description,
-        .circle2:hover .description,
-        .circle3:hover .description,
-        .circle4:hover .description {
-            display: block;
-            /* Show the description when hovering over the circle */
-        }
-
-        .circle0 img {
-            width: 50%;
-            margin-left: 25%;
-            margin-top: 20%;
-        }
-
-        .circle1 h1 {
-            margin-top: 15px;
-            margin-left: 68px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .circle1 i {
-            margin-top: 70px;
-            margin-left: 100px;
-            margin-bottom: 0px;
-            font-size: 100px;
-        }
-
-        .circle2 img {
-            width: 50%;
-            margin-left: 25%;
-            margin-top: 16%;
-        }
-
-        .circle2 h1 {
-            margin-top: 15px;
-            margin-left: 50px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .circle3 i {
-            margin-top: 70px;
-            margin-left: 110px;
-            margin-bottom: 0px;
-            font-size: 100px;
-        }
-
-        .circle3 h1 {
-            margin-top: 15px;
-            margin-left: 60px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .circle4 img {
-            display: flex;
-            width: 10vw;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
+            padding: .5vw;
+            border-radius: 1.5vw;
+            background-color: #fffefe;
+            color: #080808;
+            transition: background-color 0.3s ease-in-out;
         }
 
         * {
             text-decoration: none;
         }
 
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr ;
+            height:100%;
+            flex-grow: 1;
+        }
+
         .private-sector {
+            grid-column: 2;
+            grid-row: 2;
             max-width: 400px;
-            margin: 100px auto;
+            margin: auto;
             text-align: center;
             background-color: #000000;
             border-radius: 25px;
@@ -219,7 +108,6 @@
 
         button:hover {
             background-color: #212122;
-
         }
     </style>
     <title>JUSTforHELP</title>
@@ -231,68 +119,22 @@
             <li class="A1"> <a href="index.html"><i class="fa-solid fa-building-columns"></i> Home</a></li>
             <li><a href="database-system.html">Database System</a></li>
             <li><a href="OOP.html">OOP</a></li>
+            <li><img class="navimage" src="Untitled-1-Recovered.png" alt="Logo"></li>
             <li><a href="introduction-to-networks.html">Intro To Networks</a></li>
             <li><a href="digital-logic-design.html">Digital Logic Design</a></li>
             <li class="A1"><a href="thx-for-ur-help.html"><i class="fa-solid fa-hand-holding-heart"></i> Gift</a></li>
         </ul>
     </nav>
-    <div class="idk">
-        <h1>This place will contain all you need in <span>RoadMap</span> .</h1>
-    </div>
-    <div class="block">
-        <div class="circle0" id="circle1">
-            <img src="assets/chatgpt.png">
-            <a class="description" href="https://chat.openai.com/?model=text-davinci-002-render-sha" target="_blank">
-                <p>Godfather of any college</p>
-            </a>
+
+    <div class="main">
+        <div class="private-sector">
+            <h1>{Dark Sector}</h1>
+            <form id="passwordForm">
+                <input type="password" id="passwordInput" placeholder="Enter Password">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="message" class="message">i love pizza</div>
         </div>
-        <div class="circle1">
-            <i style="color: white;" class="fa-solid fa-cube"></i>
-            <h1 style="color :white;">Black Box</h1>
-            <a class="description" href="https://www.blackbox.ai/" target="_blank">
-                <p>More advanced than ChatGPT in coding</p>
-            </a>
-        </div>
-        <div class="circle2">
-            <img src="assets/bard-logo.png">
-            <h1><span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span
-                    style="color:#FBBC05;">o</span><span style="color:#34A853;">g</span><span
-                    style="color:#34A853;">l</span><span style="color:#EA4335;">e</span> <span
-                    style="color:black;">Bard</span></h1>
-            <a class="description" href="https://gemini.google.com/app" target="_blank">
-                <p>AI for gathering information</p>
-            </a>
-        </div>
-    </div>
-    <div class="block">
-        <div class="circle1">
-            <i style="color: white;" class="fa-brands fa-github"></i>
-            <h1 style="color :white; margin-left: 30%;">Github</h1>
-            <a class="description" href="https://github.com/" target="_blank">
-                <p>You can upload your code on it and more</p>
-            </a>
-        </div>
-        <div class="circle3">
-            <i style="color: white;" class="fa-solid fa-c"></i>
-            <h1 style="color :white; margin-left: 35%;">Canva</h1>
-            <a class="description" href="https://www.canva.com/" target="_blank">
-                <p>You can get PowerPoint designs and more</p>
-            </a>
-        </div>
-        <div class="circle4">
-            <img src="assets/testing.png">
-            <a class="description" href="exam-jfr.html" target="_blank">
-                <strong>Exam-Site</strong>
-            </a>
-        </div>
-    </div>
-    <div class="private-sector">
-        <h1>{Dark Sector}</h1>
-        <form id="passwordForm">
-            <input type="password" id="passwordInput" placeholder="Enter Password">
-            <button type="submit">Submit</button>
-        </form>
-        <div id="message" class="message">i love pizza</div>
     </div>
     <script>
         var _0x281da1 = _0x3249; function _0x3249(_0x178777, _0x129ed5) { var _0x4ed52f = _0x4ed5(); return _0x3249 = function (_0x32494e, _0xf0fb25) { _0x32494e = _0x32494e - 0xbd; var _0x26e7ed = _0x4ed52f[_0x32494e]; return _0x26e7ed; }, _0x3249(_0x178777, _0x129ed5); } (function (_0xe0ba95, _0x356961) { var _0x5456a5 = _0x3249, _0x34eac3 = _0xe0ba95(); while (!![]) { try { var _0x3871df = parseInt(_0x5456a5(0xdc)) / 0x1 * (-parseInt(_0x5456a5(0xd2)) / 0x2) + -parseInt(_0x5456a5(0xc4)) / 0x3 * (-parseInt(_0x5456a5(0xd1)) / 0x4) + -parseInt(_0x5456a5(0xc2)) / 0x5 * (-parseInt(_0x5456a5(0xd0)) / 0x6) + parseInt(_0x5456a5(0xd9)) / 0x7 + -parseInt(_0x5456a5(0xca)) / 0x8 + parseInt(_0x5456a5(0xcc)) / 0x9 * (-parseInt(_0x5456a5(0xcb)) / 0xa) + parseInt(_0x5456a5(0xdf)) / 0xb * (parseInt(_0x5456a5(0xc9)) / 0xc); if (_0x3871df === _0x356961) break; else _0x34eac3['push'](_0x34eac3['shift']()); } catch (_0xff1aa3) { _0x34eac3['push'](_0x34eac3['shift']()); } } }(_0x4ed5, 0x1b79c), document[_0x281da1(0xc7)](_0x281da1(0xdd))[_0x281da1(0xc6)](_0x281da1(0xd3), function (_0x1e48c6) { var _0x145de0 = _0x281da1; _0x1e48c6[_0x145de0(0xc0)](); var _0x2251c1 = document['getElementById'](_0x145de0(0xd6))[_0x145de0(0xc1)]; _0x2251c1 === _0x145de0(0xde) ? (setTimeout(function () { var _0x2a90b7 = _0x145de0; window['location'][_0x2a90b7(0xd4)] = _0x2a90b7(0xbd); }, 0x7d0), document[_0x145de0(0xc7)](_0x145de0(0xcf))[_0x145de0(0xc5)] = _0x145de0(0xd7), document['getElementById'](_0x145de0(0xcf))['style'][_0x145de0(0xc8)] = _0x145de0(0xbe), document[_0x145de0(0xc7)]('message')[_0x145de0(0xbf)][_0x145de0(0xd8)] = _0x145de0(0xd5)) : (document[_0x145de0(0xc7)](_0x145de0(0xcf))[_0x145de0(0xc5)] = 'Try\x20again,\x20If\x20u\x20weren\x27t\x20a\x20rat', document[_0x145de0(0xc7)](_0x145de0(0xcf))['style'][_0x145de0(0xc8)] = _0x145de0(0xce), document[_0x145de0(0xc7)](_0x145de0(0xcf))[_0x145de0(0xbf)]['fontFamily'] = _0x145de0(0xd5)); }), document[_0x281da1(0xc6)](_0x281da1(0xc3), function (_0x19fa97) { var _0x106c4a = _0x281da1; _0x19fa97[_0x106c4a(0xc0)](); }), document[_0x281da1(0xc6)]('keydown', _0x43e708 => { var _0x40d005 = _0x281da1; (_0x43e708[_0x40d005(0xda)] || _0x43e708[_0x40d005(0xcd)] == 0x7b) && (_0x43e708[_0x40d005(0xdb)](), _0x43e708[_0x40d005(0xc0)]()); })); function _0x4ed5() { var _0x547fc4 = ['Welcome\x20home\x20mate', 'fontFamily', '1102857TxLFBj', 'ctrlKey', 'stopPropagation', '5147REKbwl', 'passwordForm', 'Ju$TF0rH31p', '3091xGSJFf', 'dark-sector.html', 'green', 'style', 'preventDefault', 'value', '95bOLciB', 'contextmenu', '9ZwRMiQ', 'innerText', 'addEventListener', 'getElementById', 'color', '1740cdXkBM', '1133680vjmTde', '10nyZoyY', '1419192eqxXKM', 'keyCode', 'red', 'message', '50130TwPbFc', '114372DYqsaA', '12OjGqtr', 'submit', 'href', 'font-family:\x20\x27Courier\x20New\x27,\x20Courier,\x20monospace;', 'passwordInput']; _0x4ed5 = function () { return _0x547fc4; }; return _0x4ed5(); } 

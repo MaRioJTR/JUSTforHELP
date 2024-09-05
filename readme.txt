@@ -1,19 +1,27 @@
-OTF and TTF: Death Star (Regular and Outlines)
-Dennis Ludlow 2016 all rights reserved
-by Sharkshock 
-dennis@sharkshock.net
+JustForHelp
+JustForHelp is an educational website designed to simplify complex concepts for students enrolled in semester 3 courses. The site is aimed at providing structured and concise information on the following key subjects:
 
-In a distant galaxy far, far away fans of this epic series had limited options when looking for the right font to use for their projects. Patience you must have young Jedi and thank me later you will. Enter Death Star : A grotesque display font featuring all caps that resembles the classic 80's style.
-Geometrically rounded curves and limited stroke width variation combine for a retro look that will fit right into your blog, logo, or t-shirts. This version is limited to basic latin and punctuation only. There are a number of included alternates and ligatures so please check the included poster for these. 
-You can take advantage of these with any program that supports OTF features. These can also be accessed via the glyphs panel in some programs. NOTE: Because the nature of overlapping glyphs alternates must be selected manually in the Outlines version from the Glyphs panel. 
-Kerning is extremely tight and best displayed at larger sizes. Pair with Deutschlander for an authentic looking movie poster. 
+Object-Oriented Programming (OOP)
+Database Systems
+Introduction to Networks
+Digital Logic Design
+Objective
+The main goal of JustForHelp is to assist students in understanding complex topics by presenting the information in a simplified and digestible manner.
 
-The regular version is included but Outlined is only available with purchase of a commercial license or $15 donation via our homepage. 
+Features
+Focused Subject Matter: Covers the essential topics in OOP, Database Systems, Networking, and Digital Logic Design.
+Simplified Learning: Designed to break down complex information into easier, more manageable content.
+Structure
+The website is organized into four main sections, one for each course, providing a clear and intuitive learning path:
 
-This font like my others are free for personal use only as long as this readme file stays intact. For commercial use please contact me at dennis@sharkshock.net to discuss an end user license agreement. You can also visit www.sharkshock.net/license for more info. I also design custom fonts for
-businesses, logos, and many other things. If you'd like to leave me a PayPal donation you can use my email address above. Your generosity will be most appreciated! 
-
-
-visit www.sharkshock.net for more and take a bite out of BORING design!
-
-tags: stylish, space, display, font, typeface, publishing, logo, title, book, cover, company, brand, branding, sans, serif, poster, headline, retro, star, stars, war, wars, jedi, knight, 80's, movie, movies, film, action, sci-fi, fantasy, childrens, kids
+OOP: Concepts of object-oriented programming, including classes, inheritance, polymorphism, and more.
+Database Systems: Topics covering database design, SQL, normalization, etc.
+Introduction to Networks: Foundational knowledge on networking, including protocols, IP addresses, and network models.
+Digital Logic Design: Covers fundamental digital electronics concepts, such as logic gates, Boolean algebra, and flip-flops.
+Limitations
+Non-responsive Design: The website is not fully responsive at the moment, as the development is being handled by a single developer, and optimizing for multiple screen sizes has been deferred to prioritize core content.
+Future Improvements
+Enhance mobile and tablet responsiveness.
+Expand course content with more visual aids and interactive elements.
+Developer
+This project is currently developed and maintained by a single developer passionate about making learning more accessible for students.
