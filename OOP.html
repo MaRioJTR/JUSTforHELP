@@ -15,7 +15,7 @@
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
   /*font-family: 'Scheherazade', serif;*/
-  
+
 
 
   .expandable-list {
@@ -41,7 +41,7 @@
   .expandable-content {
     padding: 10px;
     display: none;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-family: sans-serif;
     cursor: default;
   }
@@ -60,11 +60,15 @@
   body {
     background: linear-gradient(to bottom, #000000, #1a1a1a);
     background-attachment: fixed;
-    color: #eae9fc;
+    color: #dcdcdc;
     font-family: 'Fira Code', monospace;
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
+  }
+
+  .before-start {
+    margin: 1vw;
   }
 
   *::selection {
@@ -77,7 +81,6 @@
     padding: 0;
     margin: 0;
     width: 27vw;
-    /* Maintain aspect ratio */
   }
 
   nav ul {
@@ -111,15 +114,21 @@
   }
 
   @media (max-width: 601px) {
-    .container{
+    .container {
       grid-template-columns: .25fr 1fr;
     }
-    .main-content{
-      font-size:1.8vw
+
+    .main-content {
+      font-size: 2.25vw
     }
-    .nav-bar{
-      padding:2vw;
-      font-size: 3vw;      
+
+    .nav-bar {
+      padding: 2vw;
+      font-size: 3vw;
+    }
+
+    .before-start {
+      display: none;
     }
   }
 
@@ -155,7 +164,7 @@
     background: #2d2d2d;
     border-radius: .2vw;
     padding: .1vw;
-    font-size: 1.2vw;
+    font-size: 0.99vw;
   }
 
   code[class*="language-"],
@@ -194,9 +203,6 @@
     display: grid;
     grid-template-columns: 12vw 1fr;
     height: 95vh;
-    /* Remove this line */
-    overflow-y: auto;
-    /* Add this line */
     margin: 0;
   }
 
@@ -206,29 +212,53 @@
     margin: 0;
     height: auto;
     overflow-y: auto;
-    scrollbar-color: #666 #333;
+    scrollbar-color: #adadad #414141;
     scrollbar-width: thin;
+    color: #dcdcdc;
   }
 
   .nav-bar {
     grid-column: 1;
     background-color: rgba(255, 255, 255, 0.103);
-    color: white;
+    color: #dcdcdc;
     padding: 1vw;
     height: calc(100vh - 100px);
     font-size: 1.03vw;
     margin: 0;
     border-radius: .3vw;
+    scroll-behavior: smooth;
   }
 
   .Navlink {
-    color: #fff;
-    /* default link color */
+    color: #dcdcdc;
     text-decoration: none;
   }
 
-  .Navlink.active {
+  .Navlink:hover {
     color: #ffcf20;
+  }
+
+  .span-code {
+    background-color: #333;
+    font-family: 'Fira Code', monospace;
+    font-size: .90vw;
+    padding: .33vw;
+    border-radius: .28vw;
+    color: white;
+  }
+
+  .output {
+    background-color: #2d2d2d;
+    font-family: 'Fira Code', monospace;
+    padding: 1.0vw;
+    border-radius: .28vw;
+    color: #dcdcdc;
+  }
+
+  .title {
+    color: #ffcf20;
+    margin: 3vw;
+    text-align: center;
   }
 </style>
 
@@ -254,48 +284,278 @@
     <h2>This site is not optimized for mobile devices.</h2>
     <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
   </div>
+  <div class="before-start">
+    <h1 style="color: #ffcf20;">Befroe We Start</h1>
+    <h2>You need to know</h2>
+    <p>This course introduces <span style="color: #ffcf20;">JAVA</span> to students as an example of an object oriented
+      programming language. The course starts
+      with a briefing on java history and the classifications of different java editions. The concepts of classes and
+      objects are introduced followed by a description of various types of class members. The course describes the
+      concepts of abstraction and encapsulation and how to apply these concepts when creating classes. The course
+      describes the object oriented relationships: association, aggregation, composition, inheritance and
+      implementation,
+      also the concept and role of polymorphism are introduced covering method overloading, method overriding and
+      dynamic
+      method dispatching.</p>
+    <h1>Why Use Java?</h1>
+    <ul stlye="list-style-type: circle;">
+      <li>Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)</li>
+      <li>It is one of the most popular programming languages in the world</li>
+      <li>It has a large demand in the current job market</li>
+      <li>It is easy to learn and simple to use</li>
+      <li>It is open-source and free</li>
+      <li>It is secure, fast and powerful</li>
+      <li>It has huge community support (tens of millions of developers)</li>
+      <li style="color: #ffcf20;">Java is an object oriented language which gives a clear structure to programs and
+        allows code to be reused, lowering development costs</li>
+      <li>As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa</li>
+    </ul>
+  </div>
 
 
   <ul class="expandable-list">
     <li class="expandable-item">
-      <div class="expandable-title">Week .1 LECT & SEC</div>
+      <div class="expandable-title">Week .1 Introduction to Java</div>
       <div class="expandable-content">
 
         <div class="container">
 
           <div class="nav-bar" id="nav-bar">
             <h1>Quick Access</h1>
-            <a class="Navlink" href="#target-section">Jump to target section</a>
+            <p><a class="Navlink" href="#startIntroJava">Creating .java</a></p>
+            <p><a class="Navlink" href="#Syntax">Syntax</a></p>
+            <p><a class="Navlink" href="#outPut">Outputs</a></p>
+            <p><a class="Navlink" href="#inPut">Iutputs</a></p>
           </div>
 
           <div class="main-content">
 
-            <h1>Main Content Area</h1>
+            <h1>Before We Start</h1>
+            <p>There is more than IDE to handle <span class="span-code">.java</span> Files</p>
+            <ul>
+              <li><a href="https://www.jetbrains.com/idea/download/?fromIDE=&section=windows" alt="_blank">IntelliJ IDEA
+                </a>That can be downloaded from JetBrains</li>
+              <li><a href="https://eclipseide.org/" alt="_blank">Eclipse IDE </a>That can be downloaded from Eclipse
+              </li>
+              <li><a href="https://netbeans.apache.org/front/main/download/index.html" alt="_blank">NetBeans </a></li>
+            </ul>
+            <p>All of these IDEs provide strong support for debugging, code completion, and various frameworks, and are
+              available for multiple operating systems (Windows, macOS, and Linux)</p>
+
+            <h1 id="startIntroJava" class="title">Creating Java File</h1>
+
+            <h2>There is general way to create <span class="span-code">.java</span> file</h2>
+            <p>Step 1 : After opening your IDE Create a new file in your project's source directory. This is typically
+              the <span class="span-code">.src</span> folder or its equivalent.</p>
+            <p>Step 2 : Name the file with a <span class="span-code">.java</span> extension. For example, <span
+                class="span-code">MyClass.java</span>. <strong>Ensure that the filename
+                matches the class name you intend to use, as Java class names should match the filename.</strong></p>
+            <p>Step 3 : Open the newly created <span class="span-code">.java</span> file. Add your Java code. For
+              example</p>
             <div style="max-width: 100%; overflow-x: auto;">
               <pre><code class="language-java">
-                  public class MyFirstClass { 
+                public class MyClass {
                   public static void main(String[] args) {
-                      System.out.print("He said that \"Iam from Egypt\" but lives in \"KSA\"\n");
-                      System.out.print("The file located in \t D:\\javaprorg\\tryout\n");
-                      System.out.print("'x'\n");
-                      System.out.print("Sunday \t Monday \t Tuesday \t Wednesday");	
+                      System.out.println("Hello, World!");
                   }
               }
               </code></pre>
             </div>
 
-            <h2 id="target-section">This is the target section</h2>
+            <p>Step 4 : Save file and RUN</p>
+            <h3 style="color:rgb(197, 2, 2)">NOTE : "During the course, you might see me replace <span
+                class="span-code">
+                public class MyClass</span> with
+              <span class="span-code"> public class Main</span>. There's no difference; it's just for you to be carful
+              while copy-paste method.".
+            </h3>
 
+            <h1 id="Syntax" class="title">Syntax</h1>
+
+            <p>Every line of code that runs in Java must be inside a <span class="span-code">class</span> . And the
+              class name should always start with an
+              uppercase first letter. In our example, we named the class <strong>Main</strong>.</p>
+            <h3 style="color:rgb(197, 2, 2)">NOTE : Java is case-sensitive: "MyClass" and "myclass" has different
+              meaning.</h3>
+            <h1>The Main Method</h1>
+            <p>The <span class="span-code">main()</span> method is required and you will see it in every Java program:
+            </p>
+            <div style="max-width: 100%; overflow-x: auto;">
+              <pre><code class="language-java">
+                  public static void main(String[] args) 
+              </code></pre>
+            </div>
+            <p>Any code inside the <span class="span-code">main()</span> method will be executed. Don't worry about the
+              keywords before and after it. You will get to know them bit by bit while course.</p>
+            <p>For now, just remember that every Java program has a <span class="span-code">class</span> name which must
+              match the filename, and that every program must contain the <span class="span-code">main()</span> method
+            </p>
+            <h1 id="outPut" class="title">Output (Prints)</h1>
+            <h1>Unlike C, Java has different type of Print</h1>
+            <ul>
+              <li>
+                <h1>1. Using <span class="span-code">System.out.<span style="color: #cd4b1f;">print()</span></span></h1>
+                <p>Prints text to the console without a newline at the end.</p>
+                <div style="max-width: 100%; overflow-x: auto;">
+                  <pre><code class="language-java">
+                    System.out.print("Hello");
+                    System.out.print(" World!");
+                  </code></pre>
+                </div>
+                <h2>Output:</h2>
+                <h3 class="output"> Hello World!</h3>
+              </li>
+              <br>
+              <li>
+                <h1>2. Using <span class="span-code">System.out.<span style="color: #cd4b1f;">println()</span></span>
+                </h1>
+                <p>Prints text to the console with a newline at the end.</p>
+                <div style="max-width: 100%; overflow-x: auto;">
+                  <pre><code class="language-java">
+                    System.out.println("Hello");
+                    System.out.println(" World!");
+                  </code></pre>
+                </div>
+                <h2>Output:</h2>
+                <h3 class="output">
+                  <p>Hello</p>
+                  <p>World!</p>
+                </h3>
+              </li>
+              <br>
+              <li>
+                <h1>3. Using <span class="span-code">System.out.<span style="color: #cd4b1f;">printf()</span></span>
+                </h1>
+                <p>Prints text by using format specifiers.</p>
+                <div style="max-width: 100%; overflow-x: auto;">
+                  <pre><code class="language-java">
+                    int age = 19;
+                    String name = "Mario"
+                    System.out.printf("Name = %s Age = %d",name,age);
+                  </code></pre>
+                </div>
+                <h2>Output:</h2>
+                <h3 class="output">Name = Mario Age = 19</h3>
+              </li>
+            </ul>
+            <h1>ADD-ons</h1>
+            <p>There is some tips might be useful for code organization like <span class="span-code">\n</span> to make
+              new line And <span class="span-code">\t</span> to make space</p>
+            <p>Here is way if you want to print ("") or (/) </p>
+            <div style="max-width: 100%; overflow-x: auto;">
+              <pre><code class="language-java">
+                    System.out.print("He said that \"Iam from Egypt\" and lives in \"Aswan\"\n");
+		            System.out.print("The file located in D:\\javaprorg\\tryout\n");
+		            System.out.print("'x'\n");
+		            System.out.print("Sunday \t Monday \t Tuesday \t Wednesday");
+              </code></pre>
+            </div>
+            <h2>Output:</h2>
+            <h3 class="output">
+              <p>He said that "Iam from Egypt" and lives in "Aswan"</p>
+              <p>The file located in D:\javaprorg\tryout</p>
+              <p>Sunday &nbsp; Monday &nbsp; Tuesday &nbsp; Wednesday</p>
+            </h3>
+            <h1 id="inPut" class="title">Input (Scanner)</h1>
+            <p>First, You need to import package contain User Input system by <span class="span-code">import
+                java.util.Scanner;</span>.</p>
+            <p>Then, You need to create a Scanner to obtain input from the command window by <span
+                class="span-code">Scanner input = new Scanner(System.in);</span>.</p>
+            <div style="max-width: 100%; overflow-x: auto;">
+              <pre><code class="language-java">
+                  import java.util.Scanner; // to import package contain User Input system
+
+                  public class Main { 
+                  
+                      public static void main(String[] args) {
+                        Scanner input = new Scanner(System.in); // input is object of scanner it can be x , y or blabla.
+                      }
+                    }
+                </code></pre>
+            </div>
+            <h3>-- Now, You Ready TO CREATE YOUR FIRST PROGRAM <i class="fa-solid fa-face-grin-stars"></i> <i
+                class="fa-solid fa-face-grin-stars"></i> <i class="fa-solid fa-face-grin-stars"></i> <i
+                class="fa-solid fa-face-grin-stars"></i> --</h3>
+
+                <h2>First programe is calculating rectangle area </h2>
+                <p>but first you need to know little bit thing about <strong>Variables</strong></p>
+                <h2>Data Types</h2>
+                <ul>
+                  <li><span class="span-code">String</span> - stores text, such as "Hello". String values are surrounded by double quotes</li>
+                  <li><span class="span-code">int</span> - stores integers (whole numbers), without decimals, such as 123 or -123</li>
+                  <li><span class="span-code">float</span> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+                  <li><span class="span-code">char</span> - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes</li>
+                  <li><span class="span-code">boolean</span> - stores values with two states: true or false</li>
+                </ul>
+
+                <h2>So lets get started...</h2>
+                <p>first you need to plan your code.</p>
+                <p>this code will calculate rectangle area so we need 3 Variables ( 1. for width , 2. for lenght , 3. for area )</p>
+
+                <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+                  <pre><code class="language-java">
+                      import java.util.Scanner; 
+    
+                      public class Main { 
+                      
+                          public static void main(String[] args) {
+                            Scanner input = new Scanner(System.in); 
+                            int width;
+                            int length;
+                            int area;
+                            System.out.println("Enter length : ");
+		                    length = input.nextInt(); // to store user input into variable
+		                    System.out.println("Enter width : ");
+		                    width = input.nextInt();
+	                       area = length * width;
+	                       System.out.println(area);
+
+                          }
+                        }
+                    </code></pre>
+                </div>
+                <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
+
+                <h2>Second one will calculate Net_Salary</h2>
+
+                <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+                  <pre><code class="language-java">
+                    import java.util.Scanner; 
+
+                    public class Main { 
+                    
+                        public static void main(String[] args) {
+                          Scanner input = new Scanner(System.in); 
+                          String userName;
+                          float salary;
+                          int Age;
+                          float netSalary;
+                          System.out.println("Enter your name : ");
+                          userName = input.next();
+                          System.out.println("Enter your salary : ");
+                          salary = input.nextFloat();
+                          System.out.println("Enter your age : ");
+                          Age = input.nextInt();
+                          netSalary = salary * 10/100;
+                          System.out.printf("Your name : %s \nYour salary : %f \nYour age : %d \nYor net salary : %f",userName,salary,Age,netSalary);
+  
+                        }
+                      }
+                    </code></pre>
+                </div>
+                <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
+                <h4>You may now saying iam an egg but seriously you need to try it by yourself</h4>
           </div>
         </div>
+      </div>
       </div>
     </li>
   </ul>
   <ul class="expandable-list">
     <li class="expandable-item">
-      <div class="expandable-title">Week .1 LECT & SEC</div>
+      <div class="expandable-title">Week .2 LECT & SEC</div>
       <div class="expandable-content">
-        LOL
+        NULL
       </div>
     </li>
   </ul>
@@ -305,7 +565,6 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const expandableTitles = document.querySelectorAll('.expandable-title');
-      const navLinks = document.querySelectorAll('.Navlink');
 
       expandableTitles.forEach(title => {
         title.addEventListener('click', () => {
@@ -316,14 +575,6 @@
       navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
           event.preventDefault();
-
-          // Remove active class from all links
-          navLinks.forEach(otherLink => {
-            otherLink.classList.remove('active');
-          });
-
-          // Add active class to the clicked link
-          link.classList.add('active');
 
           // Scroll to the section
           const target = document.querySelector(link.getAttribute('href'));
@@ -348,7 +599,7 @@
       var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
       if (isMobile) {
-       // document.getElementById("warning").style.display = "block";
+        // document.getElementById("warning").style.display = "block";
       }
     };
 
@@ -370,17 +621,6 @@
     mybutton.addEventListener("click", function () {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    });
-
-    const links = document.querySelectorAll('.Navlink');
-
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(otherLink => {
-          otherLink.classList.remove('active');
-        });
-        link.classList.add('active');
-      });
     });
 
   </script>

@@ -32,7 +32,6 @@ The website is organized into four main sections, one for each course, providing
 ## Future Improvements
 
 - Enhance mobile and tablet responsiveness.
-- Expand course content with more visual aids and interactive elements.
 
 ## Developer
 
