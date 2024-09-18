@@ -7,132 +7,262 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="line-starter.png" type="image/png">
 <style>
-   .expandable-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.expandable-item {
-  margin: 5px;
-  cursor: pointer;
-
-}
-
-.expandable-title {
-  padding: 10px;
-  background-color: #811c82;
-  font-size: 30px;
-  font-family: sans-serif;
-  border-radius: 25px;
-}
-
-.expandable-content {
-  padding: 10px;
-  display: none;
-  color: #ede9f9;
-  font-size: 30px;
-  font-family: sans-serif;
-  cursor: default;
-}
-
-.expandable-item.expanded .expandable-content {
-  display: block;
-}
-
-html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background: linear-gradient(to bottom, #000000, #1a1a1a);
-        color: #eae9fc;
-        font-family: 'Fira Code', monospace;
-        display: flex;
-        flex-direction: column;
-    }
-
-    *::selection {
-        background: white;
-        color: black;
-    }
-
-    .navimage {
-        max-height: 27vw;
-        padding: 0;
-        margin: 0;
-        width: 27vw;
-        /* Maintain aspect ratio */
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: space-around;
-        background-color: #080808;
-        padding: 1.2vw;
-        margin: 0;
-        align-items: center;
-        height: 3vw;
-    }
-
-    nav ul li {
-        list-style-type: none;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #fffefe;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.4vw;
-        transition: color 0.3s ease-in-out;
-    }
-
-    nav ul li a:hover {
-        padding: .5vw;
-        border-radius: 1.5vw;
-        background-color: #fffefe;
-        color: #080808;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-
-  div .highlite {
-    color: #ffcf20
+  .expandable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
+  .expandable-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .expandable-title {
+    padding: 10px;
+    background-color: #292929;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    border-radius: .3vw;
+    margin: 10px;
+  }
+
+  .expandable-content {
+    padding: 10px;
+    display: none;
+    font-size: 1.3em;
+    font-family: sans-serif;
+    cursor: default;
+  }
+
+  .expandable-item.expanded .expandable-content {
+    display: block;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    background-attachment: fixed;
+    color: #dcdcdc;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+  }
+
+  .before-start {
+    margin: 1vw;
+  }
+
+  .note{
+    color:rgb(197, 2, 2);
+  }
+
+  *::selection {
+    background: white;
+    color: black;
+  }
+
+  .navimage {
+    max-height: 27vw;
+    padding: 0;
+    margin: 0;
+    width: 27vw;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #080808;
+    padding: 1.2vw;
+    margin: 0;
+    align-items: center;
+    height: 3vw;
+  }
+
+  nav ul li {
+    list-style-type: none;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #fffefe;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+    transition: color 0.3s ease-in-out;
+  }
+
+  nav ul li a:hover {
+    padding: .5vw;
+    border-radius: 1.5vw;
+    background-color: #fffefe;
+    color: #080808;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  @media (max-width: 601px) {
+    .container {
+      grid-template-columns: .25fr 1fr;
+    }
+
+    .main-content {
+      font-size: 2.25vw
+    }
+
+    .nav-bar {
+      padding: 2vw;
+      font-size: 3vw;
+    }
+
+    .before-start {
+      display: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .A4 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .copy-button {
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+  }
 
   .warning {
-        background-color: #ffcccc;
-        text-align: center;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        color: #000000;
-    }
-    .warning h2 {
-        margin-top: 0;
-    }
-    #backToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #0d126e; /* Set a background color */
-    color: #dab01b; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-}
+    background-color: #ffcccc;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #000000;
+  }
 
-#backToTopBtn:hover {
-    background-color: #131a99; /* Darker background on hover */
-}
+  .warning h2 {
+    margin-top: 0;
+  }
+
+  pre[class*="language-"] {
+    background: #2d2d2d;
+    border-radius: .2vw;
+    padding: .1vw;
+    font-size: 0.99vw;
+    max-width: 90%;
+  }
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  #backToTopBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #eae9fc;
+    /* Set a background color */
+    color: #1a1a1a;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 14vw 1fr;
+    height: 95vh;
+    margin: 0;
+    border: solid #333;
+    border-width: .5px;
+  }
+
+  .main-content {
+    grid-column: 2;
+    padding-left: 1.1vw;
+    margin: 0;
+    height: auto;
+    overflow-y: auto;
+    scrollbar-color: #adadad #414141;
+    scrollbar-width: thin;
+    color: #dcdcdc;
+  }
+
+  .nav-bar {
+    grid-column: 1;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: #dcdcdc;
+    padding: 1.3vw;
+    height: calc(100vh - 100px);
+    font-size: 1.33vw;
+    margin: 0;
+    border-radius: .3vw;
+    scroll-behavior: smooth;
+  }
+
+  .Navlink {
+    color: #dcdcdc;
+    text-decoration: none;
+  }
+
+  .Navlink:hover {
+    color: #ffcf20;
+  }
+
+  .span-code {
+    background-color: #333;
+    font-family: 'Fira Code', monospace;
+    font-size: .96vw;
+    padding: .33vw;
+    border-radius: .28vw;
+    color: white;
+  }
+
+  .output {
+    background-color: #2d2d2d;
+    font-family: 'Fira Code', monospace;
+    padding: 1.0vw;
+    border-radius: .28vw;
+    color: #dcdcdc;
+    font-size: 1vw;
+    max-width: 88%;
+  }
+
+  .title {
+    color: #ffcf20;
+    margin: 3vw;
+    text-align: center;
+  }
+  .navlink-scrollbar{
+    overflow-y: auto;
+    scrollbar-color: #adadad #414141;
+    scrollbar-width: thin;
+  }
 </style>
 
 <head>

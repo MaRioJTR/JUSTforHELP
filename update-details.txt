@@ -7,3 +7,14 @@
 1.10  == dark-sector-update-2
 1.11  == second Reformation of the website
 1.12  == grid application 
+
+
+# dev Notes
+//(Content Codes)\\
+## OOP  ==  00p
+## Database System  ==  dbs
+## Digital Logic Design  ==  dld
+## Introduction to Networks  ==  itn
+## Whole Subjects  ==  sa4
+//(CC Start)\\
+sa4.1.0         9182024

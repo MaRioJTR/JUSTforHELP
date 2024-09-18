@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -13,97 +17,130 @@
     <title>Dark Sector</title>
 </head>
 <style>
-
-body{
-    background-color: #0c0c0c;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    font-family: "VT323", monospace;
-    font-weight: 400;
-    font-style: normal;  
-}
-
-*::selection{
-        background: white;
-        color:black;
+    body {
+        background-color: #0c0c0c;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-family: "VT323", monospace;
+        font-weight: 400;
+        font-style: normal;
     }
 
-h1 , p ,details {
-    color:white;
-    font-size: 2.0vw; 
-}
+    *::selection {
+        background: white;
+        color: black;
+    }
 
-pre{
-    color:white;
-    font-size: 1.3vw;  
-}
+    h1,
+    p,
+    details {
+        color: white;
+        font-size: 2.0vw;
+    }
 
-details pre{
-    font-size: .9vw; 
-}
+    pre {
+        color: white;
+        font-size: 1.3vw;
+    }
 
-.title {
-    text-align: center;
-    font-size: 4vw; 
-}
+    details pre {
+        font-size: .9vw;
+    }
 
-.r-g-b{
-    margin: 30px;
-}
+    .title {
+        text-align: center;
+        font-size: 4vw;
+    }
 
-.emoji{
-    width: 2vw;
-}
+    .r-g-b {
+        margin: 30px;
+    }
 
-.copy{
-    padding: .6vw;
-    margin: 1vw;
-    margin-left: 3.5vw;
-    border: solid .1vw #0c0c0c;
-    color: #0c0c0c;
-    background-color: white;
-    font-size: 1.5vw;
-    cursor: pointer;  
-    font-family: "VT323", monospace;
-}
+    .emoji {
+        width: 2vw;
+    }
 
-.first-block{
-    padding: .6vw;
-    border: solid .3vw white;
-    margin: 2vw;
-}
+    .copy {
+        padding: .6vw;
+        margin: 1vw;
+        margin-left: 3.5vw;
+        border: solid .1vw #0c0c0c;
+        color: #0c0c0c;
+        background-color: white;
+        font-size: 1.5vw;
+        cursor: pointer;
+        font-family: "VT323", monospace;
+    }
 
+    .first-block {
+        padding: .6vw;
+        border: solid .3vw white;
+        margin: 2vw;
+    }
+
+    /* From Uiverse.io by jeremyssocial */
+    @keyframes blinkCursor {
+        50% {
+            border-right-color: transparent;
+        }
+    }
+
+    @keyframes typeAndDelete {
+
+        0%,
+        10% {
+            width: 0;
+        }
+
+        45%,
+        55% {
+            width: 6.2em;
+        }
+
+        /* adjust width based on content */
+        90%,
+        100% {
+            width: 0;
+        }
+    }
+
+
+    .text {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 0.2em solid white;
+        animation: typeAndDelete 4s steps(11) infinite,
+            blinkCursor 0.4s step-end infinite alternate;
+        margin-left: 42%;
+        color: white;
+        font-size: 2.5em;
+        margin: 0;
+    }
 </style>
-<body>
-<div class="r-g-b">
-    <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red">
-            <animate attributeName="r" from="40" to="10" dur="4s" repeatCount="indefinite" />
-        </circle>
-    </svg>
-    <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="green">
-            <animate attributeName="r" from="40" to="10" dur="3s" repeatCount="indefinite" />
-        </circle>
-    </svg>
-    <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="blue">
-            <animate attributeName="r" from="40" to="10" dur="2s" repeatCount="indefinite" />
-        </circle>
-    </svg>
-</div>
-<p class="title">/* === Wassup Mates this is the ("DECTA WarHouse") === *\</p>
-<p>this page will contain all helpful qustions, codes, maybe <span style="color: rgb(83, 83, 83);">TASKs</span> <img class="emoji" src="assets/no-thinking.gif">.</p>
-<p style="color: red;">Okey, it might seems like "ILLEGAL CONTENT", but it's not.</p>
-<p>I'm gonna try to provide u with all resources and materials , "maybe answers XD".</p>
-<p>and remeber it's...</p>
-<p class="title">JUSTforHELP</p>
 
-<details>
-    <summary>Insurance Company Management System Project By C Language</summary>
-<div class="first-block">
-<pre>
+<body>
+    <div class="control close"></div>
+    <div class="control minimize"></div>
+    <div class="control maximize"></div>
+    </div>
+    </div>
+    <div class="text">ITS ALIVE <span style="color:red;">NOW</span>..</div>
+
+
+    <p class="title">/* === Wassup Mates this is the ("DECTA WarHouse") === *\</p>
+    <p>this page will contain all helpful qustions, codes, maybe <span style="color: rgb(83, 83, 83);">TASKs</span> <img
+            class="emoji" src="assets/no-thinking.gif">.</p>
+    <p style="color: red;">Okey, it might seems like "ILLEGAL CONTENT", but it's not.</p>
+    <p>I'm gonna try to provide u with all resources and materials , "maybe answers XD".</p>
+    <p>and remeber it's...</p>
+    <p class="title">JUSTforHELP</p>
+
+    <details>
+        <summary>Insurance Company Management System Project By C Language</summary>
+        <div class="first-block">
+            <pre>
     <strong>//--This Sector Will contain what we need in code--\\</strong>
                             
     1- need to learn how to edit content that stored already in file
@@ -113,10 +150,10 @@ details pre{
     5- excel file management and link it with the program 
     6- to be continue XD.....
 </pre>
-<details class="source-code">
-    <summary>Source-Code-For-STEP-1 ( CLICK ME )</summary>
-    <button class="copy" onclick="copyCode('codeToCopy1')">Copy</button>
-    <pre id="codeToCopy1">#include &lt;stdio.h&gt;
+            <details class="source-code">
+                <summary>Source-Code-For-STEP-1 ( CLICK ME )</summary>
+                <button class="copy" onclick="copyCode('codeToCopy1')">Copy</button>
+                <pre id="codeToCopy1">#include &lt;stdio.h&gt;
         #include &lt;stdlib.h&gt;           
             struct [str-name]{
                 char name[30];
@@ -191,10 +228,10 @@ details pre{
                 return 0;
             }
     </pre>
-</details>
-</div>
-<div class="first-block">
-    <pre>
+            </details>
+        </div>
+        <div class="first-block">
+            <pre>
         <strong>//--This Sector Will contain what we need in code--\\</strong>
                                 
         1- need to learn how to edit content that stored already in file
@@ -209,10 +246,10 @@ details pre{
         1- now each user has his own file 
         2- each user has structure coordination
     </pre>
-    <details class="source-code">
-        <summary>Source-Code-For-STEP-2 ( CLICK ME )</summary>
-        <button class="copy" onclick="copyCode('codeToCopy2')">Copy</button>
-        <pre id="codeToCopy2">
+            <details class="source-code">
+                <summary>Source-Code-For-STEP-2 ( CLICK ME )</summary>
+                <button class="copy" onclick="copyCode('codeToCopy2')">Copy</button>
+                <pre id="codeToCopy2">
             #include &lt;stdio.h&gt;
             #include &lt;stdlib.h&gt;
             #include &lt;string.h&gt;    
@@ -464,10 +501,10 @@ details pre{
             }
             
         </pre>
-    </details>
-    </div>
-    <div class="first-block">
-        <pre>
+            </details>
+        </div>
+        <div class="first-block">
+            <pre>
             <strong>//--This Sector Will contain what we need in code--\\</strong>
                                     
             <del>1- need to learn how to edit content that stored already in file</del>
@@ -490,10 +527,10 @@ details pre{
             2- Customer Sector
             </div>
         </pre>
-        <details class="source-code">
-            <summary>Source-Code-For-STEP-3 ( CLICK ME )</summary>
-            <button class="copy" onclick="copyCode('codeToCopy3')">Copy</button>
-            <pre id="codeToCopy3">
+            <details class="source-code">
+                <summary>Source-Code-For-STEP-3 ( CLICK ME )</summary>
+                <button class="copy" onclick="copyCode('codeToCopy3')">Copy</button>
+                <pre id="codeToCopy3">
             #include &lt;stdio.h&gt;
             #include &lt;stdlib.h&gt;
             #include &lt;string.h&gt;
@@ -1120,7 +1157,7 @@ details pre{
                     }
                     
             </pre>
-        </details>
+            </details>
         </div>
         <div class="first-block">
             <pre>
@@ -1140,10 +1177,10 @@ details pre{
                 3- Agednt Sector 
                 4- Customer Sector
             </pre>
-        <details class="source-code">
-            <summary>Source-Code-For-STEP-4-FINAL ( CLICK ME )</summary>
-            <button class="copy" onclick="copyCode('codeToCopy4')">Copy</button>
-            <pre id="codeToCopy4">
+            <details class="source-code">
+                <summary>Source-Code-For-STEP-4-FINAL ( CLICK ME )</summary>
+                <button class="copy" onclick="copyCode('codeToCopy4')">Copy</button>
+                <pre id="codeToCopy4">
             #include &lt;stdio.h&gt;
             #include &lt;stdlib.h&gt;
             #include &lt;string.h&gt; 
@@ -2212,11 +2249,11 @@ details pre{
             
                      
             </pre>
-        </details>
+            </details>
         </div>
     </details>
 
-<p>bye....</p>
+    <p>bye....</p>
 </body>
 <script>
     function copyCode(targetId) {
@@ -2233,4 +2270,5 @@ details pre{
         }
     }
 </script>
+
 </html>

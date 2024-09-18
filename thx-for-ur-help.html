@@ -74,8 +74,8 @@
         .main {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr ;
-            height:100%;
+            grid-template-rows: 1fr 1fr;
+            height: 100%;
             flex-grow: 1;
         }
 
@@ -109,6 +109,23 @@
         button:hover {
             background-color: #212122;
         }
+
+        a {
+            text-decoration: underline;
+            color: #ffcf20;
+        }
+
+        a:hover {
+            color: #ffcf20;
+        }
+
+        .warning {
+            grid-row:1;
+            grid-column: 1/4;
+            padding: 50px;
+            text-align: center;
+
+        }
     </style>
     <title>JUSTforHELP</title>
 </head>
@@ -126,7 +143,12 @@
         </ul>
     </nav>
 
+
+
     <div class="main">
+        <h1 class="warning">This sector is only allowed for close people, if you are not one of them you can just return to
+            the <a href="index.html">Main Page</a> and continue browsing.</h1>
+
         <div class="private-sector">
             <h1>{Dark Sector}</h1>
             <form id="passwordForm">

@@ -12,6 +12,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<meta name="description"
+  content="Learn Object-Oriented Programming (OOP) in Java with easy-to-follow tutorials and examples. Master key concepts like classes, objects, inheritance, polymorphism, and more to enhance your Java development skills">
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
   /*font-family: 'Scheherazade', serif;*/
@@ -31,7 +33,7 @@
 
   .expandable-title {
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.103);
+    background-color: #292929;
     font-size: 1.5em;
     font-family: sans-serif;
     border-radius: .3vw;
@@ -69,6 +71,10 @@
 
   .before-start {
     margin: 1vw;
+  }
+
+  .note {
+    color: rgb(197, 2, 2);
   }
 
   *::selection {
@@ -130,12 +136,32 @@
     .before-start {
       display: none;
     }
+
+    .example-container img {
+      display: none;
+    }
   }
 
   @media (max-width: 900px) {
     .A4 {
       margin-left: auto;
       margin-right: auto;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #080808;
+      color: white;
+    }
+
+    .footer-column {
+      max-width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
     }
   }
 
@@ -164,7 +190,8 @@
     background: #2d2d2d;
     border-radius: .2vw;
     padding: .1vw;
-    font-size: 0.99vw;
+    font-size: 0.93vw;
+    max-width: 90%;
   }
 
   code[class*="language-"],
@@ -201,9 +228,11 @@
 
   .container {
     display: grid;
-    grid-template-columns: 12vw 1fr;
+    grid-template-columns: 14vw 1fr;
     height: 95vh;
     margin: 0;
+    border: solid #333;
+    border-width: .5px;
   }
 
   .main-content {
@@ -221,9 +250,9 @@
     grid-column: 1;
     background-color: rgba(255, 255, 255, 0.103);
     color: #dcdcdc;
-    padding: 1vw;
+    padding: 1.3vw;
     height: calc(100vh - 100px);
-    font-size: 1.03vw;
+    font-size: 1.33vw;
     margin: 0;
     border-radius: .3vw;
     scroll-behavior: smooth;
@@ -241,7 +270,7 @@
   .span-code {
     background-color: #333;
     font-family: 'Fira Code', monospace;
-    font-size: .90vw;
+    font-size: .96vw;
     padding: .33vw;
     border-radius: .28vw;
     color: white;
@@ -253,12 +282,89 @@
     padding: 1.0vw;
     border-radius: .28vw;
     color: #dcdcdc;
+    font-size: 1vw;
+    max-width: 86.8%;
   }
 
   .title {
     color: #ffcf20;
     margin: 3vw;
     text-align: center;
+  }
+
+  .navlink-scrollbar {
+    overflow-y: auto;
+    scrollbar-color: #adadad #414141;
+    scrollbar-width: thin;
+  }
+
+  footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+  .footer-column {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ffcf20;
+  }
+
+  .footer-bottom {
+    padding: 10px 0;
+    background-color: #222;
+    margin-top: 20px;
+  }
+
+  .example-container {
+    display: grid;
+    grid-column: 15% 1fr;
+    grid-row: 1fr;
+  }
+
+  .example {
+    grid-column: 1;
+    padding: 1vw;
+    padding-right: 1.5vw;
+    background-color: #292929;
+    border-radius: .28vw;
+    width: fit-content;
+  }
+
+  .example-container img {
+    grid-column: 2;
+    height: 90%;
+    width: 90%;
+    margin: auto;
   }
 </style>
 
@@ -282,8 +388,9 @@
 
   <div id="warning" class="warning" style="display: none;">
     <h2>This site is not optimized for mobile devices.</h2>
-    <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+    <p>Please switch to the desktop device for better experience.</p>
   </div>
+
   <div class="before-start">
     <h1 style="color: #ffcf20;">Before We Start</h1>
     <h2>You need to know</h2>
@@ -322,10 +429,17 @@
 
           <div class="nav-bar" id="nav-bar">
             <h1>Quick Access</h1>
-            <p><a class="Navlink" href="#startIntroJava">Creating .java</a></p>
-            <p><a class="Navlink" href="#Syntax">Syntax</a></p>
-            <p><a class="Navlink" href="#outPut">Outputs</a></p>
-            <p><a class="Navlink" href="#inPut">Iutputs</a></p>
+            <div class="navlink-scrollbar">
+              <p><a class="Navlink" href="#startIntroJava">Creating .java</a></p>
+              <p><a class="Navlink" href="#Syntax">Syntax</a></p>
+              <p><a class="Navlink" href="#outPut">Outputs</a></p>
+              <p><a class="Navlink" href="#inPut">Iutputs</a></p>
+              <p><a class="Navlink" href="#ArithmeticOperations">Arithmetic Operations</a></p>
+              <p><a class="Navlink" href="#IncrementDecrementOperator">++/-- Operations</a></p>
+              <p><a class="Navlink" href="#ControlStatements">Control Statements</a></p>
+
+
+            </div>
           </div>
 
           <div class="main-content">
@@ -443,10 +557,9 @@
               new line And <span class="span-code">\t</span> to make space</p>
             <p>Here is way if you want to print ("") or (/) </p>
             <div style="max-width: 100%; overflow-x: auto;">
-              <pre><code class="language-java">
+              <pre><code class="language-java"> 
                     System.out.print("He said that \"Iam from Egypt\" and lives in \"Aswan\"\n");
 		            System.out.print("The file located in D:\\javaprorg\\tryout\n");
-		            System.out.print("'x'\n");
 		            System.out.print("Sunday \t Monday \t Tuesday \t Wednesday");
               </code></pre>
             </div>
@@ -477,23 +590,28 @@
                 class="fa-solid fa-face-grin-stars"></i> <i class="fa-solid fa-face-grin-stars"></i> <i
                 class="fa-solid fa-face-grin-stars"></i> --</h3>
 
-                <h2>First programe is calculating rectangle area </h2>
-                <p>but first you need to know little bit thing about <strong>Variables</strong></p>
-                <h2>Data Types</h2>
-                <ul>
-                  <li><span class="span-code">String</span> - stores text, such as "Hello". String values are surrounded by double quotes</li>
-                  <li><span class="span-code">int</span> - stores integers (whole numbers), without decimals, such as 123 or -123</li>
-                  <li><span class="span-code">float</span> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
-                  <li><span class="span-code">char</span> - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes</li>
-                  <li><span class="span-code">boolean</span> - stores values with two states: true or false</li>
-                </ul>
+            <h2>First programe is calculating rectangle area </h2>
+            <p>but first you need to know little bit thing about <strong>Variables</strong></p>
+            <h2>Data Types</h2>
+            <ul>
+              <li><span class="span-code">String</span> - stores text, such as "Hello". String values are surrounded by
+                double quotes</li>
+              <li><span class="span-code">int</span> - stores integers (whole numbers), without decimals, such as 123 or
+                -123</li>
+              <li><span class="span-code">float</span> - stores floating point numbers, with decimals, such as 19.99 or
+                -19.99</li>
+              <li><span class="span-code">char</span> - stores single characters, such as 'a' or 'B'. Char values are
+                surrounded by single quotes</li>
+              <li><span class="span-code">boolean</span> - stores values with two states: true or false</li>
+            </ul>
 
-                <h2>So lets get started...</h2>
-                <p>first you need to plan your code.</p>
-                <p>this code will calculate rectangle area so we need 3 Variables ( 1. for width , 2. for lenght , 3. for area )</p>
+            <h2>So lets get started...</h2>
+            <p>first you need to plan your code.</p>
+            <p>this code will calculate rectangle area so we need 3 Variables ( 1. for width , 2. for lenght , 3. for
+              area )</p>
 
-                <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
-                  <pre><code class="language-java">
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java">
                       import java.util.Scanner; 
     
                       public class Main { 
@@ -513,13 +631,13 @@
                           }
                         }
                     </code></pre>
-                </div>
-                <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
+            </div>
+            <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
 
-                <h2>Second one will calculate Net_Salary</h2>
+            <h2>Second one will calculate Net_Salary</h2>
 
-                <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
-                  <pre><code class="language-java">
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java">
                     import java.util.Scanner; 
 
                     public class Main { 
@@ -542,15 +660,212 @@
                         }
                       }
                     </code></pre>
-                </div>
-                <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
-                <h4>You may now saying iam an egg but seriously you need to try it by yourself</h4>
-          </div>
+            </div>
+            <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
+            <h4>You may now saying iam an egg but seriously you need to try it by yourself</h4>
+
+            <h1 id="ArithmeticOperations" class="title">Arithmetic Operations</h1>
+            <h3>You need to know the priority of each Arithmetic operation</h3>
+            <ul>
+              <li> <span class="span-code">()</span> &#8594; operation inside the brackets has first priority to be
+                executed</li>
+              <li> <span class="span-code">*,/,%</span> &#8594; has second priority </li>
+              <li> <span class="span-code">+,-</span> &#8594; is the last one</li>
+            </ul>
+            <p class="note">NOTE : if all operations in the same line have same priority, it will be executed from left
+              to right</p>
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java"> 
+                    public class Main { 
+                        public static void main(String[] args) {
+                          System.out.println(2 + 3 * 5);
+                          System.out.println((2 + 3) * 5);
+                        }
+                      }
+                    </code></pre>
+            </div>
+            <h2>Output</h2>
+            <h3 class="output">
+              <p>17</p>
+              <p>25</p>
+            </h3>
+
+            <h1 id="IncrementDecrementOperator" class="title">Increment and Decrement Operator </h1>
+            <h3><span class="span-code"> k++ , ++k </span> &#8594; k = k+1</h3>
+            <h3><span class="span-code"> k-- , --k </span> &#8594; k = k-1</h3>
+            <h2>The Difference is when you gonna apply the Increment and Decrement.</h2>
+            <h3> <span style="color:#f2f2f2">Pre-incremental</span>: ++k that mean the compiler will apply incremental
+              in execution يعني هيضيف اثناء الطبع او التنفيذ</h3>
+            <h3> <span style="color:#f2f2f2">Post-incremental</span>: k++ that mean the compiler will apply incremental
+              after execution هيضيف بعد الطبع او التنفيذ</h3>
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java"> 
+                    public class Main { 
+                        public static void main(String[] args) {
+                          int x = 2;
+                          int k = 9;                         
+                          System.out.println( ++x );
+                          System.out.println( k++ );
+                          System.out.println( k );
+                        }
+                      }
+                    </code></pre>
+            </div>
+            <h2>Output</h2>
+            <h3 class="output">
+              <p>3</p>
+              <p>9</p>
+              <p>10</p>
+            </h3>
+            <p>same thing with <span class="span-code">--</span> as decrement</p>
+            <h1> <span style="color: #ffcf20;">ADD-ons:</span> Special assignment / Compound assignment statement </h1>
+            <p><span class="span-code">x += 5</span> &#8594; x = x + 5 means : add 5 to the x value</p>
+            <p><span class="span-code">x *= 5</span> &#8594; x * 5 means : multiply 5 by the x value</p>
+            <p><span class="span-code">x /= 5</span> &#8594; x / 5 means : divide 5 by the x value</p>
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java"> 
+                    public class Main { 
+                        public static void main(String[] args) {
+                          int x = 10;
+                          x += 5;
+                          System.out.println(x);
+                          x = 10; // reset the value
+                          x *= 5;
+                          System.out.println(x);
+                          x = 10; // reset the value
+                          x /= 5;
+                          System.out.println(x);
+                        }
+                      }
+                    </code></pre>
+            </div>
+            <h2>Output</h2>
+            <h3 class="output">
+              <p>15</p>
+              <p>50</p>
+              <p>2</p>
+            </h3>
+
+            <h1 class="title" id="ControlStatements">Control Statements</h1>
+            <h3>Normally, Statements in program are executed one by one "Sequential Execution".</h3>
+            <h3>But sometimes you need to specify the execution or the priorities "Transfer of Control".</h3>
+            <h3>We categorize the "Control Statement" in two groups -> 1. Selection Control Statement 2. Repetition
+              Control Statement</h3>
+            <h1>1. Selection Statement ( If statement )</h1>
+            <div class="example-container">
+              <div class="example">
+                <h2 style="background-color: #414141; width: 80%; padding: .5vw; border-radius: .28vw;">Example</h2>
+                <code>
+              <pre>
+
+  if (condition) {
+      printing or execution
+  }
+
+  else if (condition) {
+      printing or execution
+  }
+
+  else{
+      printing or execution
+  } 
+
+              </pre>
+            </code>
+              </div>
+              <img src="content-assets/vote-if-example.png" alt="if statement voting example" loading="lazy">
+            </div>
+            <h3><span style="color: #ffcf20;">ADD-ons:</span>You have to know "Rational Expression"</h3>
+            <p><span class="span-code">==</span> &#8594; equal to " we use it to make comparision".</p>
+            <ul>
+              <li><span class="span-code">x = 50</span> means store 50 in variable "x".</li>
+              <li><span class="span-code">x == 50</span> means QUESTION, you are asking your compiler if x == 50 and the
+                answer is "TRUE" or "FALSE" , "1" or "0".</li>
+            </ul>
+            <p><span class="span-code">!=</span> &#8594; not equal to.</p>
+            <p><span class="span-code">
+                < ,>
+              </span> &#8594; less and greater than.</p>
+            <p><span class="span-code">
+                <= ,>=
+              </span> &#8594; less or equal to and greater or equal to.</p>
+
+            <h2>Pass OR Fall Program</h2>
+
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java">
+                  import java.util.Scanner; 
+
+                  public class Main { 
+                  
+                      public static void main(String[] args) {
+                        Scanner input = new Scanner(System.in); 
+                        
+                        int marks ;
+                        System.out.println("Enter marks: ");
+                        marks = input.nextInt();
+                
+                        if (marks >= 60)
+                            System.out.println("you passed");
+                        else 
+                            System.out.println("you failed");
+                      }
+                    }
+                  </code></pre>
+            </div>
+
+            <h1> <span style="color: #ffcf20;">ADD-ons:</span> Nested if </h1>
+            <h3>Complicated way to execute multiple if statements, but you have to know it</h3>
+
+            <h2>Odd of Even & Positive or Negative identifier</h2>
+
+            <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+              <pre><code class="language-java">
+                  import java.util.Scanner; 
+
+                  public class Main { 
+                  
+                      public static void main(String[] args) {
+                        Scanner input = new Scanner(System.in);
+                        System.out.print("write Num :");
+                        int num = input.nextInt();
+                        if ( num >= 0)
+                        {
+                            if ( num % 2 == 0)
+                                System.out.println("this number is even and positive");
+                            else
+                                System.out.println("this number is odd and positive");
+                        }
+                        else {
+                            if ( num % 2 == 0)
+                                System.out.println("this number is even and negative");
+                            else
+                                System.out.println("this number is odd and negative");
+                        }
+                      }
+                    }
+                  </code></pre>
+            </div>
+            <h2>Output</h2>
+            <h3 class="output">
+              <p style="color:#adadad"> if input : 16</p>
+              <p>this number is even and positive</p>
+              <p style="color:#adadad"> if input : 15</p>
+              <p>this number is odd and positive</p>
+              <p style="color:#adadad"> if input : -15</p>
+              <p>this number is odd and negative</p>
+              <p style="color:#adadad"> if input : -16</p>
+              <p>this number is even and negative</p>
+            </h3>
+
+
+          </div> <!--End Container-->>
         </div>
       </div>
       </div>
     </li>
   </ul>
+
   <ul class="expandable-list">
     <li class="expandable-item">
       <div class="expandable-title">Week .2 LECT & SEC</div>
@@ -559,6 +874,40 @@
       </div>
     </li>
   </ul>
+
+
+
+  <!-- QUICK COPY -->
+
+  <!-- <ul class="expandable-list">
+    <li class="expandable-item">
+      <div class="expandable-title">Week .2 LECT & SEC</div>
+      <div class="expandable-content">
+        NULL
+      </div>
+    </li>
+
+    <p><span class="span-code"></span> &#8594;</p>
+
+
+  </ul> -->
+
+
+  <footer>
+    <div class="footer-column">
+      <h2 style="color: #ffcf20;">About Me</h2>
+      <p>I'm a junior Front-End developer</p>
+      <p>trying to gain experience by helping my friends.</p>
+    </div>
+    <div class="footer-column">
+      <h2 style="color: #ffcf20;">Contact Me</h2>
+      <ul>
+        <li><a href="https://github.com/MaRioJTR" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/mario-maged-dev/" target="_blank">LinkedIn</a></li>
+        <li><a href="#">+20 1208767293</a></li>
+      </ul>
+    </div>
+  </footer>
 
 
   <button id="backToTopBtn" title="Go to top"><strong>UP</strong></button>
