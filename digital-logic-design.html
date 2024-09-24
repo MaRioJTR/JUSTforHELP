@@ -1,268 +1,438 @@
 <!DOCTYPE html>
 <Html lang="en">
-<meta charset="Utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="Utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
   <link rel="icon" href="line-starter.png" type="image/png">
-<style>
-  .expandable-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .expandable-item {
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-
-  .expandable-title {
-    padding: 10px;
-    background-color: #292929;
-    font-size: 1.5em;
-    font-family: sans-serif;
-    border-radius: .3vw;
-    margin: 10px;
-  }
-
-  .expandable-content {
-    padding: 10px;
-    display: none;
-    font-size: 1.3em;
-    font-family: sans-serif;
-    cursor: default;
-  }
-
-  .expandable-item.expanded .expandable-content {
-    display: block;
-  }
-
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background: linear-gradient(to bottom, #000000, #1a1a1a);
-    background-attachment: fixed;
-    color: #dcdcdc;
-    font-family: 'Fira Code', monospace;
-    display: flex;
-    flex-direction: column;
-    background-repeat: no-repeat;
-  }
-
-  .before-start {
-    margin: 1vw;
-  }
-
-  .note{
-    color:rgb(197, 2, 2);
-  }
-
-  *::selection {
-    background: white;
-    color: black;
-  }
-
-  .navimage {
-    max-height: 27vw;
-    padding: 0;
-    margin: 0;
-    width: 27vw;
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    background-color: #080808;
-    padding: 1.2vw;
-    margin: 0;
-    align-items: center;
-    height: 3vw;
-  }
-
-  nav ul li {
-    list-style-type: none;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #fffefe;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4vw;
-    transition: color 0.3s ease-in-out;
-  }
-
-  nav ul li a:hover {
-    padding: .5vw;
-    border-radius: 1.5vw;
-    background-color: #fffefe;
-    color: #080808;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  @media (max-width: 601px) {
-    .container {
-      grid-template-columns: .25fr 1fr;
+  <style>
+    @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
+    /*font-family: 'Scheherazade', serif;*/
+  
+  
+  
+    .expandable-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-
-    .main-content {
-      font-size: 2.25vw
+  
+    .expandable-item {
+      cursor: pointer;
+      margin-bottom: 10px;
     }
-
-    .nav-bar {
-      padding: 2vw;
-      font-size: 3vw;
+  
+    .expandable-title {
+      padding: 10px;
+      background-color: #292929;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      border-radius: .3vw;
+      margin: 10px;
     }
-
-    .before-start {
+  
+    .expandable-content {
+      padding: 10px;
       display: none;
+      font-size: 1.3em;
+      font-family: sans-serif;
+      cursor: default;
     }
-  }
-
-  @media (max-width: 900px) {
-    .A4 {
-      margin-left: auto;
-      margin-right: auto;
+  
+    .expandable-item.expanded .expandable-content {
+      display: block;
     }
-  }
-
-  .copy-button {
-    width: 100px;
-    height: 50px;
-    background-color: #ccc;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  .warning {
-    background-color: #ffcccc;
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    color: #000000;
-  }
-
-  .warning h2 {
-    margin-top: 0;
-  }
-
-  pre[class*="language-"] {
-    background: #2d2d2d;
-    border-radius: .2vw;
-    padding: .1vw;
-    font-size: 0.99vw;
-    max-width: 90%;
-  }
-
-  code[class*="language-"],
-  pre[class*="language-"] {
-    font-family: 'Courier New', Courier, monospace;
-  }
-
-  #backToTopBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: #eae9fc;
-    /* Set a background color */
-    color: #1a1a1a;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 15px;
-    /* Some padding */
-    border-radius: 10px;
-    /* Rounded corners */
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: 14vw 1fr;
-    height: 95vh;
-    margin: 0;
-    border: solid #333;
-    border-width: .5px;
-  }
-
-  .main-content {
-    grid-column: 2;
-    padding-left: 1.1vw;
-    margin: 0;
-    height: auto;
-    overflow-y: auto;
-    scrollbar-color: #adadad #414141;
-    scrollbar-width: thin;
-    color: #dcdcdc;
-  }
-
-  .nav-bar {
-    grid-column: 1;
-    background-color: rgba(255, 255, 255, 0.103);
-    color: #dcdcdc;
-    padding: 1.3vw;
-    height: calc(100vh - 100px);
-    font-size: 1.33vw;
-    margin: 0;
-    border-radius: .3vw;
-    scroll-behavior: smooth;
-  }
-
-  .Navlink {
-    color: #dcdcdc;
-    text-decoration: none;
-  }
-
-  .Navlink:hover {
-    color: #ffcf20;
-  }
-
-  .span-code {
-    background-color: #333;
-    font-family: 'Fira Code', monospace;
-    font-size: .96vw;
-    padding: .33vw;
-    border-radius: .28vw;
-    color: white;
-  }
-
-  .output {
-    background-color: #2d2d2d;
-    font-family: 'Fira Code', monospace;
-    padding: 1.0vw;
-    border-radius: .28vw;
-    color: #dcdcdc;
-    font-size: 1vw;
-    max-width: 88%;
-  }
-
-  .title {
-    color: #ffcf20;
-    margin: 3vw;
-    text-align: center;
-  }
-  .navlink-scrollbar{
-    overflow-y: auto;
-    scrollbar-color: #adadad #414141;
-    scrollbar-width: thin;
-  }
+  
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      background-attachment: fixed;
+      color: #dcdcdc;
+      font-family: 'Fira Code', monospace;
+      display: flex;
+      flex-direction: column;
+      background-repeat: no-repeat;
+    }
+  
+    .warning {
+      background-color: #ad1f1f;
+      text-align: center;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      color: #ffff;
+    }
+  
+    .warning h2 {
+      margin-top: 0;
+    }
+  
+    .before-start {
+      margin: 1vw;
+    }
+  
+    .note {
+      color: rgb(197, 2, 2);
+    }
+  
+    *::selection {
+      background: white;
+      color: black;
+    }
+  
+    p {
+      line-height: 1.6;
+    }
+  
+    .navimage {
+      max-height: 27vw;
+      padding: 0;
+      margin: 0;
+      width: 27vw;
+    }
+  
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      background-color: #080808;
+      padding: 1.2vw;
+      margin: 0;
+      align-items: center;
+      height: 3vw;
+    }
+  
+    nav ul li {
+      list-style-type: none;
+    }
+  
+    nav ul li a {
+      text-decoration: none;
+      color: #fffefe;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.4vw;
+      transition: color 0.3s ease-in-out;
+    }
+  
+    nav ul li a:hover {
+      padding: .5vw;
+      border-radius: 1.5vw;
+      background-color: #fffefe;
+      color: #080808;
+      transition: background-color 0.3s ease-in-out;
+    }
+  
+    @media (max-width: 601px) {
+      .container {
+        grid-template-columns: .25fr 1fr;
+      }
+  
+      .main-content {
+        font-size: 2.25vw
+      }
+  
+      .nav-bar {
+        padding: 2vw;
+        font-size: 3vw;
+      }
+  
+      .before-start {
+        display: none;
+      }
+  
+      .example-container img {
+        display: none;
+      }
+  
+    }
+  
+    @media (max-width: 900px) {
+      .A4 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #080808;
+        color: white;
+      }
+  
+      .footer-column {
+        max-width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+  
+    .copy-button {
+      width: 100px;
+      height: 50px;
+      background-color: #ccc;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  
+    pre[class*="language-"] {
+      background: #2d2d2d;
+      border-radius: .2vw;
+      padding: .1vw;
+      font-size: 0.93vw;
+      max-width: 90%;
+    }
+  
+    code[class*="language-"],
+    pre[class*="language-"] {
+      font-family: 'Courier New', Courier, monospace;
+    }
+  
+    #backToTopBtn {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Fixed position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      right: 30px;
+      /* Place the button 30px from the right */
+      z-index: 99;
+      /* Make sure it does not overlap */
+      border: none;
+      /* Remove borders */
+      outline: none;
+      /* Remove outline */
+      background-color: #eae9fc;
+      /* Set a background color */
+      color: #1a1a1a;
+      /* Text color */
+      cursor: pointer;
+      /* Add a mouse pointer on hover */
+      padding: 15px;
+      /* Some padding */
+      border-radius: 10px;
+      /* Rounded corners */
+    }
+  
+    .container {
+      display: grid;
+      grid-template-columns: 14vw 1fr;
+      height: 95vh;
+      margin: 0;
+      border: solid #adadad;
+      border-width: 1.5px;
+    }
+  
+    .main-content {
+      grid-column: 2;
+      padding-left: 1.1vw;
+      margin: 0;
+      height: auto;
+      overflow-y: auto;
+      scrollbar-color: #adadad #414141;
+      scrollbar-width: thin;
+      color: #dcdcdc;
+      
+    }
+  
+    .nav-bar {
+      grid-column: 1;
+      background-color: rgba(255, 255, 255, 0.103);
+      color: #dcdcdc;
+      padding: 1.3vw;
+      height: calc(100vh - 100px);
+      font-size: 1.33vw;
+      margin: 0;
+      border-radius: .3vw;
+      scroll-behavior: smooth;
+  
+      overflow-y: auto;
+      scrollbar-color: #adadad #414141;
+      scrollbar-width: thin;
+    }
+  
+    .span-code {
+      background-color: #333;
+      font-family: 'Fira Code', monospace;
+      font-size: .96vw;
+      padding: .33vw;
+      border-radius: .28vw;
+      color: white;
+    }
+  
+    .output {
+      background-color: #2d2d2d;
+      font-family: 'Fira Code', monospace;
+      padding: 1.0vw;
+      border-radius: .28vw;
+      color: #dcdcdc;
+      font-size: 1vw;
+      max-width: 86.8%;
+    }
+  
+    .title {
+      color: #ffcf20;
+      margin: 3vw;
+      text-align: center;
+    }
+  
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 0;
+      text-align: center;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-around;
+    }
+  
+  
+    .footer-column {
+      flex: 1;
+      max-width: 300px;
+      padding: 10px;
+      font-size: 15px;
+    }
+  
+    .footer-column h3 {
+      margin-bottom: 10px;
+    }
+  
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-column ul li {
+      margin: 5px 0;
+    }
+  
+    .footer-column ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+  
+    .footer-column ul li a:hover {
+      color: #ffcf20;
+    }
+  
+    .footer-bottom {
+      padding: 10px 0;
+      background-color: #222;
+      margin-top: 20px;
+    }
+  
+    .example-container {
+      display: grid;
+      grid-column: 15% 1fr;
+      grid-row: 1fr;
+    }
+  
+    .example {
+      grid-column: 1;
+      padding: 1vw;
+      padding-right: 1.5vw;
+      background-color: #292929;
+      border-radius: .28vw;
+      width: fit-content;
+    }
+  
+    .example-container img {
+      grid-column: 2;
+      height: 90%;
+      width: 90%;
+      margin: auto;
+    }
+  
+  
+    .nav-bar {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+  
+    .Navlink {
+      background-color: #1a1a1a;
+      color: #eae9fc;
+      padding: .5vw;
+      border-radius: 8px;
+      transition: transform 0.3s, background-color 0.3s;
+      text-decoration: none;
+    }
+  
+    .Navlink:hover {
+      background-color: #ffcf20;
+      transform: scale(1.05);
+      color: #1a1a1a;
+    }
+  
+  
+    .decta-ul li {
+      position: relative;
+      padding: 10px 20px;
+      margin: 10px 0;
+      background: #1a1a1a;
+      color: #eae9fc;
+      border-radius: 5px;
+      max-width: 75%;
+    }
+  
+  
+    .decta-ul a {
+      color: #ffcf20
+    }
+  
+    .decta-ul li::before {
+      content: counter(step);
+      counter-increment: step;
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      background: #ffcf20;
+      color: #1a1a1a;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+  
+    .decta-ul {
+      counter-reset: step;
+    }
+  
+  
+    .show-elements {
+      background-color: #292929;
+      padding: 1vw;
+      width: 80%;
+      border-radius: 1.28vw;
+    }
+  
+    .show-elements h2 {
+      color: #ffcf20
+    }
+  
 </style>
 
 <head>
@@ -282,10 +452,28 @@
     </ul>
 </nav>
 
-  <div id="warning" class="warning" style="display: none;">
-    <h2>This site is not optimized for mobile devices.</h2>
-    <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+<div id="warning" class="warning" style="display: none;">
+  <h2>Please switch to a desktop or any large screen</h2>
+  <p>When you open this site on a phone or any small screen, some important elements may disappear.</p>
+  <button id="closeWarning"
+    style="background-color: #dcdcdc; border: none; padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; cursor: pointer;">Close</button>
 </div>
+
+<footer>
+  <div class="footer-column">
+      <h2 style="color: #ffcf20;">About Me</h2>
+      <p>I'm a junior Front-End developer</p>
+      <p>trying to gain experience by helping my friends.</p>
+  </div>
+  <div class="footer-column">
+      <h2 style="color: #ffcf20;">Contact Me</h2>
+      <ul>
+          <li><a href="https://github.com/MaRioJTR" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/mario-maged-dev/" target="_blank">LinkedIn</a></li>
+          <li><a href="#">+20 1208767293</a></li>
+      </ul>
+  </div>
+</footer>
 
 <button id="backToTopBtn" title="Go to top">UP</button>
   <script>
@@ -299,14 +487,18 @@
       });
     });
             // JavaScript to redirect mobile users to the desktop version
-            window.onload = function() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+            window.onload = function () {
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
-        if (isMobile) {
-            document.getElementById("warning").style.display = "block";
-        }
-    };
+    if (isMobile) {
+        document.getElementById("warning").style.display = "block";
+    }
+
+    document.getElementById("closeWarning").addEventListener("click", function () {
+        document.getElementById("warning").style.display = "none";
+    });
+};
     // buttom to top
 let mybutton = document.getElementById("backToTopBtn");
 

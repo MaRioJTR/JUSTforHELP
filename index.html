@@ -325,10 +325,11 @@
                 </ul>
             </nav>
         </header>
-        <!--<div id="warning" class="warning" style="display: none;"> 
-        <h2>This site is not optimized for mobile devices.</h2>
-        <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
-    </div> -->
+        <!--<div id="warning" class="warning" style="display: none;">
+            <h2>This site is not optimized for mobile devices.</h2>
+            <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
+            <button id="closeWarning" style="background-color: #dcdcdc; border: none; padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; cursor: pointer;">Close</button>
+        </div>-->
 
         <div class="content-container">
             <div class="first-line">
@@ -377,13 +378,19 @@
     <script>
         // to warn mobile users.
         window.onload = function () {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
-            if (isMobile) {
-                document.getElementById("warning").style.display = "block";
-            }
-        };
+    if (isMobile) {
+        document.getElementById("warning").style.display = "block";
+    }
+
+    document.getElementById("closeWarning").addEventListener("click", function () {
+        document.getElementById("warning").style.display = "none";
+    });
+};
+
+
     </script>
 
 </body>

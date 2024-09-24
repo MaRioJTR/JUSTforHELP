@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <Html lang="en">
-<meta charset="Utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="Utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
 <link rel="icon" href="line-starter.png" type="image/png">
 <style>
+  @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
+  /*font-family: 'Scheherazade', serif;*/
+
+
+
   .expandable-list {
     list-style: none;
     padding: 0;
@@ -56,17 +68,34 @@
     background-repeat: no-repeat;
   }
 
+  .warning {
+    background-color: #ad1f1f;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #ffff;
+  }
+
+  .warning h2 {
+    margin-top: 0;
+  }
+
   .before-start {
     margin: 1vw;
   }
 
-  .note{
-    color:rgb(197, 2, 2);
+  .note {
+    color: rgb(197, 2, 2);
   }
 
   *::selection {
     background: white;
     color: black;
+  }
+
+  p {
+    line-height: 1.6;
   }
 
   .navimage {
@@ -123,12 +152,33 @@
     .before-start {
       display: none;
     }
+
+    .example-container img {
+      display: none;
+    }
+
   }
 
   @media (max-width: 900px) {
     .A4 {
       margin-left: auto;
       margin-right: auto;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #080808;
+      color: white;
+    }
+
+    .footer-column {
+      max-width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
     }
   }
 
@@ -140,24 +190,11 @@
     cursor: pointer;
   }
 
-  .warning {
-    background-color: #ffcccc;
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    color: #000000;
-  }
-
-  .warning h2 {
-    margin-top: 0;
-  }
-
   pre[class*="language-"] {
     background: #2d2d2d;
     border-radius: .2vw;
     padding: .1vw;
-    font-size: 0.99vw;
+    font-size: 0.93vw;
     max-width: 90%;
   }
 
@@ -198,8 +235,8 @@
     grid-template-columns: 14vw 1fr;
     height: 95vh;
     margin: 0;
-    border: solid #333;
-    border-width: .5px;
+    border: solid #adadad;
+    border-width: 1.5px;
   }
 
   .main-content {
@@ -211,6 +248,7 @@
     scrollbar-color: #adadad #414141;
     scrollbar-width: thin;
     color: #dcdcdc;
+    
   }
 
   .nav-bar {
@@ -223,15 +261,10 @@
     margin: 0;
     border-radius: .3vw;
     scroll-behavior: smooth;
-  }
 
-  .Navlink {
-    color: #dcdcdc;
-    text-decoration: none;
-  }
-
-  .Navlink:hover {
-    color: #ffcf20;
+    overflow-y: auto;
+    scrollbar-color: #adadad #414141;
+    scrollbar-width: thin;
   }
 
   .span-code {
@@ -250,7 +283,7 @@
     border-radius: .28vw;
     color: #dcdcdc;
     font-size: 1vw;
-    max-width: 88%;
+    max-width: 86.8%;
   }
 
   .title {
@@ -258,11 +291,148 @@
     margin: 3vw;
     text-align: center;
   }
-  .navlink-scrollbar{
-    overflow-y: auto;
-    scrollbar-color: #adadad #414141;
-    scrollbar-width: thin;
+
+  footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
   }
+
+
+  .footer-column {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ffcf20;
+  }
+
+  .footer-bottom {
+    padding: 10px 0;
+    background-color: #222;
+    margin-top: 20px;
+  }
+
+  .example-container {
+    display: grid;
+    grid-column: 15% 1fr;
+    grid-row: 1fr;
+  }
+
+  .example {
+    grid-column: 1;
+    padding: 1vw;
+    padding-right: 1.5vw;
+    background-color: #292929;
+    border-radius: .28vw;
+    width: fit-content;
+  }
+
+  .example-container img {
+    grid-column: 2;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+  }
+
+
+  .nav-bar {
+    list-style-type: none;
+    padding: 0;
+  }
+
+
+  .Navlink {
+    background-color: #1a1a1a;
+    color: #eae9fc;
+    padding: .5vw;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+  }
+
+  .Navlink:hover {
+    background-color: #ffcf20;
+    transform: scale(1.05);
+    color: #1a1a1a;
+  }
+
+
+  .decta-ul li {
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background: #1a1a1a;
+    color: #eae9fc;
+    border-radius: 5px;
+    max-width: 75%;
+  }
+
+
+  .decta-ul a {
+    color: #ffcf20
+  }
+
+  .decta-ul li::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    background: #ffcf20;
+    color: #1a1a1a;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .decta-ul {
+    counter-reset: step;
+  }
+
+
+  .show-elements {
+    background-color: #292929;
+    padding: 1vw;
+    width: 80%;
+    border-radius: 1.28vw;
+  }
+
+  .show-elements h2 {
+    color: #ffcf20
+  }
+
 </style>
 
 <head>
@@ -283,19 +453,37 @@
     </ul>
 </nav>
 
-  <div id="warning" class="warning" style="display: none;">
-    <h2>This site is not optimized for mobile devices.</h2>
-    <p>Please switch to the desktop version or (desktop site option) for a better experience.</p>
-  </div>
+<div id="warning" class="warning" style="display: none;">
+  <h2>Please switch to a desktop or any large screen</h2>
+  <p>When you open this site on a phone or any small screen, some important elements may disappear.</p>
+  <button id="closeWarning"
+    style="background-color: #dcdcdc; border: none; padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; cursor: pointer;">Close</button>
+</div>
 
-  <ul class="expandable-list">
+ <!-- <ul class="expandable-list">
     <li class="expandable-item">
       <div class="expandable-title">Week .1 LECT & SEC</div>
       <div class="expandable-content">
         LOL
       </div>
     </li>
-  </ul>
+  </ul>-->
+
+  <footer>
+    <div class="footer-column">
+        <h2 style="color: #ffcf20;">About Me</h2>
+        <p>I'm a junior Front-End developer</p>
+        <p>trying to gain experience by helping my friends.</p>
+    </div>
+    <div class="footer-column">
+        <h2 style="color: #ffcf20;">Contact Me</h2>
+        <ul>
+            <li><a href="https://github.com/MaRioJTR" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/mario-maged-dev/" target="_blank">LinkedIn</a></li>
+            <li><a href="#">+20 1208767293</a></li>
+        </ul>
+    </div>
+</footer>
 
 
 
@@ -312,13 +500,17 @@
     });
     // JavaScript to redirect mobile users to the desktop version
     window.onload = function () {
-      var userAgent = navigator.userAgent.toLowerCase();
-      var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isMobile = /iphone|ipod|android|blackberry|opera mini|opera mobi|windows phone|palm|iemobile|symbian/i.test(userAgent);
 
-      if (isMobile) {
+    if (isMobile) {
         document.getElementById("warning").style.display = "block";
-      }
-    };
+    }
+
+    document.getElementById("closeWarning").addEventListener("click", function () {
+        document.getElementById("warning").style.display = "none";
+    });
+};
     // buttom to top
     let mybutton = document.getElementById("backToTopBtn");
 

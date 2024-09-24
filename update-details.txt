@@ -11,10 +11,12 @@
 
 # dev Notes
 //(Content Codes)\\
-## OOP  ==  00p
-## Database System  ==  dbs
-## Digital Logic Design  ==  dld
-## Introduction to Networks  ==  itn
+## OOP  ==  00P
+## Database System  ==  DBS
+## Digital Logic Design  ==  DLD
+## Introduction to Networks  ==  ITN
 ## Whole Subjects  ==  sa4
+
 //(CC Start)\\
 sa4.1.0         9182024
+sa4.1.1        9242024
