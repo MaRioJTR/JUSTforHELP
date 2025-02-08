@@ -505,7 +505,7 @@
 
   <ul class="expandable-list">
     <li class="expandable-item">
-      <div class="expandable-title">Week .1 Introduction to Java</div>
+      <div class="expandable-title">Introduction to Java</div>
       <div class="expandable-content">
 
         <div class="container">
@@ -522,6 +522,8 @@
               <p><a class="Navlink" href="#ControlStatements">Control Statements</a></p>
               <p><a class="Navlink" href="#while">While Loop</a></p>
               <p><a class="Navlink" href="#doWhile">Do While Loop</a></p>
+              <p><a class="Navlink" href="#forLoop">For Loop</a></p>
+              <p><a class="Navlink" href="#breakCountinue">Break & Continue</a></p>
             </div>
           </div>
 
@@ -1166,7 +1168,90 @@ do{
             </div>
             <h2 style="color:#4b4b4b">Output: Tryout By yourself</h2>
 
+            <h1 id="forLoop" class="title">For Loop</h1>
+            <h2>For loop is used to iterate a part of the program several times. If the number of iterations is fixed, it
+              is recommended to use the for loop.</h2>
+            <div class="example">
+              <h2 style="background-color: #414141; width: 80%; padding: .5vw; border-radius: .28vw;">Example</h2>
+              <code>
+            <pre>
+for (initialization; condition; increment/decrement)
+{
+  Statement 1
+  Statement 2
+  .
+  . 
+  .
+}
+            </pre>
+          </code>
+          </div>
+          <h2>For loop allows us to specify three elements of loop in same line</h2>
+          <div class="decta-ul">
+            <ul>
+              <li>Initialization: Initialize the loop counter value</li>
+              <li>Condition: Evaluate the loop counter value</li>
+              <li>Increment/Decrement: Increase or decrease the loop counter value</li>
+            </ul>
+          </div>
 
+          <h2>Program to get grade average for 5 students </h2>
+
+          <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+            <pre><code class="language-java">
+              import java.util.Scanner; 
+
+              public class Main { 
+              
+                  public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    int sum = 0;
+                    int grade = 0;
+                    for (int i = 1 ; i <=5 ; i++){
+                        System.out.println("Enter number ");
+                        grade = input. nextInt();
+                        sum += grade;
+                    }
+                    sum = sum / 5;
+                    System.out.printf("The sum is %d", sum);
+                  }
+              }
+                </code></pre>
+          </div>      
+          
+          <h1 id="breakCountinue" class="title">Break & Continue Statement</h1>
+          <h2>A) The Break Statement is typically used to exit early from a loop ( for,while,do...while),
+          After the break statement, the remaining of statement inside the loop are skipped. Then, execution continues starting at the first statement after the loop,</h2>
+          <h2>B) The Continue Statement skips the remaining statements inside the loop, BUT it will PROCEEDS WITH NEXT ITERATION.</h2>
+          <h2>Program to get grade average for 5 students </h2>
+
+          <div style="max-width: 100%; overflow-x: auto; max-height: 45vh; overflow-y: auto;">
+            <pre><code class="language-java">
+              import java.util.Scanner; 
+
+              public class Main { 
+              
+                  public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    int sum = 0;
+                    int grade = 0;
+                    for (int i = 1 ; i <=5 ; i++){
+                        System.out.println("Enter grade for student " + i);
+                        grade = input. nextInt();
+                        if (grade < 0)
+                            break;
+                        sum += grade;
+                    }
+                    double avg;
+                    avg = (double) sum / 5;
+                    System.out.printf("The avg is %.2f", avg);
+                  }
+              }
+                </code></pre>
+
+          <div style="background-color: #333; border-radius: .28vw;">
+            <h1 style="background-color: #4b4b4b; border-radius: .28vw;"></h1>
+          </div>
 
           </div> <!--End Container-->>
         </div>
@@ -1177,9 +1262,9 @@ do{
 
   <ul class="expandable-list">
     <li class="expandable-item">
-      <div class="expandable-title">Week .2 LECT & SEC</div>
+      <div class="expandable-title">Object Oriented Programming</div>
       <div class="expandable-content">
-        NULL
+        Working on it
       </div>
     </li>
   </ul>
